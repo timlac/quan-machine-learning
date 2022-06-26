@@ -39,7 +39,7 @@ class Params(object):
 
     def set_mixed_emotions(self, name_list):
         """
-        A220_mix_ang_disg_5050.csv
+        e.g. A220_mix_ang_disg_5050.csv
         """
         self.mix = True
         self.emotion_1 = name_list[2]
@@ -48,7 +48,7 @@ class Params(object):
 
     def set_neutral_emotion(self, name_list):
         """
-        A220_neu_sit1_v.csv
+        e.g. A220_neu_sit1_v.csv
         """
         self.emotion_1 = name_list[1]
         # remove all non-numeric characters from situation string, keep only the digit
@@ -57,7 +57,7 @@ class Params(object):
 
     def set_long_name(self, name_list):
         """
-        A220_neg_sur_p_1.csv
+        e.g. A220_neg_sur_p_1.csv
         """
         # concat the long name of the emotion
         self.emotion_1 = "_".join((name_list[1], name_list[2]))
@@ -66,7 +66,7 @@ class Params(object):
 
     def set_default_emotion(self, name_list):
         """
-        A220_adm_p_1.csv
+        e.g. A220_adm_p_1.csv
         """
         self.emotion_1 = name_list[1]
         self.mode = name_list[2]
@@ -74,7 +74,7 @@ class Params(object):
 
     def set_versioned_emotion(self, name_list):
         """
-        A327_ang_v_1_ver1.csv
+        e.g. A327_ang_v_1_ver1.csv
         """
         self.emotion_1 = name_list[1]
         self.mode = name_list[2]
