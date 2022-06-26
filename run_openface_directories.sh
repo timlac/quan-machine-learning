@@ -23,6 +23,7 @@ find "$DATA_MOUNT/Documents" -name "*.mov" -print0 | while IFS= read -r -d '' fi
         continue
     fi
 
+    # run Openface with docker
     docker exec openface FeatureExtraction -2Dfp -3Dfp -pdmparams -pose -aus -gaze -f "$file" -out_dir "$OUT_PATH"
     docker exec openface chown -R $UID:$UID "$DATA_MOUNT" # chown to current user
 done
