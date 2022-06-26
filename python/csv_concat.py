@@ -70,7 +70,7 @@ def set_df_columns(df, filename):
         params.set_default_emotion(name_list)
 
     df = params.set_column_values(df)
-    return params.set_column_values(df)
+    return df
 
 
 def get_csv_paths(path):
