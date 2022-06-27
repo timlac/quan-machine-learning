@@ -2,13 +2,18 @@ from glob import glob
 from tqdm import tqdm
 from pathlib import Path
 import pandas as pd
-from params import Params
+import logging
+import sys
 
+from python.params import Params
 from python.helpers import get_filename, get_digits_only
 
 
+logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+
+
 class ErrorFileException(Exception):
-    def __init__(self, filename, message="Filename {} contains error marker, skipping file"):
+    def __init__(self, filename, message="\nFilename {} contains error marker, skipping file"):
         self.filename = filename
         self.message = message
         super().__init__(self.message.format(self.filename))
@@ -36,7 +41,7 @@ def create_dataframe(paths):
             df_tmp = set_df_columns(df_tmp, filename)
             df = pd.concat([df, df_tmp])
         except ErrorFileException as e:
-            print(e)
+            logging.info(e)
             continue
     return df
 
@@ -75,7 +80,7 @@ def set_df_columns(df, filename):
 
 def get_csv_paths(path):
     csv_paths = glob(path + '*.csv')
-    print("Files found:", len(csv_paths))
+    logging.info("Files found:" + str(len(csv_paths)))
     return csv_paths
 
 
@@ -84,12 +89,19 @@ def name2list(file_name):
 
 
 def main():
-    input_path = "../files/tests/csv_concat/"
+    # input_path = "files/tests/csv_concat/"
+    # out_path = "files/tests/out/csv_concat_test.csv"
+
+    input_path = "/media/tim/Seagate Backup Plus Drive/Out/"
+    out_path = "files/openface/csv_concat_openface.csv"
+
+    logging.info("Input path: " + str(input_path))
+
     paths = get_csv_paths(input_path)
-    print(paths)
+    logging.info("found paths: \n" + str(paths))
     df = create_dataframe(paths)
-    print("saving csv")
-    df.to_csv("../files/tests/out/csv_concat_test.csv")
+    logging.info("saving csv")
+    df.to_csv(out_path)
 
 
 if __name__ == "__main__":
