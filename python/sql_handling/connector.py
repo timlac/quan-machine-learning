@@ -12,7 +12,7 @@ class ConnectionHandler:
         database = os.getenv("DB_NAME")
         username = os.getenv("DB_USERNAME")
         password = os.getenv("DB_PASSWORD")
-        return "{}:{}@{}/{}".format(username, password, endpoint, database)
+        return "{}:{}@{}/{}?{}".format(username, password, endpoint, database, "local_infile=1")
 
     @staticmethod
     def test_connection():

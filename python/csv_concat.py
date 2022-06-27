@@ -5,8 +5,10 @@ import pandas as pd
 import logging
 import sys
 
+from python.column_refactor import refactor_duplicate_columns
 from python.params import Params
 from python.helpers import get_filename, get_digits_only
+from python.sql_handling.upload import EasyUpload
 
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
@@ -19,6 +21,24 @@ class ErrorFileException(Exception):
         super().__init__(self.message.format(self.filename))
 
 
+class Concatenator:
+
+    # filenames with mixed emotions contains the word mix
+    # filenames with neutral emotion contains the word neu
+    special_cases = {
+        "mixed_emotions": "mix",
+        "neutral_emotion": "neu",
+        "error": "e"
+    }
+
+    def __init__(self):
+        
+
+
+
+
+
+
 # filenames with mixed emotions contains the word mix
 # filenames with neutral emotion contains the word neu
 special_cases = {
@@ -28,27 +48,31 @@ special_cases = {
 }
 
 
-def create_dataframe(paths):
+def iterate_files(paths, batch_size=382):
     """
     :param paths: paths to csv files
+    :param batch_size
     :return: csv files concatenated into a large dataframe with columns set from filenames
     """
+    easy_upload = EasyUpload()
+    table_name = "openface"
+
     all_dfs = []
 
-    for filename in tqdm(paths):
+    for i in tqdm(range(0, len(paths), batch_size)):
         try:
-            df_tmp = pd.read_csv(filename)
-            df_tmp = set_df_columns(df_tmp, filename)
-            all_dfs.append(df_tmp)
+            df = pd.read_csv(filename)
+            df = set_df_columns(df, filename)
+            df = refactor_duplicate_columns(df)
 
-            # df = pd.concat([df, df_tmp])
+            all_dfs.append(df)
+
         except ErrorFileException as e:
             logging.info(e)
             continue
 
-    df = pd.concat(all_dfs)
-
-    return df
+        df = pd.concat(all_dfs)
+        df.to_csv()
 
 
 def set_df_columns(df, filename):
@@ -94,19 +118,17 @@ def name2list(file_name):
 
 
 def main():
-    # input_path = "files/tests/csv_concat/"
+    input_path = "/home/tim/Videos/out/"
     # out_path = "files/tests/out/csv_concat_test.csv"
 
-    input_path = "/media/tim/Seagate Backup Plus Drive/Out/"
-    out_path = "files/openface/csv_concat_openface.csv"
+    # input_path = "/media/tim/Seagate Backup Plus Drive/Out/"
+    # out_path = "files/openface/csv_concat_openface.csv"
 
     logging.info("Input path: " + str(input_path))
 
     paths = get_csv_paths(input_path)
     logging.info("found paths: \n" + str(paths))
-    df = create_dataframe(paths)
-    logging.info("saving csv")
-    df.to_csv(out_path)
+    iterate_files(paths)
 
 
 if __name__ == "__main__":

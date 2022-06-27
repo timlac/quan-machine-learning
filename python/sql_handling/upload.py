@@ -1,5 +1,5 @@
 import pandas as pd
-from connector import ConnectionHandler
+from python.sql_handling.connector import ConnectionHandler
 
 
 class EasyUpload:
@@ -20,20 +20,6 @@ class EasyUpload:
         self.truncate(table_name)
         self.insert_csv(file_path, table_name)
 
-    def refactor_duplicate_columns(self, df):
-        df.columns = df.columns.str.replace('eye_lmk_y', 'eye_2d_lmk_y')
-        df.columns = df.columns.str.replace('eye_lmk_x', 'eye_2d_lmk_x')
-        df.columns = df.columns.str.replace('eye_lmk_Y', 'eye_3d_lmk_y')
-        df.columns = df.columns.str.replace('eye_lmk_X', 'eye_3d_lmk_x')
-
-        df.columns = df.columns.str.replace('^x_', 'x_2d_')
-        df.columns = df.columns.str.replace('^y_', 'y_2d_')
-        df.columns = df.columns.str.replace('^X_', 'x_3d_')
-        df.columns = df.columns.str.replace('^Y_', 'y_3d_')
-
-        df.columns = df.columns.str.replace('^z_', 'z_2d_')
-        df.columns = df.columns.str.replace('^Z_', 'z_3d_')
-        return df
 
     def create_table(self, file_path, table_name):
         df = pd.read_csv(file_path)
@@ -47,12 +33,11 @@ class EasyUpload:
 
     def insert_csv(self, file_path, table_name):
 
-        sql_string = "LOAD DATA INFILE '{}' " \
+        sql_string = "LOAD DATA LOCAL INFILE '{}' " \
                      "INTO TABLE {} " \
                      "CHARACTER SET utf8 " \
                      "FIELDS TERMINATED BY ',' " \
-                     "ENCLOSED BY '\"' " \
-                     "LINES TERMINATED BY '\\r\\n' " \
+                     "LINES TERMINATED BY '\\n' " \
                      "IGNORE 1 LINES; ".format(file_path, table_name)
 
         print(sql_string)
@@ -84,7 +69,7 @@ class EasyUpload:
         #     "openface")
 
         easy_upload.truncate("openface")
-        
+
         # easy_upload.insert_csv(
         #     "/home/tim/work/su-thesis-project/projects/video_analysis/files/tests/out/csv_concat.csv",
         #     "openface")
