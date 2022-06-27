@@ -39,25 +39,20 @@ class CsvPreprocessor:
 
         paths = get_csv_paths(directory)
 
-        st = time.time()
-        for filepath in tqdm(paths):
+        for filepath in paths:
             try:
+                logging.info("processing file: " + str(filepath))
                 df = pd.read_csv(filepath)
                 df = self.set_df_columns(df, filepath)
                 df = refactor_duplicate_columns(df)
+
+                logging.info("saving file to csv: " + str(filepath))
 
                 df.to_csv(os.path.join(self.save_to, Path(filepath).name), index=False)
 
             except ErrorFileException as e:
                 logging.info(e)
                 continue
-
-            # get the end time
-            et = time.time()
-
-            # get the execution time
-            elapsed_time = et - st
-            print('Execution time:', elapsed_time, 'seconds')
 
     def set_df_columns(self, df, filepath):
         """
@@ -97,7 +92,10 @@ class CsvPreprocessor:
 
 def main():
     load_dotenv()
+    # input_path = "/home/tim/work/su-thesis-project/projects/video_analysis/files/tests/csv_concat/"
+
     input_path = os.getenv("OPENFACE_RAW")
+
     save_to = os.getenv("OPENFACE_PROCESSED")
 
     logging.info("Input path: " + str(input_path))

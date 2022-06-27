@@ -25,7 +25,7 @@ class TableCreator:
     def main():
         table_creator = TableCreator("openface")
         table_creator.create_table(
-            "/home/tim/work/su-thesis-project/projects/video_analysis/files/openface/A18_adm_p_1.csv")
+            "/home/tim/work/su-thesis-project/projects/video_analysis/files/openface/A334_anx_p_2.csv")
 
         table_creator.truncate()
 

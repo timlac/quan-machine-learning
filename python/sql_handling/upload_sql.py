@@ -36,7 +36,7 @@ class Uploader:
 
     def upload_dir(self, directory):
         paths = get_csv_paths(directory)
-        for filepath in tqdm(paths):
+        for filepath in paths:
             self.insert_csv(filepath)
 
     @staticmethod
