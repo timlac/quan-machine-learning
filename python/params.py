@@ -11,7 +11,7 @@ class Params(object):
     # can be vocalization (v) or prosody (p)
     DEFAULT_MODE = "v"
 
-    DEFAULT_PROPORTIONS = "0"
+    DEFAULT_PROPORTIONS = 0
     DEFAULT_SECOND_EMOTION = None
 
     def __init__(self,

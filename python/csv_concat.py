@@ -33,16 +33,21 @@ def create_dataframe(paths):
     :param paths: paths to csv files
     :return: csv files concatenated into a large dataframe with columns set from filenames
     """
-    df = pd.DataFrame()  # Initialize empty data frame
+    all_dfs = []
 
     for filename in tqdm(paths):
         try:
             df_tmp = pd.read_csv(filename)
             df_tmp = set_df_columns(df_tmp, filename)
-            df = pd.concat([df, df_tmp])
+            all_dfs.append(df_tmp)
+
+            # df = pd.concat([df, df_tmp])
         except ErrorFileException as e:
             logging.info(e)
             continue
+
+    df = pd.concat(all_dfs)
+
     return df
 
 
