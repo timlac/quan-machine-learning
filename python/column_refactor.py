@@ -18,4 +18,10 @@ def refactor_duplicate_columns(df):
 
     df.columns = df.columns.str.replace('^z_', 'z_2d_', regex=True)
     df.columns = df.columns.str.replace('^Z_', 'z_3d_', regex=True)
+
+    return df
+
+
+def reorder(df):
+    df.insert(0, 'filename', df.pop('filename'))
     return df

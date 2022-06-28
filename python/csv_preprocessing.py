@@ -8,7 +8,7 @@ import os
 import time
 from dotenv import load_dotenv
 
-from python.column_refactor import refactor_duplicate_columns
+from python.column_refactor import refactor_duplicate_columns, reorder
 from python.params import Params
 from python.helpers import get_filename, get_digits_only, get_csv_paths, name2list
 from python.sql_handling.upload_sql import Uploader
@@ -45,6 +45,7 @@ class CsvPreprocessor:
                 df = pd.read_csv(filepath)
                 df = self.set_df_columns(df, filepath)
                 df = refactor_duplicate_columns(df)
+                df = reorder(df)
 
                 logging.info("saving file to csv: " + str(filepath))
 
@@ -66,7 +67,7 @@ class CsvPreprocessor:
 
         params = Params()
         # filename with extension
-        params.filename = Path(filepath).name
+        params.filename = filename
         params.video_id = name_list[0]
 
         if name_list[1] == self.special_cases["mixed_emotions"]:

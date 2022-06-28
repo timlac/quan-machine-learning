@@ -13,6 +13,7 @@ class Params(object):
 
     DEFAULT_PROPORTIONS = 0
     DEFAULT_SECOND_EMOTION = None
+    DEFAULT_MIX = 0
 
     def __init__(self,
                  filename=None,
@@ -21,7 +22,7 @@ class Params(object):
                  emotion_2=DEFAULT_SECOND_EMOTION,
                  proportions=DEFAULT_PROPORTIONS,
                  mode=DEFAULT_MODE,
-                 mix=False,
+                 mix=DEFAULT_MIX,
                  intensity_level=DEFAULT_INTENSITY_LEVEL,
                  version=DEFAULT_VERSION,
                  situation=DEFAULT_SITUATION):
@@ -41,7 +42,7 @@ class Params(object):
         """
         e.g. A220_mix_ang_disg_5050.csv
         """
-        self.mix = True
+        self.mix = 1
         self.emotion_1 = name_list[2]
         self.emotion_2 = name_list[3]
         self.proportions = name_list[4]

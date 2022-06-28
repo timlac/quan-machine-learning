@@ -4,6 +4,7 @@ import logging
 import sys
 from dotenv import load_dotenv
 import os
+from sqlalchemy.orm import sessionmaker
 
 from python.sql_handling.connector import ConnectionHandler
 from python.helpers import get_csv_paths
@@ -18,9 +19,8 @@ class Uploader:
 
     def __init__(self, table_name):
         self.table_name = table_name
-        self.engine = ConnectionHandler.get_engine()
 
-    def insert_csv(self, file_path):
+    def insert_csv(self, file_path, engine):
         logging.info("uploading file: " + str(file_path))
 
         sql_string = "LOAD DATA LOCAL INFILE '{}' " \
@@ -32,20 +32,23 @@ class Uploader:
 
         logging.info("executing sql: " + str(sql_string))
 
-        self.engine.execute(sql_string)
+        engine.execute(sql_string)
 
     def upload_dir(self, directory):
         paths = get_csv_paths(directory)
-        for filepath in paths:
-            self.insert_csv(filepath)
+
+        batch_size = 100
+        for i in range(0, len(paths), batch_size):
+            for filepath in paths[i:i + batch_size]:
+                # create new engine to scrap cache (increases speed)
+                engine = ConnectionHandler.get_engine()
+                self.insert_csv(filepath, engine)
 
     @staticmethod
     def main():
-
         # directory = "/home/tim/work/su-thesis-project/projects/video_analysis/files/openface/"
         load_dotenv()
         input_path = os.getenv("OPENFACE_PROCESSED")
-
         table_name = "openface"
 
         uploader = Uploader(table_name)
