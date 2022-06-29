@@ -1,6 +1,7 @@
 import pandas as pd
 
 from python.helpers import get_digits_only, hasher
+from python.global_config import emotion_abr_to_emotion_id
 
 
 class Params(object):
@@ -31,7 +32,9 @@ class Params(object):
         self.video_id = video_id
         self.mix = mix
         self.emotion_1 = emotion_1
+        self.emotion_1_id = None
         self.emotion_2 = emotion_2
+        self.emotion_2_id = None
         self.proportions = proportions
         self.mode = mode
         self.intensity_level = intensity_level
@@ -81,6 +84,10 @@ class Params(object):
         self.mode = name_list[2]
         self.intensity_level = name_list[3]
         self.version = get_digits_only(name_list[4])
+
+    def set_emotion_ids(self):
+        self.emotion_1_id = emotion_abr_to_emotion_id[self.emotion_1]
+        self.emotion_2_id = emotion_abr_to_emotion_id[self.emotion_2]
 
     def set_column_values(self, df):
         for key, value in vars(self).items():

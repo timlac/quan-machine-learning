@@ -41,14 +41,11 @@ class TableCreator:
 
             connection.close()
 
-    def set_primary_keys(self, name, key1, key2):
-        sql_string = "ALTER TABLE {} " \
-                     "ADD CONSTRAINT {} " \
-                     "PRIMARY KEY ({}, {});".format(self.table_name, name, key1, key2)
-
-        logging.info("executing sql: " + str(sql_string))
+    def set_indices(self):
+        sql_string = "ALTER TABLE {} ADD INDEX (success, confidence, mix)".format(self.table_name)
 
         self.engine.execute(sql_string)
+
 
     def truncate(self):
         """Remove all data from table"""
@@ -57,15 +54,14 @@ class TableCreator:
     @staticmethod
     def main():
         load_dotenv()
-        openface_processed = os.getenv("OPENFACE_PROCESSED")
-        paths = get_csv_paths(openface_processed)
-
         table_creator = TableCreator("openface_reduced")
-        table_creator.create_table(paths[0])
+        table_creator.set_indices()
 
-        table_creator.truncate()
-
-        # table_creator.set_primary_keys("name_frame", "frame", "filename")
+        # openface_processed = os.getenv("OPENFACE_PROCESSED")
+        # paths = get_csv_paths(openface_processed)
+        # table_creator.create_table(paths[0])
+        #
+        # table_creator.truncate()
 
 
 if __name__ == '__main__':

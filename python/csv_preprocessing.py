@@ -81,6 +81,7 @@ class CsvPreprocessor:
         else:
             params.set_default_emotion(name_list)
 
+        params.set_emotion_ids()
         df = params.set_column_values(df)
         return df
 
