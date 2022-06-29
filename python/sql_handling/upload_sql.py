@@ -49,7 +49,7 @@ class Uploader:
         # directory = "/home/tim/work/su-thesis-project/projects/video_analysis/files/openface/"
         load_dotenv()
         input_path = os.getenv("OPENFACE_PROCESSED")
-        table_name = "openface"
+        table_name = "openface_reduced"
 
         uploader = Uploader(table_name)
         uploader.upload_dir(input_path)

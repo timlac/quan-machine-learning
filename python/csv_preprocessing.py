@@ -65,10 +65,7 @@ class CsvPreprocessor:
         filename = get_filename(filepath)
         name_list = name2list(filename)
 
-        params = Params()
-        # filename with extension
-        params.filename = filename
-        params.video_id = name_list[0]
+        params = Params(filename=filename, video_id=name_list[0])
 
         if name_list[1] == self.special_cases["mixed_emotions"]:
             params.set_mixed_emotions(name_list)

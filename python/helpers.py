@@ -3,6 +3,7 @@ from pathlib import Path
 import logging
 from glob import glob
 
+
 def get_filename(file):
     """
     :param file: some file path
@@ -27,6 +28,11 @@ def get_csv_paths(path):
 
 def name2list(file_name):
     return file_name.split("_")
+
+
+def hasher(value):
+    hash32 = hash(value) & 0xffffffff
+    return hash32
 
 
 def main():

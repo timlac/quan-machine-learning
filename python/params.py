@@ -1,6 +1,6 @@
 import pandas as pd
 
-from python.helpers import get_digits_only
+from python.helpers import get_digits_only, hasher
 
 
 class Params(object):
@@ -16,8 +16,8 @@ class Params(object):
     DEFAULT_MIX = 0
 
     def __init__(self,
-                 filename=None,
-                 video_id=None,
+                 filename,
+                 video_id,
                  emotion_1=None,
                  emotion_2=DEFAULT_SECOND_EMOTION,
                  proportions=DEFAULT_PROPORTIONS,
@@ -27,6 +27,7 @@ class Params(object):
                  version=DEFAULT_VERSION,
                  situation=DEFAULT_SITUATION):
 
+        self.filekey = hasher(filename)
         self.filename = filename
         self.video_id = video_id
         self.mix = mix
