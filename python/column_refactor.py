@@ -23,5 +23,5 @@ def refactor_duplicate_columns(df):
 
 
 def reorder(df):
-    df.insert(0, 'filekey', df.pop('filekey'))
+    df.insert(0, 'filename', df.pop('filename'))
     return df

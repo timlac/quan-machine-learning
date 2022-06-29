@@ -27,7 +27,6 @@ class Params(object):
                  version=DEFAULT_VERSION,
                  situation=DEFAULT_SITUATION):
 
-        self.filekey = hasher(filename)
         self.filename = filename
         self.video_id = video_id
         self.mix = mix

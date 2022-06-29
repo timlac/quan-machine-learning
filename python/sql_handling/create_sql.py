@@ -24,8 +24,7 @@ class TableCreator:
         with self.engine.connect() as connection:
             # write Data Frame to sql
             df.to_sql(self.table_name, connection, if_exists='replace', index=False,
-                      dtype={"filekey": db.types.BIGINT(),
-                             "filename": db.types.VARCHAR(length=32),
+                      dtype={"filename": db.types.VARCHAR(length=32),
                              "frame": db.types.INT(),
                              "confidence": db.types.INT(),
                              "success": db.types.INT(),
@@ -65,7 +64,8 @@ class TableCreator:
         table_creator.create_table(paths[0])
 
         table_creator.truncate()
-        table_creator.set_primary_keys("name_frame", "frame", "filekey")
+
+        # table_creator.set_primary_keys("name_frame", "frame", "filename")
 
 
 if __name__ == '__main__':
