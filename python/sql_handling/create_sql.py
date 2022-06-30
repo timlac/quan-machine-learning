@@ -32,6 +32,8 @@ class TableCreator:
                              "video_id": db.types.VARCHAR(length=10),
                              "emotion_1": db.types.VARCHAR(length=10),
                              'emotion_2': db.types.VARCHAR(length=10),
+                             "emotion_1_id": db.types.INT(),
+                             'emotion_2_id': db.types.INT(),
                              "mode": db.types.VARCHAR(length=1),
                              'mix': db.types.INT(),
                              'proportions': db.types.INT(),
@@ -42,7 +44,11 @@ class TableCreator:
             connection.close()
 
     def set_indices(self):
-        sql_string = "ALTER TABLE {} ADD INDEX (success, confidence, mix)".format(self.table_name)
+        # sql_string = "ALTER TABLE {} ADD INDEX (success, confidence, mix);".format(self.table_name)
+        #
+        # self.engine.execute(sql_string)
+
+        sql_string = "ALTER TABLE {} ADD INDEX (success, confidence, mix, video_id);".format(self.table_name)
 
         self.engine.execute(sql_string)
 
@@ -54,14 +60,17 @@ class TableCreator:
     @staticmethod
     def main():
         load_dotenv()
-        table_creator = TableCreator("openface_reduced")
-        table_creator.set_indices()
+        table_creator = TableCreator("openface")
 
         # openface_processed = os.getenv("OPENFACE_PROCESSED")
         # paths = get_csv_paths(openface_processed)
         # table_creator.create_table(paths[0])
         #
         # table_creator.truncate()
+
+
+        table_creator.set_indices()
+
 
 
 if __name__ == '__main__':

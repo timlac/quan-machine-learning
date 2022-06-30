@@ -15,12 +15,16 @@ class Params(object):
     DEFAULT_PROPORTIONS = 0
     DEFAULT_SECOND_EMOTION = None
     DEFAULT_MIX = 0
+    # set it to some number not in the list
+    DEFAULT_EMOTION_ID = 100
 
     def __init__(self,
                  filename,
                  video_id,
                  emotion_1=None,
                  emotion_2=DEFAULT_SECOND_EMOTION,
+                 emotion_1_id=DEFAULT_EMOTION_ID,
+                 emotion_2_id=DEFAULT_EMOTION_ID,
                  proportions=DEFAULT_PROPORTIONS,
                  mode=DEFAULT_MODE,
                  mix=DEFAULT_MIX,
@@ -32,9 +36,9 @@ class Params(object):
         self.video_id = video_id
         self.mix = mix
         self.emotion_1 = emotion_1
-        self.emotion_1_id = None
+        self.emotion_1_id = emotion_1_id
         self.emotion_2 = emotion_2
-        self.emotion_2_id = None
+        self.emotion_2_id = emotion_2_id
         self.proportions = proportions
         self.mode = mode
         self.intensity_level = intensity_level
@@ -87,7 +91,8 @@ class Params(object):
 
     def set_emotion_ids(self):
         self.emotion_1_id = emotion_abr_to_emotion_id[self.emotion_1]
-        self.emotion_2_id = emotion_abr_to_emotion_id[self.emotion_2]
+        if self.mix == 1:
+            self.emotion_2_id = emotion_abr_to_emotion_id[self.emotion_2]
 
     def set_column_values(self, df):
         for key, value in vars(self).items():
@@ -107,6 +112,7 @@ def main():
                     mode=name_list[2],
                     intensity_level=int(name_list[3]))
 
+    params.set_emotion_ids()
     df = params.set_column_values(df)
     df.to_csv("../files/tests/out/paramtest.csv")
 
