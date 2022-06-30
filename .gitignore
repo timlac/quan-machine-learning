@@ -1,3 +1,19 @@
+# custom
+
+python/fiddle.py
+
+files/openface/*
+files/openface_reduced
+files/sql/*
+files/tests/out/*
+
+files/tests/videos/openface/*
+files/tests/videos/opensmile/*
+files/tests/videos/raw/*
+
+
+python/notebooks/files/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
