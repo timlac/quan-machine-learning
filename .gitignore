@@ -11,6 +11,13 @@ files/tests/videos/openface/*
 files/tests/videos/opensmile/*
 files/tests/videos/raw/*
 
+some_commands
+
+bash/fiddle/*
+
+logs
+
+SQL
 
 python/notebooks/files/*
 
