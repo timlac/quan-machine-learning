@@ -2,6 +2,7 @@ import re
 from pathlib import Path
 import logging
 from glob import glob
+from global_config import emotion_id_to_emotion_abr
 
 
 def get_filename(file):
@@ -35,16 +36,25 @@ def hasher(value):
     return hash32
 
 
-def main():
-    filepath = '../files/tests/csv_concat/A220_adm_p_1.csv'
-    print(filepath)
-    filename = get_filename(filepath)
-    print(filename)
+def get_emotion_abrs_from_ids(emotion_ids):
+    ret = []
+    for i in emotion_ids:
+        ret.append(emotion_id_to_emotion_abr[i])
+    return ret
 
-    print(Path(filepath).name)
+
+def main():
+    # filepath = '../files/tests/csv_concat/A220_adm_p_1.csv'
+    # print(filepath)
+    # filename = get_filename(filepath)
+    # print(filename)
+    #
+    # print(Path(filepath).name)
+
+    emotion_ids = [1, 3, 4, 5, 7, 12, 17]
+    abrs = get_emotion_abrs_from_ids(emotion_ids)
+    print(abrs)
 
 
 if __name__ == "__main__":
     main()
-
-

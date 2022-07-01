@@ -30,4 +30,4 @@ find "$DATA_MOUNT/Documents" -name "*.mov" -print0 | while IFS= read -r -d '' fi
     docker exec openface chown -R $UID:$UID "$DATA_MOUNT" # chown to current user
 done
 
-docker-compose -f $DOCKER_COMPOSE_PATH down
+docker-compose -f $DOCKER_COMPOSE_PATH downwork

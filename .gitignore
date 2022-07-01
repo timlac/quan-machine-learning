@@ -2,6 +2,8 @@
 
 python/fiddle.py
 
+python/machine_learning_examples/*
+
 files/openface/*
 files/openface_reduced
 files/sql/*

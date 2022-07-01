@@ -48,7 +48,7 @@ class TableCreator:
         #
         # self.engine.execute(sql_string)
 
-        sql_string = "ALTER TABLE {} ADD INDEX (success, confidence, mix, video_id);".format(self.table_name)
+        sql_string = "ALTER TABLE {} ADD INDEX (success, confidence, mix, video_id, emotion_1);".format(self.table_name)
 
         self.engine.execute(sql_string)
 
