@@ -1,8 +1,8 @@
 # custom
 
-python/fiddle.py
+src/fiddle.py
 
-python/machine_learning_examples/*
+src/machine_learning_examples/*
 
 files/openface/*
 files/openface_reduced
@@ -21,7 +21,7 @@ logs
 
 SQL
 
-python/notebooks/files/*
+src/notebooks/files/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -53,7 +53,7 @@ share/python-wheels/
 MANIFEST
 
 # PyInstaller
-#  Usually these files are written by a python script from a template
+#  Usually these files are written by a src script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
