@@ -8,6 +8,7 @@ files/openface/*
 files/openface_reduced
 files/sql/*
 files/tests/out/*
+files/opensmile/*
 
 files/tests/videos/openface/*
 files/tests/videos/opensmile/*
