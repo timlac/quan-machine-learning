@@ -91,11 +91,9 @@ class CsvPreprocessor:
 
 def main():
     load_dotenv()
-    # input_path = "/home/tim/work/su-thesis-project/projects/video_analysis/files/tests/csv_concat/"
 
-    input_path = os.getenv("OPENFACE_RAW")
-
-    save_to = os.getenv("OPENFACE_PROCESSED")
+    input_path = os.getenv("OPENSMILE_FUNCTIONAlS_RAW")
+    save_to = os.getenv("OPENSMILE_FUNCTIONALS_PROCESSED")
 
     logging.info("Input path: " + str(input_path))
 

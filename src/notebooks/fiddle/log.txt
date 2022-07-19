@@ -1,0 +1,3 @@
+nohup: ignoring input
+[NbConvertApp] Converting notebook test.ipynb to notebook
+[NbConvertApp] Writing 2344 bytes to test.nbconvert.ipynb

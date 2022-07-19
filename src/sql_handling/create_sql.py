@@ -14,32 +14,18 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
 class TableCreator:
 
-    def __init__(self, table_name):
+    def __init__(self, table_name, datatypes):
         self.table_name = table_name
+        self.datatypes = datatypes
         self.engine = ConnectionHandler.get_engine()
 
-    def create_table(self, file_path):
+    def create_table_based_on_csv(self, file_path):
         df = pd.read_csv(file_path)
 
         with self.engine.connect() as connection:
             # write Data Frame to sql
             df.to_sql(self.table_name, connection, if_exists='replace', index=False,
-                      dtype={"filename": db.types.VARCHAR(length=32),
-                             "frame": db.types.INT(),
-                             "confidence": db.types.INT(),
-                             "success": db.types.INT(),
-                             "face_id": db.types.INT(),
-                             "video_id": db.types.VARCHAR(length=10),
-                             "emotion_1": db.types.VARCHAR(length=10),
-                             'emotion_2': db.types.VARCHAR(length=10),
-                             "emotion_1_id": db.types.INT(),
-                             'emotion_2_id': db.types.INT(),
-                             "mode": db.types.VARCHAR(length=1),
-                             'mix': db.types.INT(),
-                             'proportions': db.types.INT(),
-                             'intensity_level': db.types.INT(),
-                             'version': db.types.INT(),
-                             'situation': db.types.INT()})
+                      dtype=self.datatypes)
 
             connection.close()
 

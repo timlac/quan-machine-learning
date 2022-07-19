@@ -32,17 +32,22 @@ class Uploader:
 
         logging.info("executing sql: " + str(sql_string))
 
-        engine.execute(sql_string)
+        # engine.execute(sql_string)
+
+        conn = engine.connect()
+        conn.execute(sql_string)
+        conn.close()
 
     def upload_dir(self, directory):
         paths = get_csv_paths(directory)
 
-        batch_size = 100
+        batch_size = 20
         for i in range(0, len(paths), batch_size):
+            # create new engine to scrap cache (increases speed)
+            engine = ConnectionHandler.get_engine()
             for filepath in paths[i:i + batch_size]:
-                # create new engine to scrap cache (increases speed)
-                engine = ConnectionHandler.get_engine()
                 self.insert_csv(filepath, engine)
+            engine.dispose()
 
     @staticmethod
     def main():
