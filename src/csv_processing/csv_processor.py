@@ -1,24 +1,20 @@
-from glob import glob
-from tqdm import tqdm
 from pathlib import Path
 import pandas as pd
 import logging
 import sys
 import os
-import time
 from dotenv import load_dotenv
 
-from src.column_refactor import refactor_duplicate_columns, reorder
-from src.params import Params
-from src.helpers import get_filename, get_digits_only, get_csv_paths, name2list
-from src.sql_handling.upload_sql import Uploader
+from src.csv_processing.column_refactor import refactor_duplicate_columns, reorder
+from src.csv_processing.params import Params
+from src.utils.helpers import get_filename, get_csv_paths, name2list
 from src.custom_exceptions.error_file_exception import ErrorFileException
 
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
 
-class CsvPreprocessor:
+class CsvProcessor:
 
     # filenames with mixed emotions contains the word mix
     # filenames with neutral emotion contains the word neu
@@ -97,7 +93,7 @@ def main():
 
     logging.info("Input path: " + str(input_path))
 
-    csv_preprocessor = CsvPreprocessor(save_to)
+    csv_preprocessor = CsvProcessor(save_to)
     csv_preprocessor.process_files(input_path)
 
 

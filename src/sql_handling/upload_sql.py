@@ -1,13 +1,10 @@
-import pandas as pd
-from tqdm import tqdm
 import logging
 import sys
 from dotenv import load_dotenv
 import os
-from sqlalchemy.orm import sessionmaker
 
 from src.sql_handling.connector import ConnectionHandler
-from src.helpers import get_csv_paths
+from src.utils.helpers import get_csv_paths
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 

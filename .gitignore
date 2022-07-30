@@ -18,6 +18,8 @@ some_commands
 
 bash/fiddle/*
 
+*.log
+
 logs
 
 SQL

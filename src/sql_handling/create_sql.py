@@ -2,12 +2,8 @@ import pandas as pd
 import logging
 import sys
 from dotenv import load_dotenv
-import os
-import sqlalchemy as db
 
 from src.sql_handling.connector import ConnectionHandler
-
-from src.helpers import get_csv_paths
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 

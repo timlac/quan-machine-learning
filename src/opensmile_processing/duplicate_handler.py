@@ -1,7 +1,7 @@
 import glob
 
 
-from src.helpers import get_filename
+from src.utils.helpers import get_filename
 
 
 class DuplicateHandler(object):

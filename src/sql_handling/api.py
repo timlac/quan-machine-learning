@@ -3,8 +3,8 @@ import os
 
 from src.sql_handling.create_sql import TableCreator
 from src.sql_handling.upload_sql import Uploader
-from src.sql_handling.datatypes import general_datatypes, openface_datatypes
-from src.helpers import get_csv_paths
+from src.sql_handling.datatypes import general_datatypes
+from src.utils.helpers import get_csv_paths
 
 
 class Api:
