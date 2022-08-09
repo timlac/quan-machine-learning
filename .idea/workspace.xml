@@ -2,36 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/video/best_params/best_params_knn_intensity_video.sav" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/best_params/best_params_knn_intensity_video.sav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/video/best_params/best_params_rf_intensity_video.sav" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/best_params/best_params_rf_intensity_video.sav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/video/models/mod_knn_intensity_video.sav" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/models/mod_knn_intensity_video.sav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/video/models/mod_rf_intensity_video.sav" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/models/mod_rf_intensity_video.sav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/video/results/res_elastic_net_2_logocv_intensity_video.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/results/res_elastic_net_2_logocv_intensity_video.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/video/results/res_knn_2_logocv_intensity_video.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/results/res_knn_2_logocv_intensity_video.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/video/results/res_rf_2_logocv_intensity_video.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/results/res_rf_2_logocv_intensity_video.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/video/results/res_tree_2_logocv_intensity_video.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/results/res_tree_2_logocv_intensity_video.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/csv_processing/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/csv_processing/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/csv_processing/column_refactor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/csv_processing/column_refactor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/csv_processing/csv_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/csv_processing/csv_processor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/csv_processing/params.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/csv_processing/params.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/global_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/global_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/video_preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/video_preprocessing.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/video_preprocessing_time_series.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/video_preprocessing_time_series.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/video_supervised_learning.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/video_supervised_learning.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/opensmile_processing/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/opensmile_processing/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/opensmile_processing/duplicate_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/opensmile_processing/duplicate_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/opensmile_processing/opensmile_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/opensmile_processing/opensmile_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/opensmile_processing/opensmile_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/opensmile_processing/opensmile_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sql_handling/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sql_handling/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sql_handling/connector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/connector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sql_handling/create_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/create_sql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sql_handling/datatypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/datatypes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sql_handling/execute_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/execute_sql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sql_handling/upload_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/upload_sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/decision_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/decision_tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/elastic_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/elastic_net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/knn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/load_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/random_forrest.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/random_forrest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/run" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/run" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +178,7 @@
       <updated>1659177571802</updated>
       <workItem from="1659177576061" duration="2589000" />
       <workItem from="1659952649982" duration="24001000" />
-      <workItem from="1660042154899" duration="1161000" />
+      <workItem from="1660042154899" duration="3147000" />
     </task>
     <servers />
   </component>

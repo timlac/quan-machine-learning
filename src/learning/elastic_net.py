@@ -11,6 +11,7 @@ import time
 # get the start time
 st = time.time()
 
+print("running elastic net")
 print("input file: " + sys.argv[1])
 print("save location: " + sys.argv[2])
 
@@ -31,6 +32,8 @@ parameters = {'penalty': ['elasticnet'],
               'n_iter_no_change': n_iter_no_change_values,
               'max_iter': [2500]
               }
+
+parameters = {}
 
 elasticnet = SGDClassifier()
 logo = LeaveOneGroupOut()

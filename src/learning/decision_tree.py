@@ -15,6 +15,7 @@ import time
 # get the start time
 st = time.time()
 
+print("running decision tree")
 print("input file: " + sys.argv[1])
 print("save location: " + sys.argv[2])
 
@@ -38,6 +39,9 @@ parameters = {'criterion': criterion_values,
               'class_weight': ['balanced'],
               'random_state': [seed]
               }
+
+parameters = {}
+
 
 dt = DecisionTreeClassifier()
 logo = LeaveOneGroupOut()

@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from sklearn.utils import shuffle
 import pandas as pd
 import sklearn as sk
+from datetime import datetime
 
 seed = 27
 
@@ -14,6 +15,7 @@ class DataLoader:
         self.path = filename
         df = self.load()
 
+        print("starting at time: " + str(datetime.now()))
         print("loading file {}".format(filename))
         print("with {} rows and {} columns".format(df.shape[0], df.shape[1]))
 

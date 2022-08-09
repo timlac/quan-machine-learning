@@ -15,6 +15,7 @@ import time
 # get the start time
 st = time.time()
 
+print("running random forrest")
 print("input file: " + sys.argv[1])
 print("save location: " + sys.argv[2])
 
@@ -43,6 +44,9 @@ parameters = {'n_estimators': n_estimators_values,
               'class_weight': class_weight_values,
               'n_jobs': [-1]
               }
+
+parameters = {}
+
 
 rf = RandomForestClassifier()
 logo = LeaveOneGroupOut()

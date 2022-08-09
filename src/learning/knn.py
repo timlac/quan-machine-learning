@@ -14,7 +14,7 @@ import time
 # get the start time
 st = time.time()
 
-
+print("running knn")
 print("input file: " + sys.argv[1])
 print("save location: " + sys.argv[2])
 
@@ -39,6 +39,9 @@ parameters = {'n_neighbors': n_neigh_values,
               'metric': ['manhattan'],
               'n_jobs': [-1]
               }
+
+parameters = {}
+
 
 knn = KNeighborsClassifier()
 logo = LeaveOneGroupOut()
