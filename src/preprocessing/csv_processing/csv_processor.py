@@ -5,8 +5,8 @@ import sys
 import os
 from dotenv import load_dotenv
 
-from src.csv_processing.column_refactor import refactor_duplicate_columns, reorder
-from src.csv_processing.params import Params
+from src.preprocessing.csv_processing.column_refactor import refactor_duplicate_columns, reorder
+from src.preprocessing.csv_processing.params import Params
 from src.utils.helpers import get_filename, get_csv_paths, name2list
 from src.custom_exceptions.error_file_exception import ErrorFileException
 

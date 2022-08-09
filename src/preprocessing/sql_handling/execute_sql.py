@@ -2,7 +2,7 @@ import pandas as pd
 import time
 
 
-from src.sql_handling.connector import ConnectionHandler
+from src.preprocessing.sql_handling.connector import ConnectionHandler
 
 
 def execute_sql_pandas(query):

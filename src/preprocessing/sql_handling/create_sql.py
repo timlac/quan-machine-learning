@@ -3,7 +3,7 @@ import logging
 import sys
 from dotenv import load_dotenv
 
-from src.sql_handling.connector import ConnectionHandler
+from src.preprocessing.sql_handling.connector import ConnectionHandler
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 

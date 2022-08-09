@@ -2,6 +2,11 @@
 
 src/fiddle.py
 
+*fiddle*
+
+src/learning/fiddle.py
+src/learning/fiddle2.py
+
 src/machine_learning_examples/*
 
 files/openface/*

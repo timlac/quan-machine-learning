@@ -101,7 +101,7 @@ class Params(object):
 
 
 def main():
-    input_path = "../../files/tests/csv_concat/A220_adm_p_1.csv"
+    input_path = "../../../files/tests/csv_concat/A220_adm_p_1.csv"
     df = pd.read_csv(input_path)
 
     name_list = ['A332', 'ang', 'p', '2']

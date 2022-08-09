@@ -5,7 +5,7 @@ import opensmile
 import glob
 
 from src.utils.helpers import get_filename
-from src.opensmile_processing.duplicate_handler import DuplicateHandler
+from src.preprocessing.opensmile_processing.duplicate_handler import DuplicateHandler
 
 smile = opensmile.Smile(
     feature_set=opensmile.FeatureSet.eGeMAPSv02,

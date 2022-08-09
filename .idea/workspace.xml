@@ -2,30 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/emotional-recognition.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/video_analysis.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/column_refactor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/csv_processing/column_refactor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/csv_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/csv_processing/csv_processor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/audio_preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/audio_preprocessing.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/video/best_params/best_params_knn_intensity_video.sav" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/best_params/best_params_knn_intensity_video.sav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/video/best_params/best_params_rf_intensity_video.sav" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/best_params/best_params_rf_intensity_video.sav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/video/models/mod_knn_intensity_video.sav" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/models/mod_knn_intensity_video.sav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/video/models/mod_rf_intensity_video.sav" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/models/mod_rf_intensity_video.sav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/video/results/res_elastic_net_2_logocv_intensity_video.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/results/res_elastic_net_2_logocv_intensity_video.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/video/results/res_knn_2_logocv_intensity_video.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/results/res_knn_2_logocv_intensity_video.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/video/results/res_rf_2_logocv_intensity_video.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/results/res_rf_2_logocv_intensity_video.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/video/results/res_tree_2_logocv_intensity_video.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/video/results/res_tree_2_logocv_intensity_video.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/csv_processing/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/csv_processing/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/csv_processing/column_refactor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/csv_processing/column_refactor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/csv_processing/csv_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/csv_processing/csv_processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/csv_processing/params.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/csv_processing/params.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/global_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/global_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/notebooks/video_preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/video_preprocessing.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/opensmile_handling/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/opensmile_processing/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/opensmile_handling/duplicate_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/opensmile_processing/duplicate_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/opensmile_handling/opensmile_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/opensmile_processing/opensmile_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/opensmile_handling/opensmile_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/opensmile_processing/opensmile_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/params.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/csv_processing/params.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sql_handling/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql_handling/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sql_handling/create_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql_handling/create_sql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sql_handling/upload_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql_handling/upload_sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/video_preprocessing_time_series.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/video_preprocessing_time_series.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/video_supervised_learning.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/video_supervised_learning.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opensmile_processing/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/opensmile_processing/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opensmile_processing/duplicate_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/opensmile_processing/duplicate_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opensmile_processing/opensmile_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/opensmile_processing/opensmile_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opensmile_processing/opensmile_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/opensmile_processing/opensmile_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql_handling/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql_handling/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql_handling/connector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/connector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql_handling/create_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/create_sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql_handling/datatypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/datatypes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql_handling/execute_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/execute_sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql_handling/upload_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/upload_sql.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,14 +56,141 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/tim/work/su-thesis-project/emotional-recognition/src/preprocessing&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/preprocessing" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.fiddle2">
+    <configuration name="decision_tree" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="emotional-recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/learning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/learning/decision_tree.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="elastic_net" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="emotional-recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/learning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/learning/elastic_net.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fiddle" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="emotional-recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/learning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/learning/fiddle.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fiddle2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="emotional-recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/learning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/learning/fiddle2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="random_forrest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="emotional-recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/learning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/learning/random_forrest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.fiddle2" />
+        <item itemvalue="Python.elastic_net" />
+        <item itemvalue="Python.fiddle" />
+        <item itemvalue="Python.random_forrest" />
+        <item itemvalue="Python.decision_tree" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,7 +199,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1659177571802</updated>
-      <workItem from="1659177576061" duration="1126000" />
+      <workItem from="1659177576061" duration="2589000" />
+      <workItem from="1659952649982" duration="24001000" />
+      <workItem from="1660042154899" duration="1161000" />
     </task>
     <servers />
   </component>
@@ -71,5 +218,24 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/learning/fiddle.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/emotional_recognition$random_forrest.coverage" NAME="random_forrest Coverage Results" MODIFIED="1659960628435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$elastic_net.coverage" NAME="elastic_net Coverage Results" MODIFIED="1659965853975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$fiddle2.coverage" NAME="fiddle2 Coverage Results" MODIFIED="1659978645774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$save.coverage" NAME="save Coverage Results" MODIFIED="1659956911287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$decision_tree.coverage" NAME="decision_tree Coverage Results" MODIFIED="1659960161611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$fiddle.coverage" NAME="fiddle Coverage Results" MODIFIED="1659965638510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
   </component>
 </project>

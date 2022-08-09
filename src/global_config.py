@@ -1,6 +1,9 @@
 import matplotlib.colors
 import seaborn as sns
 
+threads = -20
+
+
 # Color palette
 blue_rgb       = (78/255,  121/255, 167/255)
 orange_rgb     = (242/255, 142/255, 43/255)

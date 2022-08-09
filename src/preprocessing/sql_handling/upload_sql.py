@@ -3,7 +3,7 @@ import sys
 from dotenv import load_dotenv
 import os
 
-from src.sql_handling.connector import ConnectionHandler
+from src.preprocessing.sql_handling.connector import ConnectionHandler
 from src.utils.helpers import get_csv_paths
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)

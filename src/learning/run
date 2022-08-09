@@ -1,0 +1,22 @@
+# MAIN ENV
+
+nohup python -m src.learning.elastic_net files/out/video/video_data_intensity_train.csv files/out/video/ > files/out/video/elastic_net.log 2>&1 &
+
+nohup python -m src.learning.knn files/out/video/video_data_intensity_train.csv files/out/video/ > files/out/video/knn.log 2>&1 &
+
+nohup python -m src.learning.decision_tree files/out/video/video_data_intensity_train.csv files/out/video/ > files/out/video/tree.log 2>&1 &
+
+nohup python -m src.learning.random_forrest files/out/video/video_data_intensity_train.csv files/out/video/ > files/out/video/rf.log 2>&1 &
+
+
+
+
+# TEST ENV
+
+nohup python -m src.learning.elastic_net files/tests/out/video/video_data_intensity_train.csv files/tests/out/video/ > files/tests/out/video/elastic_net.log 2>&1 &
+
+nohup python -m src.learning.knn files/tests/out/video/video_data_intensity_train.csv files/tests/out/video/ > files/tests/out/video/knn.log 2>&1 &
+
+nohup python -m src.learning.decision_tree files/tests/out/video/video_data_intensity_train.csv files/tests/out/video/ > files/tests/out/video/decision_tree.log 2>&1 &
+
+nohup python -m src.learning.random_forrest files/tests/out/video/video_data_intensity_train.csv files/tests/out/video/ > files/tests/out/video/random_forrest.log 2>&1 &
