@@ -4,6 +4,9 @@ log*.txt
 
 *.log
 
+
+files/out/*
+
 src/fiddle.py
 
 src/machine_learning_examples/*
