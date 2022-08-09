@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/decision_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/decision_tree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/elastic_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/elastic_net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/knn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/load_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/random_forrest.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/random_forrest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/run" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/run" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +173,7 @@
       <updated>1659177571802</updated>
       <workItem from="1659177576061" duration="2589000" />
       <workItem from="1659952649982" duration="24001000" />
-      <workItem from="1660042154899" duration="3147000" />
+      <workItem from="1660042154899" duration="3813000" />
     </task>
     <servers />
   </component>

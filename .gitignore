@@ -15,7 +15,13 @@ files/sql/*
 files/tests/out/*
 files/opensmile/*
 
-files/out/*
+files/out/video/best_params/*.sav
+files/out/video/models/*.sav
+files/out/video/results/*.csv
+files/out/video/*.csv
+files/out/video/charts/*.svg
+files/out/video/confusion_matrix/*.svg
+
 
 files/tests/videos/openface/*
 files/tests/videos/opensmile/*
