@@ -45,8 +45,6 @@ parameters = {'n_estimators': n_estimators_values,
               'n_jobs': [-1]
               }
 
-parameters = {}
-
 
 rf = RandomForestClassifier()
 logo = LeaveOneGroupOut()

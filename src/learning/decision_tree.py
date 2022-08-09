@@ -40,8 +40,6 @@ parameters = {'criterion': criterion_values,
               'random_state': [seed]
               }
 
-parameters = {}
-
 
 dt = DecisionTreeClassifier()
 logo = LeaveOneGroupOut()

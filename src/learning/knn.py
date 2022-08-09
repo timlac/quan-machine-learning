@@ -40,8 +40,6 @@ parameters = {'n_neighbors': n_neigh_values,
               'n_jobs': [-1]
               }
 
-parameters = {}
-
 
 knn = KNeighborsClassifier()
 logo = LeaveOneGroupOut()

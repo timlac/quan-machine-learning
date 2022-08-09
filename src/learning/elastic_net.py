@@ -33,8 +33,6 @@ parameters = {'penalty': ['elasticnet'],
               'max_iter': [2500]
               }
 
-parameters = {}
-
 elasticnet = SGDClassifier()
 logo = LeaveOneGroupOut()
 
