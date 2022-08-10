@@ -23,7 +23,7 @@ data = DataLoader(filename=sys.argv[1])
 
 # Define parameters to evaluate
 # the number of trees to build before taking the maximum voting or averages of predictions
-n_estimators_values = [int(x) for x in np.linspace(10, 1000, num=50)]  # np.arange(100, 810, 10).tolist()
+n_estimators_values = [int(x) for x in np.linspace(10, 500, num=100)]  # np.arange(100, 810, 10).tolist()
 criterion_values = ['gini']
 class_weight_values = ['balanced']
 max_features_values = ['auto', 'sqrt']
