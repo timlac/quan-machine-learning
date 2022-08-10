@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/knn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/learning/random_forrest.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/random_forrest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time_classification.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/video_preprocessing_time_series.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/video_preprocessing_time_series.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/preprocessing/sql_handling/connector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/connector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/preprocessing/sql_handling/execute_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/execute_sql.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +174,7 @@
       <workItem from="1659177576061" duration="2589000" />
       <workItem from="1659952649982" duration="24001000" />
       <workItem from="1660042154899" duration="6463000" />
-      <workItem from="1660125026056" duration="329000" />
+      <workItem from="1660125026056" duration="1254000" />
     </task>
     <servers />
   </component>

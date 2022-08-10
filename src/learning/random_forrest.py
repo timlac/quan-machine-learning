@@ -56,7 +56,7 @@ clf = RandomizedSearchCV(estimator=rf,
                          verbose=51,
                          n_iter=5000,
                          random_state=seed,
-                         n_jobs=threads,
+                         n_jobs=-25,
                          pre_dispatch='n_jobs'
                          )
 clf.fit(data.X, data.y)
