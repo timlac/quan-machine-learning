@@ -37,7 +37,6 @@ parameters = {'n_neighbors': n_neigh_values,
               'weights': ['uniform'],
               'algorithm': algorithm_values,
               'metric': ['manhattan'],
-              'n_jobs': [-1]
               }
 
 

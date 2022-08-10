@@ -42,7 +42,6 @@ parameters = {'n_estimators': n_estimators_values,
               'bootstrap': bootstrap_values,
               'random_state': [seed],
               'class_weight': class_weight_values,
-              'n_jobs': [-1]
               }
 
 

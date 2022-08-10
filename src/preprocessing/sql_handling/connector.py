@@ -17,7 +17,7 @@ class ConnectionHandler:
     @staticmethod
     def test_connection():
         engine = ConnectionHandler.get_engine()
-        engine.connect()
+        ret = engine.connect()
 
     @staticmethod
     def get_engine():
