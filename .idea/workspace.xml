@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/emotional-recognition.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/emotional-recognition.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/global_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/global_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/decision_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/decision_tree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/elastic_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/elastic_net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/knn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/random_forrest.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/random_forrest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/save_output.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/save_output.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time_classification_multivariate.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time_classification_multivariate.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time_classification_univariate.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time_classification_univariate.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/neural_networks/basic_network.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/neural_networks/basic_network.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/video_preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/video_preprocessing.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/video_preprocessing_time_series.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/video_preprocessing_time_series.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/run" beforeDir="false" afterPath="$PROJECT_DIR$/src/learning/run" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +190,7 @@
       <workItem from="1660125026056" duration="5034000" />
       <workItem from="1660220783969" duration="1396000" />
       <workItem from="1660222564024" duration="2054000" />
-      <workItem from="1660393940700" duration="6738000" />
+      <workItem from="1660393940700" duration="7040000" />
     </task>
     <servers />
   </component>

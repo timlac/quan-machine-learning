@@ -1,22 +1,11 @@
-# MAIN ENV
+# AUDIO
+(nohup python -m src.learning.cli audio elastic_net ;
+nohup python -m src.learning.cli audio knn ;
+nohup python -m src.learning.cli audio decision_tree ;
+nohup python -m src.learning.cli audio rf) files/out/audio/parameter_search.log 2>&1 &
 
-(nohup python -m src.learning.elastic_net files/out/video/video_data_intensity_train.csv files/out/video/ ;
-
-nohup python -m src.learning.knn files/out/video/video_data_intensity_train.csv files/out/video/ ;
-
-nohup python -m src.learning.decision_tree files/out/video/video_data_intensity_train.csv files/out/video/ ;
-
-nohup python -m src.learning.random_forrest files/out/video/video_data_intensity_train.csv files/out/video/) > files/out/video/parameter_search.log 2>&1 &
-
-
-
-
-# TEST ENV
-
-(nohup python -m src.learning.elastic_net files/tests/out/video/video_data_intensity_train.csv files/tests/out/video/ ;
-
-nohup python -m src.learning.knn files/tests/out/video/video_data_intensity_train.csv files/tests/out/video/ ;
-
-nohup python -m src.learning.decision_tree files/tests/out/video/video_data_intensity_train.csv files/tests/out/video/ ;
-
-nohup python -m src.learning.random_forrest files/tests/out/video/video_data_intensity_train.csv files/tests/out/video/ ) > files/tests/out/video/parameter_search.log 2>&1 &
+# VIDEO
+(nohup python -m src.learning.cli video elastic_net ;
+nohup python -m src.learning.cli video knn ;
+nohup python -m src.learning.cli video decision_tree ;
+nohup python -m src.learning.cli video rf) files/out/video/parameter_search.log 2>&1 &

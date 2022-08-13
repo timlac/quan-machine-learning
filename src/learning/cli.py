@@ -72,7 +72,7 @@ def main():
     print("save location: {}".format(out))
 
     data = DataLoader(input_file)
-    clf = method_handler(method, data, test=True)
+    clf = method_handler(method, data)
 
     saver = Saver(clf=clf, method=method, n_groups=data.n_groups, save_location=out,
                   filename=filename_out)
