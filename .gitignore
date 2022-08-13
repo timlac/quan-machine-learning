@@ -23,6 +23,15 @@ files/out/video/charts/*.svg
 files/out/video/confusion_matrix/*.svg
 
 
+files/out/audio/best_params/*.sav
+files/out/audio/models/*.sav
+files/out/audio/results/*.csv
+files/out/audio/*.csv
+files/out/audio/charts/*.svg
+files/out/audio/confusion_matrix/*.svg
+
+
+
 files/tests/videos/openface/*
 files/tests/videos/opensmile/*
 files/tests/videos/raw/*
