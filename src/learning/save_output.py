@@ -7,12 +7,13 @@ from datetime import datetime
 
 class Saver:
 
-    def __init__(self, clf, method, n_groups, save_location):
+    def __init__(self, clf, method, n_groups, save_location, filename):
         load_dotenv()
         self.path = save_location
         self.clf = clf
         self.method = method
         self.n_groups = n_groups
+        self.filename = filename
 
     def save(self):
         print("successfully trained {} classifier".format(self.method))
@@ -38,7 +39,7 @@ class Saver:
         df.to_csv(save_path, index=False, header=True)
 
     def get_result_filename(self):
-        return "res_{}_{}_logocv_intensity_video.csv".format(self.method, self.n_groups)
+        return "res_{}_{}_logocv_{}.csv".format(self.method, self.n_groups, self.filename)
 
     def save_params(self):
         """
@@ -53,7 +54,7 @@ class Saver:
         pickle.dump(self.clf.best_params_, open(save_path, 'wb'))
 
     def get_param_filename(self):
-        return "best_params_{}_intensity_video.sav".format(self.method)
+        return "best_params_{}_{}.sav".format(self.method, self.filename)
 
     def save_best_model(self):
         """
@@ -68,6 +69,6 @@ class Saver:
         pickle.dump(self.clf.best_estimator_, open(save_path, 'wb'))
 
     def get_best_model_filename(self):
-        return "mod_{}_intensity_video.sav".format(self.method)
+        return "mod_{}_{}.sav".format(self.method, self.filename)
 
 

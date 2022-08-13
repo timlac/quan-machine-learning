@@ -176,3 +176,33 @@ emotion_abr_to_emotion_id = {'reg': 0,
                              'sha': 43}
 
 emotion_id_to_emotion_abr = dict(zip(emotion_abr_to_emotion_id.values(), emotion_abr_to_emotion_id.keys()))
+
+basic_emotions = {
+    "sad": "sadness",
+    "fea": "fear",
+    "ang": "anger",
+    "int": "interest_curiosity",
+    "hap": "happiness_joy",
+    "disg": "disgust",
+    "gui": "guilt",
+    "sha": "shame",
+}
+
+
+AU_INTENSITY_COLS = ['AU01_r',
+'AU02_r',
+'AU04_r',
+'AU05_r',
+'AU06_r',
+'AU07_r',
+'AU09_r',
+'AU10_r',
+'AU12_r',
+'AU14_r',
+'AU15_r',
+'AU17_r',
+'AU20_r',
+'AU23_r',
+'AU25_r',
+'AU26_r',
+'AU45_r']
