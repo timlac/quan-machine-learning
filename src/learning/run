@@ -2,10 +2,10 @@
 (nohup python -m src.learning.cli audio elastic_net ;
 nohup python -m src.learning.cli audio knn ;
 nohup python -m src.learning.cli audio decision_tree ;
-nohup python -m src.learning.cli audio rf) files/out/audio/parameter_search.log 2>&1 &
+nohup python -m src.learning.cli audio rf) > files/out/audio/parameter_search.log 2>&1 &
 
 # VIDEO
 (nohup python -m src.learning.cli video elastic_net ;
 nohup python -m src.learning.cli video knn ;
 nohup python -m src.learning.cli video decision_tree ;
-nohup python -m src.learning.cli video rf) files/out/video/parameter_search.log 2>&1 &
+nohup python -m src.learning.cli video rf) > files/out/video/parameter_search.log 2>&1 &
