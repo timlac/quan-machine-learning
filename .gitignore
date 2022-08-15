@@ -31,6 +31,8 @@ files/out/audio/charts/*.svg
 files/out/audio/confusion_matrix/*.svg
 
 
+*.csv
+
 
 files/tests/videos/openface/*
 files/tests/videos/opensmile/*

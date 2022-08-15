@@ -46,13 +46,13 @@ class RandomForest:
         clf = RandomizedSearchCV(estimator=rf,
                                  param_distributions=cls.parameters,
                                  scoring='roc_auc_ovo_weighted',
-                                 cv=logo.split(X=data.X, groups=data.groups),
+                                 cv=logo.split(X=data.X_list, groups=data.groups),
                                  verbose=51,
                                  n_iter=5000,
                                  random_state=seed,
                                  n_jobs=-25,
                                  pre_dispatch='n_jobs'
                                  )
-        clf.fit(data.X, data.y)
+        clf.fit(data.X_list, data.y_list)
 
         return clf

@@ -21,7 +21,7 @@ class DecisionTree:
         self.data = data
 
         self.max_features_values = [int(x) for x in
-                                    np.linspace(1, len(self.data.X.columns), num=18)]  # list(range(1,len(X.columns)))
+                                    np.linspace(1, len(self.data.X_list.columns), num=18)]  # list(range(1,len(X.columns)))
 
         self.parameters = {'criterion': self.criterion_values,
                            'splitter': self.splitter_values,
@@ -44,7 +44,7 @@ class DecisionTree:
         clf = RandomizedSearchCV(estimator=dt,
                                  param_distributions=self.parameters,
                                  scoring='roc_auc_ovo_weighted',
-                                 cv=logo.split(X=self.data.X, groups=self.data.groups),
+                                 cv=logo.split(X=self.data.X_list, groups=self.data.groups),
                                  verbose=51,
                                  random_state=seed,
                                  n_iter=5000,
@@ -52,6 +52,6 @@ class DecisionTree:
                                  pre_dispatch='n_jobs'
                                  )
 
-        clf.fit(self.data.X, self.data.y)
+        clf.fit(self.data.X_list, self.data.y_list)
 
         return clf
