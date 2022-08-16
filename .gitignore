@@ -4,10 +4,13 @@ src/fiddle.py
 
 *fiddle*
 
-src/learning/fiddle.py
-src/learning/fiddle2.py
+src/analysis/fiddle.py
+src/analysis/fiddle2.py
 
-src/machine_learning_examples/*
+src/notebooks/fiddle
+
+
+src/analysis/machine_learning_examples/*
 
 files/openface/*
 files/openface_reduced
@@ -30,9 +33,10 @@ files/out/audio/*.csv
 files/out/audio/charts/*.svg
 files/out/audio/confusion_matrix/*.svg
 
-
+*.sav
+*.svg
 *.csv
-
+*.log
 
 files/tests/videos/openface/*
 files/tests/videos/opensmile/*

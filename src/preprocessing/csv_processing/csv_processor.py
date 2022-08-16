@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from src.preprocessing.csv_processing.column_refactor import refactor_duplicate_columns, reorder
 from src.preprocessing.csv_processing.params import Params
 from src.utils.helpers import get_filename, get_csv_paths, name2list
-from src.custom_exceptions.error_file_exception import ErrorFileException
+from src.preprocessing.error_file_exception import ErrorFileException
 
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)

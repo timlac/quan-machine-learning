@@ -2,8 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/audio/results/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/video/best_params/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/video/charts/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/video/confusion_matrix/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/video/models/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/video/results/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/analysis/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/classification/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shapelets/shapelet_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/shapelets/shapelet_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/audio/best_params/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/audio/charts/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/audio/confusion_matrix/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/audio/models/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/audio/parameter_search.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/audio/results/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/video/best_params/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/video/charts/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/video/confusion_matrix/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/video/models/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/video/parameter_search.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/out/video/results/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom_exceptions/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/audio/best_params/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom_exceptions/error_file_exception.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/error_file_exception.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/audio/charts/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/decision_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/decision_tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/elastic_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/elastic_net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/knn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/load_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/random_forrest.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/random_forrest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/run" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/run" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/learning/save_output.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/save_output.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neural_networks/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/audio/confusion_matrix/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neural_networks/logistic_regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/classification/logistic_regression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/BASIC_video_preprocessing_time_series.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/low_level/preprocessing/simplified_video_low_level_preprocessing.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/CNN.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/CNN_my_data.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/data_exploration.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/fiddle_data/time_series.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time_classification_multivariate.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time_classification_univariate.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/mean_value_svm.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/missing_values.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/time_series_analysis.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/audio_model_interpretation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/functionals/supervised_learning/audio_functionals_interpretation.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/audio_preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/functionals/preprocessing/audio_functionals_preprocessing.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/audio_supervised_learning.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/functionals/supervised_learning/audio_functionals_supervised_learning.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/linear_interpolation_unsuccessfull_frames.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/low_level/preprocessing/linear_interpolation_unsuccessfull_frames.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/neural_networks/basic_network.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/neural_networks/basic_network_2.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/sktime_data_example.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/video_model_interpretation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/functionals/supervised_learning/video_functionals_interpretation.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/video_preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/functionals/preprocessing/video_functionals_preprocessing.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/video_preprocessing_time_series.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/low_level/preprocessing/video_low_level_preprocessing.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/video_supervised_learning.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/functionals/supervised_learning/video_functionals_supervised_learning.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/preprocessing/csv_processing/csv_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/csv_processing/csv_processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shapelets/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/audio/models/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shapelets/shapelet_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/dimensionality_reduction/shapelet_learning.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,40 +80,42 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/analysis/supervised_learning/classification/logistic_regression.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/analysis/supervised_learning/dimensionality_reduction/shapelet_learning.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/analysis/supervised_learning/param_search/decision_tree.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/analysis/supervised_learning/param_search/knn.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/analysis/supervised_learning/param_search/load_data.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/analysis/supervised_learning/param_search/random_forrest.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/analysis/supervised_learning/param_search/save_output.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/global_config.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/learning/decision_tree.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/learning/fiddle.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/learning/knn.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/learning/load_data.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/learning/random_forrest.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/learning/save_output.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/neural_networks/logistic_regression.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/shapelets/shapelet_learning.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2CeyubU36qnDmmcxpmRGXuq2vnZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/tim/Pictures&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/tim/work/su-thesis-project/emotional-recognition/src/analysis/supervised_learning",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;Python&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Python"
     ]
   }
-}</component>
+}]]></component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="emotional-recognition" sdk-home="$USER_HOME$/anaconda3/envs/torchenv/bin/python">
@@ -66,7 +126,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/preprocessing" />
+      <recent name="$PROJECT_DIR$/src/notebooks/fiddle" />
+      <recent name="$PROJECT_DIR$/src/notebooks/low_level/preprocessing" />
+      <recent name="$PROJECT_DIR$/src/notebooks/functionals/supervised_learning" />
+      <recent name="$PROJECT_DIR$/src/notebooks/functionals" />
+      <recent name="$PROJECT_DIR$/src/notebooks/supervised_learning" />
     </key>
   </component>
   <component name="RunManager" selected="Python.shapelet_learning">
@@ -218,7 +282,7 @@
       <workItem from="1660597338678" duration="234000" />
       <workItem from="1660597589793" duration="2297000" />
       <workItem from="1660604884411" duration="1239000" />
-      <workItem from="1660648479162" duration="298000" />
+      <workItem from="1660648479162" duration="4981000" />
     </task>
     <servers />
   </component>
