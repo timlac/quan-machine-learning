@@ -8,6 +8,7 @@ from sklearn.decomposition import PCA
 
 from tslearn.shapelets import LearningShapelets
 from keras.optimizers import adam_v2
+from dotenv import load_dotenv
 
 from src.global_config import AU_INTENSITY_COLS
 
@@ -46,7 +47,6 @@ shapelet_sizes = {50: 10}
 # Define the model and fit it using the training data
 clf = LearningShapelets(n_shapelets_per_size=shapelet_sizes,
                         weight_regularizer=0.0001,
-                        optimizer=adam_v2.Adam(lr=0.01),
                         max_iter=2,
                         verbose=100,
                         scale=False,
@@ -76,8 +76,8 @@ acc = correct/total
 print("accuracy: " + str(acc))
 
 
-dist_df = pd.DataFrame(distances)
-dist_df.to_csv("distances.csv", index=False)
-
-y_df = pd.DataFrame(y)
-y_df.to_csv("labels.csv")
+# dist_df = pd.DataFrame(distances)
+# dist_df.to_csv("distances.csv", index=False)
+#
+# y_df = pd.DataFrame(y)
+# y_df.to_csv("labels.csv")

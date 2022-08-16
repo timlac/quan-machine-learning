@@ -1,0 +1,8 @@
+pandas
+sklearn
+numpy
+matplotlib
+dotenv
+tensorflow
+torch
+tslearn
