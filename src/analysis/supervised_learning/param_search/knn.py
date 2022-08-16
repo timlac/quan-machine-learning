@@ -1,12 +1,10 @@
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.model_selection import cross_validate
 import numpy as np
-import sys
 
 from sklearn.model_selection import LeaveOneGroupOut
 from sklearn.model_selection import GridSearchCV
 
-from src.global_config import *
+from global_config import *
 
 
 class KNN:

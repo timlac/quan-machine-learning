@@ -2,66 +2,75 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/audio/results/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/video/best_params/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/video/charts/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/video/confusion_matrix/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/video/models/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/video/results/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/analysis/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/classification/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/functionals/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/functionals/preprocessing/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/functionals/preprocessing/audio_functionals_preprocessing.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/functionals/preprocessing/video_functionals_preprocessing.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/functionals/supervised_learning/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/functionals/supervised_learning/audio_functionals_interpretation.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/functionals/supervised_learning/audio_functionals_supervised_learning.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/functionals/supervised_learning/video_functionals_interpretation.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/functionals/supervised_learning/video_functionals_supervised_learning.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/low_level/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/low_level/preprocessing/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/low_level/preprocessing/linear_interpolation_unsuccessfull_frames.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/low_level/preprocessing/simplified_video_low_level_preprocessing.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/low_level/preprocessing/video_low_level_preprocessing.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/audio/best_params/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/audio/charts/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/audio/confusion_matrix/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/audio/models/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/audio/parameter_search.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/audio/results/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/video/best_params/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/video/charts/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/video/confusion_matrix/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/video/models/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/video/parameter_search.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/video/results/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_exceptions/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/audio/best_params/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_exceptions/error_file_exception.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/error_file_exception.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/audio/charts/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/cli.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/decision_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/decision_tree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/elastic_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/elastic_net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/knn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/load_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/random_forrest.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/random_forrest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/run" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/run" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/learning/save_output.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/save_output.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neural_networks/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/audio/confusion_matrix/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neural_networks/logistic_regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/classification/logistic_regression.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/BASIC_video_preprocessing_time_series.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/low_level/preprocessing/simplified_video_low_level_preprocessing.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/CNN.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/CNN_my_data.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/data_exploration.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/fiddle_data/time_series.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time_classification_multivariate.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/forrest_time_classification_univariate.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/mean_value_svm.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/missing_values.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/analytics/time_series_analysis.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/audio_model_interpretation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/functionals/supervised_learning/audio_functionals_interpretation.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/audio_preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/functionals/preprocessing/audio_functionals_preprocessing.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/audio_supervised_learning.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/functionals/supervised_learning/audio_functionals_supervised_learning.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/linear_interpolation_unsuccessfull_frames.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/low_level/preprocessing/linear_interpolation_unsuccessfull_frames.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/neural_networks/basic_network.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/neural_networks/basic_network_2.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/sktime_data_example.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/video_model_interpretation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/functionals/supervised_learning/video_functionals_interpretation.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/video_preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/functionals/preprocessing/video_functionals_preprocessing.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/video_preprocessing_time_series.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/low_level/preprocessing/video_low_level_preprocessing.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notebooks/video_supervised_learning.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/src/notebooks/functionals/supervised_learning/video_functionals_supervised_learning.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/preprocessing/csv_processing/csv_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/csv_processing/csv_processor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shapelets/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/out/functionals/supervised_learning/audio/models/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shapelets/shapelet_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/dimensionality_reduction/shapelet_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/tests/csv_concat/A220_adm_p_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/tests/csv_concat/A220_adm_p_4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/tests/csv_concat/A220_adm_v_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/tests/csv_concat/A220_mix_ang_disg_3070.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/tests/csv_concat/A220_mix_ang_disg_5050.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/tests/csv_concat/A220_neg_sur_p_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/tests/csv_concat/A220_neg_sur_p_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/tests/csv_concat/A220_neu_sit1_v.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/tests/csv_concat/A220_neu_sit2_p.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/tests/csv_concat/A327_ang_v_1_ver1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/tests/csv_concat/A327_rel_p_1_e.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analysis/supervised_learning/classification/logistic_regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/classification/logistic_regression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analysis/supervised_learning/dimensionality_reduction/shapelet_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/dimensionality_reduction/shapelet_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/decision_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/decision_tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/elastic_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/elastic_net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/knn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/random_forrest.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/random_forrest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/global_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/global_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/fiddle/PCA.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/fiddle/Untitled.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/fiddle/audio_processing.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/fiddle/basic analysis.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/fiddle/classification.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/fiddle/fiddle.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/fiddle/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/fiddle/smile.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/fiddle/statistics-more-features.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/fiddle/statistics.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/fiddle/test.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/fiddle/test.nbconvert.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/functionals/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/functionals/preprocessing/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/functionals/preprocessing/audio_functionals_preprocessing.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/functionals/preprocessing/video_functionals_preprocessing.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/functionals/supervised_learning/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/functionals/supervised_learning/audio_functionals_interpretation.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/functionals/supervised_learning/audio_functionals_supervised_learning.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/functionals/supervised_learning/video_functionals_interpretation.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/functionals/supervised_learning/video_functionals_supervised_learning.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/low_level/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/low_level/preprocessing/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/low_level/preprocessing/linear_interpolation_unsuccessfull_frames.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/low_level/preprocessing/simplified_video_low_level_preprocessing.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notebooks/low_level/preprocessing/video_low_level_preprocessing.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/preprocessing/csv_processing/params.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/csv_processing/params.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/preprocessing/opensmile_processing/duplicate_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/opensmile_processing/duplicate_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/preprocessing/opensmile_processing/opensmile_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/opensmile_processing/opensmile_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/requirements_mul-emo-recog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements_mul-emo-recog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/requirements_tensorflow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements_tensorflow.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +89,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/global_config.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/analysis/supervised_learning/classification/logistic_regression.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/analysis/supervised_learning/dimensionality_reduction/shapelet_learning.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/analysis/supervised_learning/param_search/decision_tree.py" root0="FORCE_HIGHLIGHTING" />
@@ -87,7 +97,13 @@
     <setting file="file://$PROJECT_DIR$/src/analysis/supervised_learning/param_search/load_data.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/analysis/supervised_learning/param_search/random_forrest.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/analysis/supervised_learning/param_search/save_output.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/global_config.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/preprocessing/dataset_creation/create_datasets.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/preprocessing/dataset_creation/missing_time_series_values_handling.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/preprocessing/dataset_creation/queries.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/preprocessing/dataset_creation/time_series_handling.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/preprocessing/opensmile_processing/duplicate_handler.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/preprocessing/opensmile_processing/opensmile_demo.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/preprocessing/opensmile_processing/opensmile_processing.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -100,22 +116,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/tim/work/su-thesis-project/emotional-recognition/src/analysis/supervised_learning",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/tim/work/su-thesis-project/emotional-recognition/src/analysis/supervised_learning&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "Python"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Python&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="emotional-recognition" sdk-home="$USER_HOME$/anaconda3/envs/torchenv/bin/python">
@@ -126,15 +142,15 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/logs" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/SQL" />
+      <recent name="$PROJECT_DIR$/files/tests/preprocessing" />
       <recent name="$PROJECT_DIR$/src/notebooks/fiddle" />
-      <recent name="$PROJECT_DIR$/src/notebooks/low_level/preprocessing" />
-      <recent name="$PROJECT_DIR$/src/notebooks/functionals/supervised_learning" />
-      <recent name="$PROJECT_DIR$/src/notebooks/functionals" />
-      <recent name="$PROJECT_DIR$/src/notebooks/supervised_learning" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.shapelet_learning">
-    <configuration name="connector" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.create_datasets">
+    <configuration name="create_datasets" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="emotional-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -142,12 +158,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/preprocessing/sql_handling" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/preprocessing/sql_handling/connector.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_datasets.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -156,20 +172,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="fiddle2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="create_video_functionals" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="emotional-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/learning" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/learning/fiddle2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_video_functionals.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -178,7 +191,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="logistic_regression" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="fiddle" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="emotional-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -186,12 +199,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/neural_networks" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/neural_networks/logistic_regression.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/preprocessing/dataset_creation/fiddle.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -200,20 +213,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="scratch_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="missing_time_series_values_handling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="emotional-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/preprocessing/dataset_creation/missing_time_series_values_handling.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -222,7 +232,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="shapelet_learning" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="time_series_handling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="emotional-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -230,12 +240,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/shapelets" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/shapelets/shapelet_learning.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/preprocessing/dataset_creation/time_series_handling.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -246,11 +256,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.shapelet_learning" />
-        <item itemvalue="Python.logistic_regression" />
-        <item itemvalue="Python.scratch_1" />
-        <item itemvalue="Python.connector" />
-        <item itemvalue="Python.fiddle2" />
+        <item itemvalue="Python.create_datasets" />
+        <item itemvalue="Python.create_video_functionals" />
+        <item itemvalue="Python.missing_time_series_values_handling" />
+        <item itemvalue="Python.time_series_handling" />
+        <item itemvalue="Python.fiddle" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +292,8 @@
       <workItem from="1660597338678" duration="234000" />
       <workItem from="1660597589793" duration="2297000" />
       <workItem from="1660604884411" duration="1239000" />
-      <workItem from="1660648479162" duration="4981000" />
+      <workItem from="1660648479162" duration="18276000" />
+      <workItem from="1660676786101" duration="10900000" />
     </task>
     <servers />
   </component>
@@ -308,19 +319,29 @@
           <line>25</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/missing_time_series_values_handling.py</url>
+          <line>74</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/emotional_recognition$missing_time_series_values_handling.coverage" NAME="missing_time_series_values_handling Coverage Results" MODIFIED="1660678995982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
     <SUITE FILE_PATH="coverage/emotional_recognition$random_forrest.coverage" NAME="random_forrest Coverage Results" MODIFIED="1659960628435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
     <SUITE FILE_PATH="coverage/emotional_recognition$elastic_net.coverage" NAME="elastic_net Coverage Results" MODIFIED="1659965853975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
     <SUITE FILE_PATH="coverage/emotional_recognition$connector.coverage" NAME="connector Coverage Results" MODIFIED="1660050740029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/sql_handling" />
-    <SUITE FILE_PATH="coverage/emotional_recognition$fiddle2.coverage" NAME="fiddle2 Coverage Results" MODIFIED="1659978645774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
     <SUITE FILE_PATH="coverage/emotional_recognition$save.coverage" NAME="save Coverage Results" MODIFIED="1659956911287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
     <SUITE FILE_PATH="coverage/emotional_recognition$logistic_regression.coverage" NAME="logistic_regression Coverage Results" MODIFIED="1660597004545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/neural_networks" />
-    <SUITE FILE_PATH="coverage/emotional_recognition$shapelet_learning.coverage" NAME="shapelet_learning Coverage Results" MODIFIED="1660605099066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/shapelets" />
     <SUITE FILE_PATH="coverage/emotional_recognition$decision_tree.coverage" NAME="decision_tree Coverage Results" MODIFIED="1659960161611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
-    <SUITE FILE_PATH="coverage/emotional_recognition$fiddle.coverage" NAME="fiddle Coverage Results" MODIFIED="1659965638510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$fiddle.coverage" NAME="fiddle Coverage Results" MODIFIED="1660660242404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$create_video_functionals.coverage" NAME="create_video_functionals Coverage Results" MODIFIED="1660681775768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$fiddle2.coverage" NAME="fiddle2 Coverage Results" MODIFIED="1659978645774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$helpers.coverage" NAME="time_series_handling Coverage Results" MODIFIED="1660669692125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$time_series.coverage" NAME="query_db Coverage Results" MODIFIED="1660669887586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$shapelet_learning.coverage" NAME="shapelet_learning Coverage Results" MODIFIED="1660605099066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/shapelets" />
     <SUITE FILE_PATH="coverage/emotional_recognition$scratch_1.coverage" NAME="scratch_1 Coverage Results" MODIFIED="1660587836646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$query_db.coverage" NAME="create_datasets Coverage Results" MODIFIED="1660691155044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
   </component>
 </project>

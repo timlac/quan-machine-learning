@@ -1,7 +1,7 @@
 import pandas as pd
 
 from src.utils.helpers import get_digits_only
-from src.global_config import emotion_abr_to_emotion_id
+from global_config import emotion_abr_to_emotion_id
 
 
 class Params(object):
@@ -101,7 +101,7 @@ class Params(object):
 
 
 def main():
-    input_path = "../../../files/tests/csv_concat/A220_adm_p_1.csv"
+    input_path = "../../../files/tests/preprocessing/csv_concat/A220_adm_p_1.csv"
     df = pd.read_csv(input_path)
 
     name_list = ['A332', 'ang', 'p', '2']

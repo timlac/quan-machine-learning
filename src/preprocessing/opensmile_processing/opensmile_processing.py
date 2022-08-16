@@ -38,8 +38,8 @@ def process_files(file_path, out_path, limit=None):
 
 def main():
     print("in main")
-    # file_path = "../files/tests/videos/**/*.mov"
-    # out_path = "../files/tests/videos/opensmile/"
+    # file_path = "../files/tests/example_data/**/*.mov"
+    # out_path = "../files/tests/example_data/opensmile/"
 
     file_path = "/media/tim/Seagate Backup Plus Drive/Documents/**/*.mov"
     out_path = "/media/tim/Seagate Backup Plus Drive/out_opensmile_eGeMAPSv02_lowleveldescriptors/"

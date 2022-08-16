@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from torch.nn.utils.rnn import pad_sequence
 
-from src.global_config import AU_INTENSITY_COLS
+from global_config import AU_INTENSITY_COLS
 
 
 class LogisticRegression(torch.nn.Module):

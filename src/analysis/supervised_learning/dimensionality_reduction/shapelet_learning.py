@@ -1,5 +1,4 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
@@ -7,10 +6,8 @@ from sklearn.decomposition import PCA
 
 
 from tslearn.shapelets import LearningShapelets
-from keras.optimizers import adam_v2
-from dotenv import load_dotenv
 
-from src.global_config import AU_INTENSITY_COLS
+from global_config import AU_INTENSITY_COLS
 
 
 df = pd.read_csv('/files/tests/out/video/video_data_time_series_ang_sad.csv')

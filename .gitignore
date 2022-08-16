@@ -2,12 +2,12 @@
 
 src/fiddle.py
 
-*fiddle*
+*fiddle.py
 
 src/analysis/fiddle.py
 src/analysis/fiddle2.py
 
-src/notebooks/fiddle
+notebooks/fiddle
 
 
 src/analysis/machine_learning_examples/*
@@ -37,10 +37,11 @@ files/out/audio/confusion_matrix/*.svg
 *.svg
 *.csv
 *.log
+*.npz
 
-files/tests/videos/openface/*
-files/tests/videos/opensmile/*
-files/tests/videos/raw/*
+files/tests/preprocessing/example_data/openface/*
+files/tests/preprocessing/example_data/opensmile/*
+files/tests/preprocessing/example_data/raw/*
 
 some_commands
 
@@ -52,7 +53,7 @@ logs
 
 SQL
 
-src/notebooks/files/*
+notebooks/files/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

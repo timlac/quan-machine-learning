@@ -1,12 +1,10 @@
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import cross_validate
 import numpy as np
-import sys
 
 from sklearn.model_selection import LeaveOneGroupOut
 from sklearn.model_selection import RandomizedSearchCV
 
-from src.global_config import *
+from global_config import *
 
 
 class RandomForest:

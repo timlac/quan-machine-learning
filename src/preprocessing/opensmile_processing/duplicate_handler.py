@@ -24,8 +24,8 @@ class DuplicateHandler(object):
 
 
 def main():
-    file_path = "../../files/tests/videos/**/*.mov"
-    out_path = "../../../files/tests/videos/opensmile/"
+    file_path = "../../files/tests/example_data/**/*.mov"
+    out_path = "../../../files/tests/preprocessing/example_data/opensmile/"
 
     dh = DuplicateHandler(out_path)
     print(dh.processed_files)

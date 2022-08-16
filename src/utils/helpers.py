@@ -2,7 +2,7 @@ import re
 from pathlib import Path
 import logging
 from glob import glob
-from src.global_config import emotion_id_to_emotion_abr
+from global_config import emotion_id_to_emotion_abr
 
 
 def get_filename(file):

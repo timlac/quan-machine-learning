@@ -1,7 +1,7 @@
 from sklearn.model_selection import LeaveOneGroupOut
 from sklearn.model_selection import GridSearchCV
 from sklearn.linear_model import SGDClassifier
-from src.global_config import *
+from global_config import *
 
 
 class ElasticNet:
