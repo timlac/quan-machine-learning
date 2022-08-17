@@ -36,6 +36,13 @@ def hasher(value):
     return hash32
 
 
+def mapper(input_values, mapper_dict):
+    ret = []
+    for i in input_values:
+        ret.append(mapper_dict[i])
+    return ret
+
+
 def get_emotion_abrs_from_ids(emotion_ids):
     ret = []
     for i in emotion_ids:
@@ -54,6 +61,7 @@ def main():
     emotion_ids = [1, 3, 4, 5, 7, 12, 17]
     abrs = get_emotion_abrs_from_ids(emotion_ids)
     print(abrs)
+
 
 
 if __name__ == "__main__":

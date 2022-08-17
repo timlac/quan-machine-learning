@@ -6,18 +6,17 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 threads = -20
 
-
 # Color palette
-blue_rgb       = (78/255,  121/255, 167/255)
-orange_rgb     = (242/255, 142/255, 43/255)
-red_rgb        = (225/255, 87/255,  89/255)
-turquoise_rgb  = (118/255, 183/255, 178/255)
-green_rgb      = (89/255,  161/255, 79/255)
-yellow_rgb     = (237/255, 201/255, 72/255)
-purple_rgb     = (176/255, 122/255, 161/255)
-pink_rgb       = (255/255, 157/255, 167/255)
-brown_rgb      = (156/255, 117/255, 95/255)
-gray_rgb       = (186/255, 176/255, 172/255)
+blue_rgb = (78 / 255, 121 / 255, 167 / 255)
+orange_rgb = (242 / 255, 142 / 255, 43 / 255)
+red_rgb = (225 / 255, 87 / 255, 89 / 255)
+turquoise_rgb = (118 / 255, 183 / 255, 178 / 255)
+green_rgb = (89 / 255, 161 / 255, 79 / 255)
+yellow_rgb = (237 / 255, 201 / 255, 72 / 255)
+purple_rgb = (176 / 255, 122 / 255, 161 / 255)
+pink_rgb = (255 / 255, 157 / 255, 167 / 255)
+brown_rgb = (156 / 255, 117 / 255, 95 / 255)
+gray_rgb = (186 / 255, 176 / 255, 172 / 255)
 
 sns_saturation = 1
 
@@ -33,13 +32,15 @@ palette_def = [blue_rgb,
                gray_rgb]
 
 # Blues (2 shades)
-blue_shades = [(78/255,  121/255, 167/255),
-               (163/255, 201/255, 220/255)]
+blue_shades = [(78 / 255, 121 / 255, 167 / 255),
+               (163 / 255, 201 / 255, 220 / 255)]
 
 # More color definitions
-conf_cmap = matplotlib.colors.LinearSegmentedColormap.from_list("", [(255/255,255/255,215/255), turquoise_rgb, blue_rgb])
-pos_cmap =  matplotlib.colors.LinearSegmentedColormap.from_list("", [(205/255,242/255,246/255),(23/255,39/255,82/255)])
-neg_pos_cmap =  matplotlib.colors.LinearSegmentedColormap.from_list("", [blue_rgb,orange_rgb])
+conf_cmap = matplotlib.colors.LinearSegmentedColormap.from_list("", [(255 / 255, 255 / 255, 215 / 255), turquoise_rgb,
+                                                                     blue_rgb])
+pos_cmap = matplotlib.colors.LinearSegmentedColormap.from_list("", [(205 / 255, 242 / 255, 246 / 255),
+                                                                    (23 / 255, 39 / 255, 82 / 255)])
+neg_pos_cmap = matplotlib.colors.LinearSegmentedColormap.from_list("", [blue_rgb, orange_rgb])
 
 # Style definitions
 sns.set_style({'axes.facecolor': 'white',
@@ -60,10 +61,10 @@ sns.set_style({'axes.facecolor': 'white',
                'image.cmap': 'rocket',
                'font.family': ['sans-serif'],
                'font.sans-serif': ['Arial',
-               'DejaVu Sans',
-               'Liberation Sans',
-               'Bitstream Vera Sans',
-               'sans-serif'],
+                                   'DejaVu Sans',
+                                   'Liberation Sans',
+                                   'Bitstream Vera Sans',
+                                   'sans-serif'],
                'patch.force_edgecolor': False,
                'xtick.bottom': False,
                'xtick.top': False,
@@ -73,14 +74,14 @@ sns.set_style({'axes.facecolor': 'white',
                'axes.spines.bottom': True,
                'axes.spines.right': False,
                'axes.spines.top': False}
-)
+              )
 matplotlib.rcParams.update({'font.size': 10})
 
 # Seed
 seed = 27
 
 # Number of folder CV
-n_folds = 5
+# n_folds = 5
 
 # Mapping emotions
 emotion_abr_to_emotion = {
@@ -180,6 +181,53 @@ emotion_abr_to_emotion_id = {'reg': 0,
 
 emotion_id_to_emotion_abr = dict(zip(emotion_abr_to_emotion_id.values(), emotion_abr_to_emotion_id.keys()))
 
+emotion_id_to_emotion = {0: "regret",
+                         1: "confusion",
+                         2: "determination",
+                         3: "doubt",
+                         4: "envy",
+                         5: "admiration",
+                         6: "sadness",
+                         7: "gratitude",
+                         8: "elevation_rejoicing",
+                         9: "positive_surprise",
+                         10: "fear",
+                         11: "negative_surprise",
+                         12: "anger",
+                         13: "amusement",
+                         14: "rejection",
+                         15: "schadenfreude",
+                         16: "satisfaction_contentment",
+                         17: "distress_pain",
+                         18: "awe",
+                         19: "inspiration",
+                         20: "triumph_achievement",
+                         21: "hope",
+                         22: "neutral",
+                         23: "sensory_pleasure",
+                         24: "sexual_lust",
+                         25: "peacefulness_serenity",
+                         26: "boredom",
+                         27: "concentration",
+                         28: "satisfaction_contentment",
+                         29: "interest_curiosity",
+                         30: "nostalgia",
+                         31: "sarcasm",
+                         32: "contempt",
+                         33: "happiness_joy",
+                         34: "anxiety",
+                         35: "disgust",
+                         36: "excitement_expectation",
+                         37: "disappointment",
+                         38: "relief",
+                         39: "embarrassment",
+                         40: "guilt",
+                         41: "pride",
+                         42: "being moved",
+                         43: "shame"}
+
+emotion_to_emotion_id = dict(zip(emotion_id_to_emotion.values(), emotion_id_to_emotion.keys()))
+
 basic_emotions = {
     "sad": "sadness",
     "fea": "fear",
@@ -191,23 +239,22 @@ basic_emotions = {
     "sha": "shame",
 }
 
-
 AU_INTENSITY_COLS = ['AU01_r',
-'AU02_r',
-'AU04_r',
-'AU05_r',
-'AU06_r',
-'AU07_r',
-'AU09_r',
-'AU10_r',
-'AU12_r',
-'AU14_r',
-'AU15_r',
-'AU17_r',
-'AU20_r',
-'AU23_r',
-'AU25_r',
-'AU26_r',
-'AU45_r']
+                     'AU02_r',
+                     'AU04_r',
+                     'AU05_r',
+                     'AU06_r',
+                     'AU07_r',
+                     'AU09_r',
+                     'AU10_r',
+                     'AU12_r',
+                     'AU14_r',
+                     'AU15_r',
+                     'AU17_r',
+                     'AU20_r',
+                     'AU23_r',
+                     'AU25_r',
+                     'AU26_r',
+                     'AU45_r']
 
 TARGET_COLUMN = "emotion_1_id"
