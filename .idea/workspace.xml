@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/functionals/supervised_learning/audio_functionals_interpretation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/functionals/supervised_learning/audio_functionals_interpretation.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/functionals/supervised_learning/video_functionals_interpretation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/functionals/supervised_learning/video_functionals_interpretation.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/functionals/unsupervised_learning/video_data_clustering.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/functionals/unsupervised_learning/video_data_clustering.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +235,8 @@
       <workItem from="1660735659870" duration="599000" />
       <workItem from="1660742438459" duration="4317000" />
       <workItem from="1660758786895" duration="2373000" />
-      <workItem from="1661000418490" duration="675000" />
+      <workItem from="1661000418490" duration="2285000" />
+      <workItem from="1661174316399" duration="631000" />
     </task>
     <servers />
   </component>
