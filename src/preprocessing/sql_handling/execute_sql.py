@@ -8,8 +8,11 @@ from src.preprocessing.sql_handling.connector import ConnectionHandler
 def execute_sql_pandas(query):
     queryExecStart = time.time()
     engine = ConnectionHandler.get_engine()
+    print("executing query: \n{}".format(query))
     df = pd.read_sql(query, engine)
+    print("done")
     read_duration = round(time.time() - queryExecStart, 3)
+    print("Read duration: {}".format(read_duration))
     return df, read_duration
 
 
