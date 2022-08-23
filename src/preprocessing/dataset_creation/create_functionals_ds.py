@@ -51,8 +51,8 @@ class CreateFunctionalsDataset:
 
 
 def main():
-    out = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals.npz")
-    cfs = CreateFunctionalsDataset(out, query=query_au_cols_with_confidence_filter)
+    out = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals_A220.npz")
+    cfs = CreateFunctionalsDataset(out, query=query_au_cols_with_confidence_filter_A220)
     cfs.save_ds()
 
 
