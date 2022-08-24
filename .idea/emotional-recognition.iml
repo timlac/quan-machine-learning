@@ -5,7 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/files/openface" />
       <excludeFolder url="file://$MODULE_DIR$/files/opensmile" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.8 (thesis) (2)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (mul-emo-recog)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
