@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from src.preprocessing.dataset_creation.time_series_handling import pad_list_of_series, time_series_to_list
 from src.preprocessing.dataset_creation.create_video_functionals import create_functionals
-from src.preprocessing.dataset_creation.group_creation import create_groups
+from src.preprocessing.dataset_creation.group_creation import create_video_id_groups
 from src.preprocessing.sql_handling.execute_sql import execute_sql_pandas
 from global_config import ROOT_DIR, AU_INTENSITY_COLS, TARGET_COLUMN
 from src.preprocessing.dataset_creation.queries import query_au_cols_with_confidence_filter, \

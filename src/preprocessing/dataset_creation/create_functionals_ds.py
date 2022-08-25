@@ -2,7 +2,7 @@ import os
 
 import numpy as np
 from src.preprocessing.dataset_creation.create_video_functionals import create_functionals
-from src.preprocessing.dataset_creation.group_creation import create_groups
+from src.preprocessing.dataset_creation.group_creation import create_video_id_groups
 from global_config import ROOT_DIR, AU_INTENSITY_COLS, TARGET_COLUMN
 from src.preprocessing.dataset_creation.queries import query_au_cols_with_confidence_filter, \
     query_au_cols_without_confidence_filter, query_au_cols_with_confidence_filter_A220
@@ -24,7 +24,7 @@ class CreateFunctionalsDataset:
         video_ids = self.df.video_id
         unique_video_ids = video_ids.unique()
 
-        groups_dict = create_groups(unique_video_ids)
+        groups_dict = create_video_id_groups(unique_video_ids)
         groups = video_ids.map(groups_dict)
 
         return groups
