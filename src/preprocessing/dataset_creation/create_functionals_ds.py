@@ -1,8 +1,10 @@
 import os
 
 import numpy as np
+import pandas as pd
+
 from src.preprocessing.dataset_creation.create_video_functionals import create_functionals
-from src.preprocessing.dataset_creation.group_creation import create_video_id_groups
+from src.preprocessing.dataset_creation.group_creation import create_video_id_groups, create_twinned_groups
 from global_config import ROOT_DIR, AU_INTENSITY_COLS, TARGET_COLUMN
 from src.preprocessing.dataset_creation.queries import query_au_cols_with_confidence_filter, \
     query_au_cols_without_confidence_filter, query_au_cols_with_confidence_filter_A220
@@ -20,12 +22,16 @@ class CreateFunctionalsDataset:
             raise RuntimeError("Didn't receive query or dataframe on dataset creation")
         self.df = create_functionals(df)
 
-    def get_groups(self):
-        video_ids = self.df.video_id
-        unique_video_ids = video_ids.unique()
-
-        groups_dict = create_video_id_groups(unique_video_ids)
-        groups = video_ids.map(groups_dict)
+    def get_groups(self, twinned=False):
+        if twinned:
+            filenames = self.df.filename
+            groups_dict = create_twinned_groups(filenames)
+            groups = filenames.map(groups_dict)
+        else:
+            video_ids = self.df.video_id
+            unique_video_ids = video_ids.unique()
+            groups_dict = create_video_id_groups(unique_video_ids)
+            groups = video_ids.map(groups_dict)
 
         return groups
 
@@ -51,8 +57,13 @@ class CreateFunctionalsDataset:
 
 
 def main():
+    load = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals_A220.npz")
+    df = pd.read_csv(load)
+
     out = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals_A220.npz")
-    cfs = CreateFunctionalsDataset(out, query=query_au_cols_with_confidence_filter_A220)
+    # cfs = CreateFunctionalsDataset(out, query=query_au_cols_with_confidence_filter_A220)
+    cfs = CreateFunctionalsDataset(out, df=df)
+
     cfs.save_ds()
 
 

@@ -19,9 +19,9 @@ def create_time_series_ds(df, save_as):
 
 
 def query_db(query):
-    print("Executing query".format(query))
+    # print("Executing query".format(query))
     df, read_duration = execute_sql_pandas(query)
-    print("Read duration: {}".format(read_duration))
+    # print("Read duration: {}".format(read_duration))
     return df
 
 
@@ -49,31 +49,31 @@ def query_db(query):
 # cfs = CreateFunctionalsDataset(out, df=df)
 
 
-#
-# def main():
-#     query = query_au_cols_with_confidence_filter_A220
-#     out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals.npz")
-#     create_functionals_ds(query, out)
-
+def main():
+    # query = query_au_cols_with_confidence_filter_A220
+    # out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals.npz")
+    # create_functionals_ds(query, out)
+    #
     # query = query_au_cols_without_confidence_filter
     # df = query_db(query)
     # out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_with_unsuccessful.csv")
     # df.to_csv(out, index=False)
 
-    # query = query_au_cols_with_confidence_filter_A220
-    # df = query_db(query)
-    # out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals_A220.npz")
-    # create_functionals_ds(df, out)
+    query = query_au_cols_with_confidence_filter_A220
+    df = query_db(query)
+    out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals_A220.npz")
+    df.to_csv(out, index=False)
 
+    #
     # load = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data.csv")
     # df = pd.read_csv(load, nrows=10000)
     # out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals.npz")
     # create_functionals_ds(df, out)
-
-
+    #
+    #
     # out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data.csv")
     # df.to_csv(out, index=False)
-
+    #
     # load = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data.csv")
     # df = pd.read_csv(load, nrows=10000)
     #
@@ -81,5 +81,5 @@ def query_db(query):
     # create_time_series_ds(df, out)
 
 
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()

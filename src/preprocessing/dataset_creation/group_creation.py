@@ -18,8 +18,20 @@ def get_odds(size):
     return ret
 
 
-def create_shuffled_groups():
-    pass
+def create_twinned_groups(filenames, number_of_groups=5):
+    """
+    :param filenames: pd.Series with all filenames in the dataset
+    :param number_of_groups: the number of groups to create
+    :return: dict with (filename: group)
+    """
+    groups = {}
+
+    i = 0
+    while len(groups) < len(filenames):
+        groups[filenames[i]] = i % number_of_groups
+        i += 1
+
+    return groups
 
 
 def create_video_id_groups(video_ids):
