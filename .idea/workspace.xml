@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/functionals/supervised_learning/video_functionals_elastic_net_interpretation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/functionals/supervised_learning/video_functionals_elastic_net_interpretation.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_functionals_ds.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_functionals_ds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/group_creation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/group_creation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_dataset.hdf5" beforeDir="false" />
-    </list>
+    <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -247,7 +239,7 @@
       <workItem from="1661329708997" duration="5648000" />
       <workItem from="1661435325711" duration="3742000" />
       <workItem from="1661499294409" duration="12624000" />
-      <workItem from="1661754250192" duration="4357000" />
+      <workItem from="1661754250192" duration="4597000" />
     </task>
     <servers />
   </component>
