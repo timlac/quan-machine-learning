@@ -74,7 +74,7 @@ def main():
     # df = pd.read_csv(load)
 
     out = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals.hdf5")
-    cfs = CreateFunctionalsDataset(out, group_type=CONSTANTS.TWINNED, query=query_au_cols_with_confidence_filter)
+    cfs = CreateFunctionalsDataset(out, group_type=CONSTANTS.VIDEO_ID, query=query_au_cols_with_confidence_filter)
     # cfs = CreateFunctionalsDataset(out, group_type=CONSTANTS.TWINNED, df=df)
 
     cfs.save_ds()
