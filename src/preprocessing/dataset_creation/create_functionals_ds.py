@@ -70,12 +70,12 @@ class CreateFunctionalsDataset:
 
 
 def main():
-    load = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals_A220.npz")
-    df = pd.read_csv(load)
+    # load = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals_A220.npz")
+    # df = pd.read_csv(load)
 
-    out = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals_A220.hdf5")
-    # cfs = CreateFunctionalsDataset(out, group_type=CONSTANTS.TWINNED, query=query_au_cols_with_confidence_filter_A220)
-    cfs = CreateFunctionalsDataset(out, group_type=CONSTANTS.TWINNED, df=df)
+    out = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals.hdf5")
+    cfs = CreateFunctionalsDataset(out, group_type=CONSTANTS.TWINNED, query=query_au_cols_without_confidence_filter)
+    # cfs = CreateFunctionalsDataset(out, group_type=CONSTANTS.TWINNED, df=df)
 
     cfs.save_ds()
 
