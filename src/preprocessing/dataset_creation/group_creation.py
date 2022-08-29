@@ -1,5 +1,6 @@
 import random
 from global_config import seed, ROOT_DIR
+from sklearn.utils import shuffle
 
 
 def get_evens(size):
@@ -25,6 +26,8 @@ def create_twinned_groups(filenames, number_of_groups=5):
     :return: dict with (filename: group)
     """
     groups = {}
+
+    filenames = shuffle(filenames).reset_index(drop=True)
 
     i = 0
     while len(groups) < len(filenames):

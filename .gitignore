@@ -38,6 +38,8 @@ files/out/audio/confusion_matrix/*.svg
 *.csv
 *.log
 *.npz
+*.hdf5
+*.h5
 
 files/tests/preprocessing/example_data/openface/*
 files/tests/preprocessing/example_data/opensmile/*

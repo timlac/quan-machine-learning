@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_datasets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/functionals/supervised_learning/video_functionals_elastic_net_interpretation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/functionals/supervised_learning/video_functionals_elastic_net_interpretation.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_functionals_ds.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_functionals_ds.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/group_creation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/group_creation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_dataset.hdf5" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,14 +80,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/" />
       <recent name="$PROJECT_DIR$/logs" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/SQL" />
       <recent name="$PROJECT_DIR$/files/tests/preprocessing" />
-      <recent name="$PROJECT_DIR$/src/notebooks/fiddle" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.group_splitting">
+  <component name="RunManager" selected="Python.create_functionals_ds">
     <configuration name="create_datasets" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="emotional-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -133,6 +136,9 @@
       <module name="emotional-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -194,8 +200,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.group_splitting" />
         <item itemvalue="Python.create_functionals_ds" />
+        <item itemvalue="Python.group_splitting" />
         <item itemvalue="Python.create_datasets" />
         <item itemvalue="Python.scratch" />
         <item itemvalue="Python.scratch_2" />
@@ -240,7 +246,8 @@
       <workItem from="1661200448047" duration="676000" />
       <workItem from="1661329708997" duration="5648000" />
       <workItem from="1661435325711" duration="3742000" />
-      <workItem from="1661499294409" duration="10429000" />
+      <workItem from="1661499294409" duration="12624000" />
+      <workItem from="1661754250192" duration="4357000" />
     </task>
     <servers />
   </component>
@@ -271,13 +278,43 @@
           <line>74</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/group_creation.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/group_creation.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/group_creation.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/group_creation.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/group_creation.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/group_creation.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/emotional_recognition$missing_time_series_values_handling.coverage" NAME="missing_time_series_values_handling Coverage Results" MODIFIED="1660678995982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
     <SUITE FILE_PATH="coverage/emotional_recognition$random_forrest.coverage" NAME="random_forrest Coverage Results" MODIFIED="1659960628435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
-    <SUITE FILE_PATH="coverage/emotional_recognition$create_functionals_ds.coverage" NAME="create_functionals_ds Coverage Results" MODIFIED="1661500605453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$create_functionals_ds.coverage" NAME="create_functionals_ds Coverage Results" MODIFIED="1661759706708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
     <SUITE FILE_PATH="coverage/emotional_recognition$elastic_net.coverage" NAME="elastic_net Coverage Results" MODIFIED="1659965853975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
     <SUITE FILE_PATH="coverage/emotional_recognition$connector.coverage" NAME="connector Coverage Results" MODIFIED="1660050740029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/sql_handling" />
     <SUITE FILE_PATH="coverage/emotional_recognition$create_datasets.coverage" NAME="create_datasets Coverage Results" MODIFIED="1661500590238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
