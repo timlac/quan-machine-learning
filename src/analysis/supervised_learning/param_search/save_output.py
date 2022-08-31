@@ -1,6 +1,5 @@
 import os
 import pickle
-from dotenv import load_dotenv
 import pandas as pd
 from datetime import datetime
 
@@ -8,7 +7,6 @@ from datetime import datetime
 class Saver:
 
     def __init__(self, clf, method, n_groups, save_location, filename):
-        load_dotenv()
         self.path = save_location
         self.clf = clf
         self.method = method

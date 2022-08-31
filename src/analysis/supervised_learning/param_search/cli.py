@@ -61,7 +61,7 @@ def main():
         filename_out = "egemaps_audio"
     elif source == "video":
         out = os.getenv("VIDEO_OUT")
-        input_file = os.path.join(out, "video_data_intensity_train.csv")
+        input_file = os.path.join(out, "video_data_functionals_A220.hdf5")
         filename_out = "intensity_video"
     else:
         raise RuntimeError
