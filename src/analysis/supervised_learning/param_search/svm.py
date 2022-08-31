@@ -5,6 +5,8 @@ from sklearn.svm import SVC
 import os
 import argparse
 import h5py
+import time
+import datetime
 
 from src.analysis.supervised_learning.param_search.save_output import Saver
 from src.analysis.supervised_learning.param_search.load_data import DataLoader
@@ -55,7 +57,18 @@ def main():
     output_filename = "video_au_functionals"
 
     data = DataLoader(input_path)
+
+    # get the start time
+    st = time.time()
+    print("starting at time: " + str(datetime.datetime.now()))
+
     clf = SVM.param_search(data)
+
+    # get the end time
+    et = time.time()
+    # get the execution time
+    elapsed_time = et - st
+    print('Execution time:', str(datetime.timedelta(seconds=elapsed_time)))
 
     saver = Saver(clf=clf, method="svm", n_groups=data.n_groups, save_location=output_path, filename=output_filename)
     saver.save()

@@ -53,6 +53,8 @@ class CreateFunctionalsDataset:
         return df_x.columns.values
 
     def save_ds(self):
+        print("saving data to {}".format(self.save_as))
+
         f = h5py.File(name=self.save_as, mode='w')
         # save data
         f['x'] = self.get_x()
@@ -78,7 +80,7 @@ def test():
 
 def main():
     out = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals.hdf5")
-    cfs = CreateFunctionalsDataset(out, group_type=CONSTANTS.VIDEO_ID, query=query_au_cols_with_confidence_filter)
+    cfs = CreateFunctionalsDataset(out, group_type=CONSTANTS.TWINNED, query=query_au_cols_with_confidence_filter)
     cfs.save_ds()
 
 
