@@ -46,14 +46,11 @@ class SVM:
 
 
 def main():
-
-
-
     # parser = argparse.ArgumentParser()
     # parser.add_argument("infile")
     # parser.add_argument("outpath")
 
-    input_path = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals_A220.hdf5")
+    input_path = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals.hdf5")
     output_path = os.path.join(ROOT_DIR, "files/out/functionals/supervised_learning/video/grid_search/")
     output_filename = "video_au_functionals"
 

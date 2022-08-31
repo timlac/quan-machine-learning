@@ -53,26 +53,12 @@ class CreateFunctionalsDataset:
         return df_x.columns.values
 
     def save_ds(self):
-        x = self.get_x()
-        y = self.get_y()
-
-        print(x)
-        print(y)
-
-
-        print("saving dataset to {}".format(self.save_as))
-
         f = h5py.File(name=self.save_as, mode='w')
         # save data
         f['x'] = self.get_x()
         f['y'] = self.get_y()
         f['groups'] = self.get_groups(group_type=self.group_type)
         f['feature_names'] = self.get_feature_names()
-
-        print(f['x'])
-        print(f['y'])
-        print(f['groups'])
-        print(f['feature_names'])
 
         # save metadata
         # f.attrs['name'] =
@@ -97,4 +83,4 @@ def main():
 
 
 if __name__ == "__main__":
-    test()
+    main()

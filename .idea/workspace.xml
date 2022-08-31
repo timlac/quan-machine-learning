@@ -2,18 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/functionals/supervised_learning/audio/best_params/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/functionals/supervised_learning/audio/models/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/functionals/supervised_learning/audio/results/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/functionals/supervised_learning/video/best_params/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/functionals/supervised_learning/video/models/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/functionals/supervised_learning/video/results/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/functionals/unsupervised_learning/video/best_params/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/out/functionals/unsupervised_learning/video/data/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/cli.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/load_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/save_output.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/save_output.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_functionals_ds.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_functionals_ds.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -254,7 +242,7 @@
       <workItem from="1661773003832" duration="3498000" />
       <workItem from="1661860454204" duration="6427000" />
       <workItem from="1661875972607" duration="12050000" />
-      <workItem from="1661935764475" duration="7653000" />
+      <workItem from="1661935764475" duration="7752000" />
     </task>
     <servers />
   </component>
