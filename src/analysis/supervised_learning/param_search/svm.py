@@ -11,6 +11,7 @@ import datetime
 from src.analysis.supervised_learning.param_search.save_output import Saver
 from src.analysis.supervised_learning.param_search.load_data import DataLoader
 from global_config import ROOT_DIR
+from constants import CONSTANTS
 
 
 class SVM:
@@ -48,15 +49,16 @@ class SVM:
 
 
 def main():
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument("infile")
-    # parser.add_argument("outpath")
-
     input_path = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals.hdf5")
     output_path = os.path.join(ROOT_DIR, "files/out/functionals/supervised_learning/video/grid_search/")
     output_filename = "video_au_functionals"
 
-    data = DataLoader(input_path)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("group_type", choices=[CONSTANTS.TWINNED, CONSTANTS.VIDEO_ID])
+    args = parser.parse_args()
+    group_type = args.group_type
+
+    data = DataLoader(input_path, group_type)
 
     # get the start time
     st = time.time()

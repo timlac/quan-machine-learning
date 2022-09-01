@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.utils import shuffle
 
+from constants import CONSTANTS
 from global_config import ROOT_DIR
 import os
 
@@ -26,13 +27,17 @@ def scale(x):
 
 class DataLoader:
 
-    def __init__(self, path):
+    def __init__(self, path, group_type):
         file = load_h5(path)
         x = file['x']
         self.x = scale(x)
 
         self.y = np.array(file['y'])
-        self.groups = np.array(file['groups'])
+
+
+        self.groups = np.array(file["groups"][group_type])
+        print("identified {}")
+
         self.n_groups = len(np.unique(self.groups))
 
         # shuffle x, y and groups together
@@ -44,13 +49,12 @@ class DataLoader:
 
 
 def main():
-    path = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals_A220.hdf5")
+    path = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals.hdf5")
 
-    data = DataLoader(path)
+    data = DataLoader(path, group_type=CONSTANTS.TWINNED)
 
     print(data.x)
     print(data.y)
-    print(data.groups)
 
 
 if __name__ == "__main__":

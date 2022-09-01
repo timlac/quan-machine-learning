@@ -60,8 +60,11 @@ class CreateFunctionalsDataset:
         # save data
         f['x'] = self.get_x()
         f['y'] = self.get_y()
-        f['twinned_groups'] = self.get_twinned_groups()
-        f['video_id_groups'] = self.get_video_id_groups()
+        groups = f.create_group("groups")
+        groups[CONSTANTS.TWINNED] = self.get_twinned_groups()
+        video_id_groups = self.get_video_id_groups()
+        if video_id_groups:
+            groups[CONSTANTS.VIDEO_ID] = video_id_groups
         f['feature_names'] = self.get_feature_names()
 
         # save metadata
@@ -74,7 +77,7 @@ class CreateFunctionalsDataset:
 def test():
     load = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals_A220.csv")
     df = pd.read_csv(load)
-    out = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals_A220.hdf5")
+    out = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals.hdf5")
     cfs = CreateFunctionalsDataset(out, df=df)
     cfs.save_ds()
 
@@ -86,4 +89,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    test()
