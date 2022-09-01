@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/load_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/svm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/param_search/svm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_functionals_ds.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_functionals_ds.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -249,7 +246,7 @@
       <workItem from="1661935764475" duration="12440000" />
       <workItem from="1662020725614" duration="2304000" />
       <workItem from="1662025239910" duration="969000" />
-      <workItem from="1662038506109" duration="6455000" />
+      <workItem from="1662038506109" duration="7004000" />
     </task>
     <servers />
   </component>

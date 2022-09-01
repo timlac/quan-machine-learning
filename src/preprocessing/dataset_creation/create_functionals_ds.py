@@ -63,7 +63,7 @@ class CreateFunctionalsDataset:
         groups = f.create_group("groups")
         groups[CONSTANTS.TWINNED] = self.get_twinned_groups()
         video_id_groups = self.get_video_id_groups()
-        if video_id_groups:
+        if video_id_groups is not None:
             groups[CONSTANTS.VIDEO_ID] = video_id_groups
         f['feature_names'] = self.get_feature_names()
 
