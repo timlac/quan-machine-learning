@@ -5,6 +5,13 @@ from global_config import ROOT_DIR, AU_INTENSITY_COLS
 
 
 def time_series_to_list(df, identifier, x_cols, y_col):
+    """
+    :param df: pd.Dataframe
+    :param identifier: which column to split time series by
+    :param x_cols: column names for input features
+    :param y_col: column name for labels
+    :return: list with length = number of time series and every element of shape (number of frames, number of features)
+    """
     x = []
     y = []
     for _, group in df.groupby(identifier):
@@ -17,7 +24,11 @@ def time_series_to_list(df, identifier, x_cols, y_col):
 
 
 def pad_list_of_series(ts_list):
-
+    """
+    :param ts_list: a list of time series where every element has shape (number of frames, number of features)
+    :return: np.array where every element in the series has been padded with zeros and then transformed into a matrix
+                with shape (number of observations, number of frames, number of features)
+    """
     # obtain the longest element in the list
     length = max(map(len, ts_list))
 

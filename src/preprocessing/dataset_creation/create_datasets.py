@@ -8,7 +8,7 @@ from src.preprocessing.dataset_creation.group_creation import create_video_id_gr
 from src.preprocessing.sql_handling.execute_sql import execute_sql_pandas
 from global_config import ROOT_DIR, AU_INTENSITY_COLS, TARGET_COLUMN
 from src.preprocessing.dataset_creation.queries import query_au_cols_with_confidence_filter, \
-    query_au_cols_without_confidence_filter, query_au_cols_with_confidence_filter_A220
+    query_au_cols_without_confidence_filter_A220, query_au_cols_with_confidence_filter_A220
 
 
 def create_time_series_ds(df, save_as):
@@ -50,6 +50,11 @@ def query_db(query):
 
 
 def main():
+    df = query_db(query_au_cols_without_confidence_filter_A220)
+    out = os.path.join(ROOT_DIR, "files/out/low_level/video_data.csv")
+    df.to_csv(out, index=False)
+
+
     # query = query_au_cols_with_confidence_filter_A220
     # out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals.npz")
     # create_functionals_ds(query, out)
@@ -59,10 +64,10 @@ def main():
     # out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_with_unsuccessful.csv")
     # df.to_csv(out, index=False)
 
-    query = query_au_cols_with_confidence_filter_A220
-    df = query_db(query)
-    out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals_A220.npz")
-    df.to_csv(out, index=False)
+    # query = query_au_cols_with_confidence_filter_A220
+    # df = query_db(query)
+    # out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals_A220.npz")
+    # df.to_csv(out, index=False)
 
     #
     # load = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data.csv")
