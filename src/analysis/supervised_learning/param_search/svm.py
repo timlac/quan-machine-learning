@@ -51,7 +51,7 @@ class SVM:
 def main():
     input_path = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals.hdf5")
     output_path = os.path.join(ROOT_DIR, "files/out/functionals/supervised_learning/video/grid_search/")
-    output_filename = "video_au_functionals"
+    output_filename = "au_functionals"
 
     parser = argparse.ArgumentParser()
     parser.add_argument("group_type", choices=[CONSTANTS.TWINNED, CONSTANTS.VIDEO_ID])
@@ -72,7 +72,7 @@ def main():
     elapsed_time = et - st
     print('Execution time:', str(datetime.timedelta(seconds=elapsed_time)))
 
-    saver = Saver(clf=clf, method="svm", n_groups=data.n_groups, save_location=output_path, filename=output_filename)
+    saver = Saver(clf=clf, method="svm", group_type=group_type, n_groups=data.n_groups, save_location=output_path, filename=output_filename)
     saver.save()
 
 
