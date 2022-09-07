@@ -8,21 +8,31 @@ from global_config import ROOT_DIR
 
 class MissingTimeSeriesValuesHandler:
 
+    # constants for SQL/df column names
+    SLICE_BY = "filename"
+    CONFIDENCE = "confidence"
+    SUCCESS = "success"
+
     def __init__(self, threshold=0.9):
         self.threshold = threshold
         self.interpolation_candidates = []
+
+    def remove_and_interpolate(self, df):
+        df = self.remove_unsuccessful(df)
+        df = self.interpolate(df)
+        return df
 
     def remove_unsuccessful(self, df):
         filenames_to_remove = []
 
         # iterate over a df for every filename
-        for filename, df_filename in df.groupby('filename'):
+        for filename, df_filename in df.groupby(self.SLICE_BY):
             # get the total number of frames
             total = df_filename.shape[0]
 
             # get the sum of all rows with success and greater than 0.98 confidence in df
-            successful = (df_filename['success'] == 1).sum()
-            confident = (df_filename['confidence'] > 0.98).sum()
+            successful = (df_filename[self.SUCCESS] == 1).sum()
+            confident = (df_filename[self.CONFIDENCE] > 0.98).sum()
 
             # calculate ratio between unsuccessful or low confidence rows and total number of rows
             success_ratio = successful / total
@@ -46,17 +56,17 @@ class MissingTimeSeriesValuesHandler:
         """
         # set the AU value of all rows with bad frames to NaN
         for au in AU_INTENSITY_COLS:
-            df.loc[(df['success'] != 1) | (df['confidence'] != 1), au] = np.NaN
+            df.loc[(df[self.SUCCESS] != 1) | (df[self.CONFIDENCE] != 1), au] = np.NaN
 
         for filename in self.interpolation_candidates:
             # select dataframe subset
-            df_filename = df[df['filename'] == filename]
+            df_filename = df[df[self.SLICE_BY] == filename]
 
             # interpolate
             df_filename[AU_INTENSITY_COLS] = df_filename[AU_INTENSITY_COLS].interpolate(method="linear")
 
             # set subset to the interpolated frame
-            df[df['filename'] == filename] = df_filename
+            df[df[self.SLICE_BY] == filename] = df_filename
 
         # drop rows that couldn't be interpolated
         df = df.dropna()

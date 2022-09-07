@@ -17,6 +17,24 @@ def my_find_peaks(x):
     return len(peaks)
 
 
+def calculate_means(df):
+    df = df.groupby(['filename']).agg(['mean']).sort_values(by=['filename'], ignore_index=True)
+
+    # Impute NaN values
+    # There might be some NaN values in the dataframe
+    # coming from the coefficient of variation (std(x)/mean(x) when mean(x)=0)
+    df.fillna(0, inplace=True)
+
+    # Collapse hierarchical index in columns
+    df.columns = ['_'.join(col).strip('_') for col in df.columns.values]
+
+    # check for null values
+    if df.isnull().values.any():
+        raise ValueError
+
+    return df
+
+
 def calculate_aggregate_measures(df):
     # Compute statistical measures
     # Coefficient of variation
@@ -84,4 +102,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    pass

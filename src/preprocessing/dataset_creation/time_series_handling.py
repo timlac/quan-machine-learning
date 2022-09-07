@@ -2,9 +2,21 @@ import numpy as np
 import pandas as pd
 import os
 from global_config import ROOT_DIR, AU_INTENSITY_COLS
+import torch
+
+#
+# class ListedData:
+#
+#     def __init__(self):
+#         self.x = []
+#         self.y = []
+#         self.video_ids = []
+#         self.filenames = []
+#
+#
 
 
-def time_series_to_list(df, identifier, x_cols, y_col):
+def time_series_to_list(df, identifier, x_cols, y_col, video_id_col):
     """
     :param df: pd.Dataframe
     :param identifier: which column to split time series by
@@ -14,12 +26,14 @@ def time_series_to_list(df, identifier, x_cols, y_col):
     """
     x = []
     y = []
+    video_ids = []
     for _, group in df.groupby(identifier):
-        x_arr = np.array(group[x_cols].values)
+        x_arr = torch.Tensor(group[x_cols].values)
         x.append(x_arr)
 
         y_val = group[[y_col]].values[0][0]
         y.append(y_val)
+
     return x, y
 
 
@@ -45,20 +59,15 @@ def pad_list_of_series(ts_list):
     return np.asarray(padded_list)
 
 
-
 def main():
-    # load = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data.csv")
-    # df = pd.read_csv(load, nrows=10000)
-    # x, y = time_series_to_list(df, "filename", AU_INTENSITY_COLS, "emotion_1_id")
+    load = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data.csv")
+    df = pd.read_csv(load, nrows=10000)
+    x, y, video_ids = time_series_to_list(df, "filename", AU_INTENSITY_COLS, "emotion_1_id", "video_id")
+
     # padded_x = pad_list_of_series(x)
     #
     # out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/padded_time_series.npz")
     # np.savez(out, x=padded_x, y=y)
-
-    load = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/padded_time_series.npz")
-    npzfile = np.load(load)
-    x = npzfile["x"]
-    y = npzfile["y"]
 
 
 if __name__ == "__main__":
