@@ -10,7 +10,7 @@ import os
 import h5py
 from missing_time_series_values_handling import MissingTimeSeriesValuesHandler
 
-from src.preprocessing.dataset_creation.queries import query_au_cols_without_confidence_filter
+from src.preprocessing.dataset_creation.queries import query_au_cols_without_confidence_filter, query_au_cols_without_confidence_filter_A220
 from enum import Enum
 
 
@@ -65,10 +65,10 @@ def test():
 
 
 def main():
-    out = os.path.join(ROOT_DIR, "files/out/low_level/video_data_low_level.hdf5")
-    creator = CreateTimeSeriesDataset(out, query=query_au_cols_without_confidence_filter)
+    out = os.path.join(ROOT_DIR, "files/out/low_level/video_data_low_level_A220.hdf5")
+    creator = CreateTimeSeriesDataset(out, query=query_au_cols_without_confidence_filter_A220)
     creator.save()
 
 
 if __name__ == "__main__":
-    test()
+    main()

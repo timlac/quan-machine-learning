@@ -257,4 +257,45 @@ AU_INTENSITY_COLS = ['AU01_r',
                      'AU26_r',
                      'AU45_r']
 
+au_intensity_name_to_index = {'AU01_r': 0,
+                              'AU02_r': 1,
+                              'AU04_r': 2,
+                              'AU05_r': 3,
+                              'AU06_r': 4,
+                              'AU07_r': 5,
+                              'AU09_r': 6,
+                              'AU10_r': 7,
+                              'AU12_r': 8,
+                              'AU14_r': 9,
+                              'AU15_r': 10,
+                              'AU17_r': 11,
+                              'AU20_r': 12,
+                              'AU23_r': 13,
+                              'AU25_r': 14,
+                              'AU26_r': 15,
+                              'AU45_r': 16}
+
+index_to_au_intensity_name = dict(zip(au_intensity_name_to_index.values(), au_intensity_name_to_index.keys()))
+
+au_intensity_name_to_desc = {'AU01_r': "AU01 (inner brow raiser)",
+                             'AU02_r': "AU02 (outer brow raiser)",
+                             'AU04_r': "AU04 (brow lowerer)",
+                             'AU05_r': "AU05 (upper lid raiser)",
+                             'AU06_r': "AU06 (cheek raiser)",
+                             'AU07_r': "AU07 (lid tightener)",
+                             'AU09_r': "AU09 (nose wrinkler)",
+                             'AU10_r': "AU10 (upper lip raiser)",
+                             'AU12_r': "AU12 (lip corner puller)",
+                             'AU14_r': "AU14 (dimpler)",
+                             'AU15_r': "AU15 (lip corner depressor)",
+                             'AU17_r': "AU17 (chin raiser)",
+                             'AU20_r': "AU20 (lip stretcher)",
+                             'AU23_r': "AU23 (lip tightener)",
+                             'AU25_r': "AU25 (lips part)",
+                             'AU26_r': "AU26 (jaw drop)",
+                             'AU45_r': "AU45 (blink)"
+                             }
+
+desc_to_au_intensity_name = dict(zip(au_intensity_name_to_desc.values(), au_intensity_name_to_desc.keys()))
+
 TARGET_COLUMN = "emotion_1_id"

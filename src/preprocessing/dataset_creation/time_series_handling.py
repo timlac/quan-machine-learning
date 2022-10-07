@@ -16,7 +16,7 @@ import torch
 #
 
 
-def time_series_to_list(df, identifier, x_cols, y_col, video_id_col):
+def time_series_to_list(df, identifier, x_cols, y_col):
     """
     :param df: pd.Dataframe
     :param identifier: which column to split time series by
@@ -26,7 +26,6 @@ def time_series_to_list(df, identifier, x_cols, y_col, video_id_col):
     """
     x = []
     y = []
-    video_ids = []
     for _, group in df.groupby(identifier):
         x_arr = torch.Tensor(group[x_cols].values)
         x.append(x_arr)

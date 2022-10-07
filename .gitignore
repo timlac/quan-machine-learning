@@ -25,6 +25,7 @@ files/out/video/*.csv
 files/out/video/charts/*.svg
 files/out/video/confusion_matrix/*.svg
 
+files/example_data
 
 files/out/audio/best_params/*.sav
 files/out/audio/models/*.sav
