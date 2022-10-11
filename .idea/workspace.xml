@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/global_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/global_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_time_series_ds.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_time_series_ds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/time_series_handling.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/time_series_handling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video_A220_RNN.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/low_level/supervised_learning/torch_models/video_A220_RNN.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +269,8 @@
       <workItem from="1664527683917" duration="3366000" />
       <workItem from="1664706055265" duration="39000" />
       <workItem from="1665043910036" duration="7682000" />
-      <workItem from="1665146456058" duration="573000" />
+      <workItem from="1665146456058" duration="2474000" />
+      <workItem from="1665481576034" duration="401000" />
     </task>
     <servers />
   </component>
