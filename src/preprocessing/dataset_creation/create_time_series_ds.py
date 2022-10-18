@@ -1,17 +1,14 @@
 import pandas as pd
-import torch
 
 from src.preprocessing.sql_handling.execute_sql import execute_sql_pandas
-from src.preprocessing.dataset_creation.time_series_handling import pad_list_of_series, time_series_to_list
+from src.preprocessing.dataset_creation.time_series_handling import time_series_to_list
 from global_config import ROOT_DIR, AU_INTENSITY_COLS, TARGET_COLUMN
 from torch.nn.utils.rnn import pad_sequence
 import numpy as np
 import os
-import h5py
 from missing_time_series_values_handling import MissingTimeSeriesValuesHandler
 
-from src.preprocessing.dataset_creation.queries import query_au_cols_without_confidence_filter, query_au_cols_without_confidence_filter_A220
-from enum import Enum
+from src.preprocessing.sql_handling.queries import query_au_cols_without_confidence_filter
 
 
 class CreateTimeSeriesDataset:
@@ -47,15 +44,20 @@ class CreateTimeSeriesDataset:
     def save(self):
         print("saving data to {}".format(self.save_as))
 
-        f = h5py.File(name=self.save_as, mode='w')
+        x = self.get_x()
+        y = self.get_y()
 
-        # save data
-        f['x'] = self.get_x()
-        f['y'] = self.get_y()
+        np.savez_compressed(self.save_as, x=x, y=y)
 
-        if self.query:
-            f.attrs['query'] = self.query
-        f.close()
+        # f = h5py.File(name=self.save_as, mode='w')
+        #
+        # # save data
+        # f['x'] = self.get_x()
+        # f['y'] = self.get_y()
+        #
+        # if self.query:
+        #     f.attrs['query'] = self.query
+        # f.close()
 
 
 def test():
@@ -68,7 +70,7 @@ def test():
 
 
 def main():
-    out = os.path.join(ROOT_DIR, "files/out/low_level/video_data_low_level_custom_pad.hdf5")
+    out = os.path.join(ROOT_DIR, "files/out/low_level/video_data_low_level_custom_pad.npz")
     creator = CreateTimeSeriesDataset(out, query=query_au_cols_without_confidence_filter)
     creator.save()
 

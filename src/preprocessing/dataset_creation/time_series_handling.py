@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 import os
 from global_config import ROOT_DIR, AU_INTENSITY_COLS
-import torch
 
 #
 # class ListedData:
@@ -27,7 +26,7 @@ def time_series_to_list(df, identifier, x_cols, y_col):
     x = []
     y = []
     for _, group in df.groupby(identifier):
-        x_arr = torch.Tensor(group[x_cols].values)
+        x_arr = np.array(group[x_cols].values)
         x.append(x_arr)
 
         y_val = group[[y_col]].values[0][0]

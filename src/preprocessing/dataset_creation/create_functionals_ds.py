@@ -1,15 +1,13 @@
 import os
 
-import numpy as np
 import pandas as pd
 import h5py
 
 from constants import CONSTANTS
 from src.preprocessing.dataset_creation.create_video_functionals import create_functionals
 from src.preprocessing.dataset_creation.group_creation import create_video_id_groups, create_twinned_groups
-from global_config import ROOT_DIR, AU_INTENSITY_COLS, TARGET_COLUMN
-from src.preprocessing.dataset_creation.queries import query_au_cols_with_confidence_filter, \
-    query_au_cols_without_confidence_filter, query_au_cols_with_confidence_filter_A220
+from global_config import ROOT_DIR, TARGET_COLUMN
+from src.preprocessing.sql_handling.queries import query_au_cols_with_confidence_filter
 from src.preprocessing.sql_handling.execute_sql import execute_sql_pandas
 
 

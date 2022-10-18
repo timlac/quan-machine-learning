@@ -1,8 +1,10 @@
 import pandas as pd
 import time
-
+from global_config import ROOT_DIR
 
 from src.preprocessing.sql_handling.connector import ConnectionHandler
+
+from src.preprocessing.sql_handling.queries import query_au_cols_with_confidence_filter_A220
 
 
 def execute_sql_pandas(query):
@@ -26,10 +28,18 @@ def execute_sql(query):
 
 
 def main():
-    q = """SELECT * FROM openface LIMIT 10"""
-    df, read_duration = execute_sql_pandas(q)
-    print("pandas query executed in: {} seconds".format(read_duration))
-    print(df)
+    df, read_duration = execute_sql_pandas(query_au_cols_with_confidence_filter_A220)
+    df.to_csv(ROOT_DIR + "/files/out/au_cols_a220.csv", index=False)
+
+
+
+
+
+
+    # q = """SELECT * FROM openface LIMIT 10"""
+    # df, read_duration = execute_sql_pandas(q)
+    # print("pandas query executed in: {} seconds".format(read_duration))
+    # print(df)
 
     # # a small test of execution time
     # # execution times are similar
