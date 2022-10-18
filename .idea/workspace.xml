@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_time_series_ds.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_time_series_ds.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +271,9 @@
       <workItem from="1664706055265" duration="39000" />
       <workItem from="1665043910036" duration="7682000" />
       <workItem from="1665146456058" duration="2474000" />
-      <workItem from="1665481576034" duration="401000" />
+      <workItem from="1665481576034" duration="4566000" />
+      <workItem from="1665664248169" duration="2511000" />
+      <workItem from="1666093777537" duration="790000" />
     </task>
     <servers />
   </component>
@@ -490,7 +493,7 @@
     <SUITE FILE_PATH="coverage/emotional_recognition$time_series_dataset.coverage" NAME="time_series_dataset Coverage Results" MODIFIED="1662556080137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/analysis/data_loading" />
     <SUITE FILE_PATH="coverage/emotional_recognition$random_forrest.coverage" NAME="random_forrest Coverage Results" MODIFIED="1659960628435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
     <SUITE FILE_PATH="coverage/emotional_recognition$connector.coverage" NAME="connector Coverage Results" MODIFIED="1660050740029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/sql_handling" />
-    <SUITE FILE_PATH="coverage/emotional_recognition$create_time_series_ds.coverage" NAME="create_time_series_ds Coverage Results" MODIFIED="1665044896709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$create_time_series_ds.coverage" NAME="create_time_series_ds Coverage Results" MODIFIED="1665664579664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
     <SUITE FILE_PATH="coverage/emotional_recognition$logistic_regression.coverage" NAME="logistic_regression Coverage Results" MODIFIED="1660597004545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/neural_networks" />
     <SUITE FILE_PATH="coverage/emotional_recognition$svm.coverage" NAME="svm Coverage Results" MODIFIED="1661938672888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/analysis/supervised_learning/param_search" />
     <SUITE FILE_PATH="coverage/emotional_recognition$query.coverage" NAME="query Coverage Results" MODIFIED="1662477157770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />

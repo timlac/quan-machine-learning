@@ -15,6 +15,9 @@ from enum import Enum
 
 
 class CreateTimeSeriesDataset:
+    # TODO: adjust for varying frame rates...
+    # videos with weird names often have low frame rate and weird sound
+    # look into the data file
 
     SLICE_BY = "filename"
     VIDEO_ID = "video_id"
@@ -35,7 +38,7 @@ class CreateTimeSeriesDataset:
         self.x, self.y = time_series_to_list(df, self.SLICE_BY, AU_INTENSITY_COLS, TARGET_COLUMN)
 
     def get_x(self):
-        x = pad_sequence(self.x, batch_first=True)
+        x = pad_sequence(self.x, batch_first=True, padding_value=-10)
         return np.array(x)
 
     def get_y(self):
@@ -65,8 +68,8 @@ def test():
 
 
 def main():
-    out = os.path.join(ROOT_DIR, "files/out/low_level/video_data_low_level_A220.hdf5")
-    creator = CreateTimeSeriesDataset(out, query=query_au_cols_without_confidence_filter_A220)
+    out = os.path.join(ROOT_DIR, "files/out/low_level/video_data_low_level_custom_pad.hdf5")
+    creator = CreateTimeSeriesDataset(out, query=query_au_cols_without_confidence_filter)
     creator.save()
 
 
