@@ -21,7 +21,8 @@ def time_series_to_list(df, identifier, x_cols, y_col):
     :param identifier: which column to split time series by
     :param x_cols: column names for input features
     :param y_col: column name for labels
-    :return: list with length = number of time series and every element of shape (number of frames, number of features)
+    :return: tuple of lists: x length = number of time series and every element of shape (number of frames, number of features)
+                            y length = number of time series
     """
     x = []
     y = []

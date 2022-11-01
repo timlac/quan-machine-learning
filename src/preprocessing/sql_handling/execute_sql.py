@@ -4,7 +4,7 @@ from global_config import ROOT_DIR
 
 from src.preprocessing.sql_handling.connector import ConnectionHandler
 
-from src.preprocessing.sql_handling.queries import query_au_cols_with_confidence_filter_A220
+from src.preprocessing.sql_handling.queries import query_au_cols_without_confidence_filter_A220
 
 
 def execute_sql_pandas(query):
@@ -28,7 +28,7 @@ def execute_sql(query):
 
 
 def main():
-    df, read_duration = execute_sql_pandas(query_au_cols_with_confidence_filter_A220)
+    df, read_duration = execute_sql_pandas(query_au_cols_without_confidence_filter_A220)
     df.to_csv(ROOT_DIR + "/files/out/au_cols_a220.csv", index=False)
 
 
