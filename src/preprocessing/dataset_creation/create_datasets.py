@@ -1,86 +1,92 @@
 import os
-
+import pandas as pd
 import numpy as np
+import scipy
 from src.preprocessing.dataset_creation.time_series_handling import pad_list_of_series, time_series_to_list
 from src.preprocessing.sql_handling.execute_sql import execute_sql_pandas
 from global_config import ROOT_DIR, AU_INTENSITY_COLS, TARGET_COLUMN
 from src.preprocessing.sql_handling.queries import query_au_cols_without_confidence_filter_A220
 
 
-def create_time_series_ds(df, save_as):
-    x, y = time_series_to_list(df, "filename", AU_INTENSITY_COLS, TARGET_COLUMN)
-    x = pad_list_of_series(x)
-    print("saving dataset to {}".format(save_as))
-    np.savez(save_as, x=x, y=y)
+def query_to_list(query):
+    # df, _ = execute_sql_pandas(query)
+    df = pd.read_csv(ROOT_DIR + "/files/out/au_cols_a74.csv")
+
+    slices = slice_by("filename", df)
+    slices = remove_interpolate(slices)
+    functionals = calculate_aggregate_measures(slices)
 
 
-def query_db(query):
-    # print("Executing query".format(query))
-    df, read_duration = execute_sql_pandas(query)
-    # print("Read duration: {}".format(read_duration))
+def calculate_aggregate_measures(slices):
+    ret = []
+    for df in slices:
+
+        x = df[AU_INTENSITY_COLS].values
+
+        m = np.mean(x, axis=0)
+        per20 = np.percentile(x, 20, axis=0)
+        per50 = np.percentile(x, 50, axis=0)
+        per80 = np.percentile(x, 80, axis=0)
+        iqr2080 = scipy.stats.iqr(x, rng=(20, 80), axis=0)
+
+        ret = None
+        for i in range(len(AU_INTENSITY_COLS)):
+            temp = np.concatenate((m[i], per20[i], per50[i], per80[i], iqr2080[i]), axis=None)
+            if ret is None:
+                ret = temp
+            else:
+                ret = np.concatenate((ret, temp), axis=None)
+
+        x = np.nan_to_num(x)
+
+    return ret
+
+
+def remove_interpolate(slices):
+    threshold = 0.85
+
+    ret = []
+
+    for df in slices:
+
+        confidence = df["confidence"].values
+        success = df["success"].values
+
+        n_rows = df.shape[0]
+        ratio_high_conf = (confidence > 0.98).sum() / n_rows
+        ratio_successful = (success == 1).sum() / n_rows
+
+        if ratio_successful < 1 or ratio_high_conf < 1:
+            if ratio_successful < threshold or ratio_high_conf < threshold:
+                continue
+            else:
+                df = interpolate(df)
+                ret.append(df)
+        else:
+            ret.append(df)
+
+    return ret
+
+
+def interpolate(df):
+    # set the AU value of all rows with bad values to NaN
+    for x in AU_INTENSITY_COLS:
+        df.loc[(df["success"] != 1) | (df["confidence"] != 1), x] = np.NaN
+
+    # interpolate
+    df[AU_INTENSITY_COLS] = df[AU_INTENSITY_COLS].interpolate(method="linear")
+
+    # drop rows that couldn't be interpolated
+    df = df.dropna()
+
     return df
 
 
-# def create_functionals_ds(query, save_as):
-#     df = query_db(query)
-#     groups_dict = create_groups(df.video_id.unique())
-#     groups = df.video_id.map(groups_dict)
-#     y = df[TARGET_COLUMN].values
-#     df = df.drop(columns=["filename", "video_id", TARGET_COLUMN])
-#     x = df.values
-#     col_names = df.columns.values
-#     print("saving dataset to {}".format(save_as))
-#     np.savez(save_as, x=x, y=y, groups=groups, col_names=col_names)
+def slice_by(identifier, df):
+    ret = []
+    for _, group in df.groupby(identifier):
+        ret.append(group)
+    return ret
 
 
-
-
-#
-# query = query_au_cols_with_confidence_filter_A220
-# out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals.npz")
-#
-# load = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data.csv")
-# df = pd.read_csv(load, nrows=10000)
-#
-# cfs = CreateFunctionalsDataset(out, df=df)
-
-
-def main():
-    df = query_db(query_au_cols_without_confidence_filter_A220)
-    out = os.path.join(ROOT_DIR, "files/out/low_level/video_data.csv")
-    df.to_csv(out, index=False)
-
-
-    # query = query_au_cols_with_confidence_filter_A220
-    # out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals.npz")
-    # create_functionals_ds(query, out)
-    #
-    # query = query_au_cols_without_confidence_filter
-    # df = query_db(query)
-    # out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_with_unsuccessful.csv")
-    # df.to_csv(out, index=False)
-
-    # query = query_au_cols_with_confidence_filter_A220
-    # df = query_db(query)
-    # out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals_A220.npz")
-    # df.to_csv(out, index=False)
-
-    #
-    # load = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data.csv")
-    # df = pd.read_csv(load, nrows=10000)
-    # out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data_functionals.npz")
-    # create_functionals_ds(df, out)
-    #
-    #
-    # out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data.csv")
-    # df.to_csv(out, index=False)
-    #
-    # load = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data.csv")
-    # df = pd.read_csv(load, nrows=10000)
-    #
-    # out = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/padded_time_series.npz")
-    # create_time_series_ds(df, out)
-
-
-if __name__ == "__main__":
-    main()
+query_to_list(None)

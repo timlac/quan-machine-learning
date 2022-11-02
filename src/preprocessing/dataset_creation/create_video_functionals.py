@@ -45,21 +45,19 @@ def calculate_aggregate_measures(df):
     # Number of peaks above the adaptive threshold
 
     df = df.groupby(['filename']).agg(['mean',  # Arithmetic mean
-                                       lambda x: scipy.stats.variation(x),
                                        lambda x: np.percentile(x, q=20),
                                        lambda x: np.percentile(x, q=50),
                                        lambda x: np.percentile(x, q=80),
                                        lambda x: scipy.stats.iqr(x, rng=(20, 80)),
-                                       lambda x: my_find_peaks(x),
                                        ]).reset_index().sort_values(by=['filename'], ignore_index=True)
 
     # Rename columns
-    df.rename(columns={'<lambda_0>': 'stddevNorm',
+    df.rename(columns={
                        '<lambda_1>': 'percentile20.0',
                        '<lambda_2>': 'percentile50.0',
                        '<lambda_3>': 'percentile80.0',
-                       '<lambda_4>': 'iqr60_80-20',
-                       '<lambda_5>': 'numPeaks',
+                       '<lambda_4>': 'iqr60_80-20'
+
                        }, level=1, inplace=True)
 
     # Impute NaN values

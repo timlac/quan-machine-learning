@@ -11,6 +11,11 @@ from src.preprocessing.sql_handling.queries import query_au_cols_with_confidence
 from src.preprocessing.sql_handling.execute_sql import execute_sql_pandas
 
 
+# TODO: Provide an option to just not create any groups whatsoever.
+#  Actually this is unnneccaary we just dont have to use the groups...
+#  But maybe rewrite the svm grid search then...
+
+
 class CreateFunctionalsDataset:
 
     def __init__(self, save_as, query=None, df=None):
