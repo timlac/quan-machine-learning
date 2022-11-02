@@ -133,3 +133,19 @@ AU45_r
 FROM openface
 WHERE mix = 0
 AND video_id = 'A74';"""
+
+query_pose_cols_without_confidence_filter = """SELECT filename,
+video_id,
+emotion_1,
+emotion_1_id,
+frame,
+success,
+confidence,
+pose_Rx, 
+pose_Ry, 
+pose_Rz, 
+pose_Tx, 
+pose_Ty, 
+pose_Tz
+FROM openface
+WHERE mix = 0;"""
