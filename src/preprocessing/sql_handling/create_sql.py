@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 
 from src.preprocessing.sql_handling.connector import ConnectionHandler
 
+
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
 
@@ -34,7 +35,6 @@ class TableCreator:
 
         self.engine.execute(sql_string)
 
-
     def truncate(self):
         """Remove all data from table"""
         self.engine.execute("TRUNCATE TABLE {};".format(self.table_name))
@@ -42,7 +42,7 @@ class TableCreator:
     @staticmethod
     def main():
         load_dotenv()
-        table_creator = TableCreator("openface")
+        # table_creator = TableCreator("openface")
 
         # openface_processed = os.getenv("OPENFACE_PROCESSED")
         # paths = get_csv_paths(openface_processed)
@@ -52,7 +52,6 @@ class TableCreator:
 
 
         table_creator.set_indices()
-
 
 
 if __name__ == '__main__':

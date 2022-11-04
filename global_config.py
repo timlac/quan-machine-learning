@@ -298,4 +298,39 @@ au_intensity_name_to_desc = {'AU01_r': "AU01 (inner brow raiser)",
 
 desc_to_au_intensity_name = dict(zip(au_intensity_name_to_desc.values(), au_intensity_name_to_desc.keys()))
 
+POSE_COLS = [
+    "pose_Rx",
+    "pose_Ry",
+    "pose_Rz",
+    "pose_Tx",
+    "pose_Ty",
+    "pose_Tz"
+]
+
+AUDIO_LLD_COLS = [
+    "Loudness_sma3",
+    "alphaRatio_sma3",
+    "hammarbergIndex_sma3",
+    "slope0-500_sma3",
+    "slope500-1500_sma3",
+    "spectralFlux_sma3",
+    "mfcc1_sma3", "mfcc2_sma3",
+    "mfcc3_sma3", "mfcc4_sma3",
+    "F0semitoneFrom27.5Hz_sma3nz",
+    "jitterLocal_sma3nz",
+    "shimmerLocaldB_sma3nz",
+    "HNRdBACF_sma3nz",
+    "logRelF0-H1-H2_sma3nz",
+    "logRelF0-H1-A3_sma3nz",
+    "F1frequency_sma3nz",
+    "F1bandwidth_sma3nz",
+    "F1amplitudeLogRelF0_sma3nz",
+    "F2frequency_sma3nz",
+    "F2bandwidth_sma3nz",
+    "F2amplitudeLogRelF0_sma3nz",
+    "F3frequency_sma3nz",
+    "F3bandwidth_sma3nz",
+    "F3amplitudeLogRelF0_sma3nz"
+]
+
 TARGET_COLUMN = "emotion_1_id"

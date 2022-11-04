@@ -21,7 +21,7 @@ class Api:
         table_creator.create_table_based_on_csv(first_csv)
 
         table_creator.truncate()
-        table_creator.set_indices()
+        # table_creator.set_indices()
 
     def upload_data(self):
         uploader = Uploader(table_name=self.table_name)
@@ -31,8 +31,8 @@ class Api:
 def main():
     load_dotenv()
 
-    input_path = os.getenv("OPENSMILE_FUNCTIONALS_PROCESSED")
-    table_name = "opensmile_functionals"
+    input_path = os.getenv("OPENSMILE_LLD_PROCESSED")
+    table_name = "opensmile_lld"
     datatypes = general_datatypes
 
     api = Api(input_path=input_path, table_name=table_name)

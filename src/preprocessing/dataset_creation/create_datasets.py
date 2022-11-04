@@ -2,31 +2,81 @@ import os
 import pandas as pd
 import numpy as np
 import scipy
+from torch.nn.utils.rnn import pad_sequence
+
+
 from src.preprocessing.dataset_creation.time_series_handling import pad_list_of_series, time_series_to_list
 from src.preprocessing.sql_handling.execute_sql import execute_sql_pandas
-from global_config import ROOT_DIR, AU_INTENSITY_COLS, TARGET_COLUMN
-from src.preprocessing.sql_handling.queries import query_au_cols_without_confidence_filter_A220, query_au_cols_without_confidence_filter, query_au_cols_without_confidence_filter_A74
+from global_config import ROOT_DIR, AU_INTENSITY_COLS, TARGET_COLUMN, POSE_COLS, AUDIO_LLD_COLS
+from src.preprocessing.sql_handling.queries import query_pose_cols, query_audio_cols
+from src.preprocessing.dataset_creation.interpolation import Interpolator
 
 
-def create_ds(query, save_as, X_COLS):
-    df, _ = execute_sql_pandas(query)
-    # df = pd.read_csv(ROOT_DIR + "/files/out/au_cols_a74.csv")
+class DatasetCreator:
 
-    slices = slice_by("filename", df)
+    # every time series in the dataset is identified by a unique filename
+    TIMESERIES_IDENTIFIER = "filename"
+    Y_COL = "emotion_1_id"
 
-    interpolator = Interpolator(X_COLS)
-    slices = interpolator.remove_interpolate(slices)
+    # padding value for time series datasets
+    # variable length time series requires padding to create an array with same length rows
+    PADDING_VALUE = -1000
 
-    x = calculate_aggregate_measures(slices, X_COLS)
-    y = get_y(slices)
+    def __init__(self,
+                 query,
+                 X_COLS,
+                 interpolate=True,
+                 aggregate=True):
 
-    print(x.shape)
-    print(y.shape)
+        # query for the database
+        self.query = query
+        # name of x columns
+        self.X_COLS = X_COLS
+        # interpolate or not (only applicable for openface features)
+        self.interpolate = interpolate
+        # aggregate (create functionals) or not (only applicable for openface features
+        self.aggregate = aggregate
 
-    np.savez_compressed(save_as, x=x, y=y)
+    def create(self, save_as):
+        df, _ = execute_sql_pandas(self.query)
+
+        # df = pd.read_csv(os.path.join(ROOT_DIR, "files/out/au_cols_without_confidence_filter.csv"))
+
+        slices = slice_by(df, self.TIMESERIES_IDENTIFIER)
+
+        if self.interpolate:
+            interpolator = Interpolator(self.X_COLS)
+            slices = interpolator.remove_interpolate(slices)
+
+        if self.aggregate:
+            x = get_aggregate_measures(slices, self.X_COLS)
+        else:
+            x = get_x(slices, self.X_COLS)
+
+        y = get_y(slices, self.Y_COL)
+
+        print(x.shape)
+        print(y.shape)
+
+        np.savez_compressed(save_as, x=x, y=y)
 
 
-def calculate_aggregate_measures(slices, X_COLS):
+def get_x(slices, padding_value):
+    """
+    :param padding_value: the value to pad the time series with
+    :param slices: list of dataframes
+    :return: np array
+    """
+    x = pad_sequence(slices, batch_first=True, padding_value=padding_value)
+    return np.asarray(x)
+
+
+def get_aggregate_measures(slices, X_COLS):
+    """
+    :param slices: list of dataframes
+    :param X_COLS: list of column names for x
+    :return: np array with mean values and other aggregate measures
+    """
     ret = []
     for df in slices:
 
@@ -48,78 +98,15 @@ def calculate_aggregate_measures(slices, X_COLS):
     return arr
 
 
-class Interpolator:
-
-    # parameters
-    MIN_RATIO_GOOD_FRAMES = 0.85
-    CONFIDENCE_THRESHOLD = 0.98
-    SUCCESS_INDICATOR = 1
-
-    # string constants
-    CONFIDENCE = "confidence"
-    SUCCESS = "success"
-    INTERPOLATION_METHOD = "linear"
-
-    def __init__(self, X_COLS):
-        """
-        :param X_COLS: the columns to be interpolated
-        """
-        self.X_COLS = X_COLS
-
-    def remove_interpolate(self, slices):
-        """
-        :param slices: list of dataframes to interpolate bad values for (must contain confidence and success columns
-                        as well as X_COLS
-        :return: list of dataframes with interpolated values
-        """
-
-        ret = []
-
-        for df in slices:
-
-            confidence = df[self.CONFIDENCE].values
-            success = df[self.SUCCESS].values
-
-            n_rows = df.shape[0]
-            ratio_high_conf = (confidence > self.CONFIDENCE_THRESHOLD).sum() / n_rows
-            ratio_successful = (success == self.SUCCESS_INDICATOR).sum() / n_rows
-
-            if ratio_successful < 1 or ratio_high_conf < 1:
-                if ratio_successful < self.MIN_RATIO_GOOD_FRAMES or ratio_high_conf < self.MIN_RATIO_GOOD_FRAMES:
-                    # skip dataframes with too many bad values
-                    continue
-                else:
-                    # interpolate if not too many values are bad
-                    df = self.interpolate(df)
-                    ret.append(df)
-            else:
-                # just append if no values are bad
-                ret.append(df)
-
-        return ret
-
-    def interpolate(self, df):
-        """
-        :param df: pandas Dataframe to interpolate
-        :return:
-        """
-        # iterate over X_cols and set cells with bad values to NaN
-        for x in self.X_COLS:
-            df.loc[(df[self.SUCCESS] != 1) | (df[self.CONFIDENCE] != 1), x] = np.NaN
-
-        # interpolate
-        df[self.X_COLS] = df[self.X_COLS].interpolate(method=self.INTERPOLATION_METHOD)
-
-        # drop rows that couldn't be interpolated
-        df = df.dropna()
-
-        return df
-
-
-def get_y(slices):
+def get_y(slices, Y_COL):
+    """
+    :param slices: list of dataframes
+    :param Y_COL: list of column name for y
+    :return: np array
+    """
     y = []
     for df in slices:
-        array = df["emotion_1_id"].values
+        array = df[Y_COL].values
         if len(np.unique(array)) != 1:
             raise ValueError("something went wrong, more than one emotion id found for time series")
         else:
@@ -127,7 +114,12 @@ def get_y(slices):
     return np.asarray(y)
 
 
-def slice_by(identifier, df):
+def slice_by(df, identifier):
+    """
+    :param df: dataframe with multiple time series
+    :param identifier: column name to identify unique time series
+    :return: list of dataframes
+    """
     ret = []
     for _, group in df.groupby(identifier):
         ret.append(group)
@@ -135,8 +127,30 @@ def slice_by(identifier, df):
 
 
 def main():
-    out = os.path.join(ROOT_DIR, "files/out/functionals/video_data_functionals_A74.npz")
-    create_ds(query_au_cols_without_confidence_filter_A74, out)
+    # Pose
+    # TODO: Try to analyze how pose is different between different emotions?
+    # TODO: Is there any particular feature that stands out?
+    # pose_dataset_creator = DatasetCreator(query=query_pose_cols,
+    #                                       X_COLS=POSE_COLS,
+    #                                       )
+    # pose_save_path = os.path.join(ROOT_DIR, "files/out/functionals/video_pose_functionals.npz")
+    # pose_dataset_creator.create(pose_save_path)
+
+    # audio time series
+    audio_time_series_creator = DatasetCreator(query=query_audio_cols,
+                                               X_COLS=AUDIO_LLD_COLS,
+                                               interpolate=False,
+                                               aggregate=False)
+    audio_time_series_save_path = os.path.join(ROOT_DIR, "files/out/low_level/audio_time_series.npz")
+    audio_time_series_creator.create(audio_time_series_save_path)
+
+    # action unit time series
+    # video_time_series_creator = DatasetCreator(query="",
+    #                                            X_COLS=AU_INTENSITY_COLS,
+    #                                            interpolate=False,
+    #                                            aggregate=False)
+    # video_time_series_save_path = os.path.join(ROOT_DIR, "files/out/low_level/video_time_series.npz")
+    # video_time_series_creator.create(video_time_series_save_path)
 
 
 if __name__ == "__main__":
