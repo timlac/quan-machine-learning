@@ -3,17 +3,6 @@ import pandas as pd
 import os
 from global_config import ROOT_DIR, AU_INTENSITY_COLS
 
-#
-# class ListedData:
-#
-#     def __init__(self):
-#         self.x = []
-#         self.y = []
-#         self.video_ids = []
-#         self.filenames = []
-#
-#
-
 
 def time_series_to_list(df, identifier, x_cols, y_col):
     """
@@ -21,7 +10,8 @@ def time_series_to_list(df, identifier, x_cols, y_col):
     :param identifier: which column to split time series by
     :param x_cols: column names for input features
     :param y_col: column name for labels
-    :return: list with length = number of time series and every element of shape (number of frames, number of features)
+    :return: tuple of lists: x length = number of time series and every element of shape (number of frames, number of features)
+                            y length = number of time series
     """
     x = []
     y = []
@@ -70,18 +60,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-# length = max(map(len, X_list))
-#
-# padded_X = []
-# for xi in X_list:
-#     pad = np.zeros((length-len(xi), xi.shape[1]))
-#     xi = np.concatenate((xi, pad)).T
-#     padded_X.append(xi)
-#
-# X = np.asarray(padded_X)

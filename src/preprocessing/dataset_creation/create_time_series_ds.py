@@ -6,7 +6,7 @@ from global_config import ROOT_DIR, AU_INTENSITY_COLS, TARGET_COLUMN
 from torch.nn.utils.rnn import pad_sequence
 import numpy as np
 import os
-from missing_time_series_values_handling import MissingTimeSeriesValuesHandler
+from interpolation import MissingTimeSeriesValuesHandler
 
 from src.preprocessing.sql_handling.queries import query_au_cols_without_confidence_filter
 

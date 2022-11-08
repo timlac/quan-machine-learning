@@ -23,7 +23,7 @@ class ConnectionHandler:
     def get_engine():
         connection_string = ConnectionHandler.get_connection_string()
 
-        return db.create_engine('mysql+pymysql://' + connection_string, encoding='utf8')
+        return db.create_engine('mysql+pymysql://' + connection_string, encoding='utf8', server_side_cursors=True)
 
     @staticmethod
     def main():

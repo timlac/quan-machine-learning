@@ -87,9 +87,12 @@ class CsvProcessor:
 
 def main():
     load_dotenv()
+    #
+    # input_path = os.getenv("OPENSMILE_FUNCTIONAlS_RAW")
+    # save_to = os.getenv("OPENSMILE_FUNCTIONALS_PROCESSED")
 
-    input_path = os.getenv("OPENSMILE_FUNCTIONAlS_RAW")
-    save_to = os.getenv("OPENSMILE_FUNCTIONALS_PROCESSED")
+    input_path = os.getenv("OPENSMILE_LLD_RAW")
+    save_to = os.getenv("OPENSMILE_LLD_PROCESSED")
 
     logging.info("Input path: " + str(input_path))
 
