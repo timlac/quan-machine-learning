@@ -8,8 +8,8 @@ from src.utils.helpers import get_filename
 from src.preprocessing.opensmile_processing.duplicate_handler import DuplicateHandler
 
 smile = opensmile.Smile(
-    feature_set=opensmile.FeatureSet.eGeMAPSv02,
-    feature_level=opensmile.FeatureLevel.LowLevelDescriptors,
+    feature_set=opensmile.FeatureSet.ComParE_2016,
+    feature_level=opensmile.FeatureLevel.LowLevelDescriptors_Deltas,
 )
 
 
@@ -41,8 +41,12 @@ def main():
     # file_path = "../files/tests/example_data/**/*.mov"
     # out_path = "../files/tests/example_data/opensmile/"
 
-    file_path = "/media/tim/Seagate Backup Plus Drive/Documents/**/*.mov"
-    out_path = "/media/tim/Seagate Backup Plus Drive/out_opensmile_eGeMAPSv02_lowleveldescriptors/"
+    # file_path = "/media/tim/Seagate Backup Plus Drive/Documents/**/*.mov"
+    # out_path = "/media/tim/Seagate Backup Plus Drive/out_opensmile_eGeMAPSv02_lowleveldescriptors/"
+
+    # GEMEP
+    file_path = "/home/tim/work/su-thesis-project/datasets/GEMEP/ALLVIDEOS/*.wmv"
+    out_path = "/home/tim/work/su-thesis-project/datasets/GEMEP/gemep_opensmile_compare_2016_lowleveldescriptors_deltas/"
 
     print(os.path.isdir(out_path))
 

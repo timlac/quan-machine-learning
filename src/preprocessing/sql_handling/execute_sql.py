@@ -6,29 +6,22 @@ import os
 from src.preprocessing.sql_handling.connector import ConnectionHandler
 from src.preprocessing.sql_handling.queries import query_audio_cols, query_au_cols
 
-def execute_sql_pandas_chunks(query):
-    queryExecStart = time.time()
+
+def execute_sql_pandas(query, chunk_size=1000000):
+    query_exec_start = time.time()
     engine = ConnectionHandler.get_engine()
     print("executing query: \n{}".format(query))
+
     dfs = []
-    for df in pd.read_sql(query, engine, chunksize=1000000):
+    for df in pd.read_sql(query, engine, chunksize=chunk_size):
         print("appending df with shape: " + str(df.shape))
         dfs.append(df)
-        print("done")
-    read_duration = round(time.time() - queryExecStart, 3)
+
+    read_duration = round(time.time() - query_exec_start, 3)
     print("Read duration: {}".format(read_duration))
+
     ret = pd.concat(dfs)
     return ret, read_duration
-
-def execute_sql_pandas(query):
-    queryExecStart = time.time()
-    engine = ConnectionHandler.get_engine()
-    print("executing query: \n{}".format(query))
-    df = pd.read_sql(query, engine)
-    print("done")
-    read_duration = round(time.time() - queryExecStart, 3)
-    print("Read duration: {}".format(read_duration))
-    return df, read_duration
 
 
 def execute_sql(query):
@@ -54,7 +47,5 @@ def main():
     df.to_csv(os.path.join(ROOT_DIR, "files/out/au.csv"), index=False)
 
 
-dfs, read_duration = execute_sql_pandas_chunks(query_audio_cols)
-
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()

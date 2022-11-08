@@ -3,7 +3,7 @@ import os
 
 from src.preprocessing.sql_handling.create_sql import TableCreator
 from src.preprocessing.sql_handling.upload_sql import Uploader
-from src.preprocessing.sql_handling.datatypes import general_datatypes
+from src.preprocessing.sql_handling.datatypes import general_datatypes, gemep_datatypes
 from src.utils.helpers import get_csv_paths
 
 
@@ -31,9 +31,20 @@ class Api:
 def main():
     load_dotenv()
 
-    input_path = os.getenv("OPENSMILE_LLD_PROCESSED")
-    table_name = "opensmile_lld"
-    datatypes = general_datatypes
+    # input_path = os.getenv("OPENSMILE_LLD_PROCESSED")
+    # table_name = "opensmile_lld"
+    # datatypes = general_datatypes
+    #
+    # api = Api(input_path=input_path, table_name=table_name)
+    #
+    # # api.create_table(datatypes)
+    #
+    # api.upload_data()
+
+    # GEMEP
+    input_path = os.getenv("GEMEP_OPENSMILE_COMPARE_LLD_PROCESSED")
+    table_name = "gemep_opensmile_compare_lld"
+    datatypes = gemep_datatypes
 
     api = Api(input_path=input_path, table_name=table_name)
 

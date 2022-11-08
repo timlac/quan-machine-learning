@@ -41,6 +41,9 @@ files/out/audio/confusion_matrix/*.svg
 *.npz
 *.hdf5
 *.h5
+*.pickle
+*.gz
+*.tar
 
 files/tests/preprocessing/example_data/openface/*
 files/tests/preprocessing/example_data/opensmile/*
