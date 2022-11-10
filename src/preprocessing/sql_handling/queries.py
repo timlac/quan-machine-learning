@@ -10,6 +10,8 @@ video_id,
 emotion_1_id,
 success,
 confidence,
+intensity_level,
+mode,
 `{X_COLS}`
 FROM openface
 WHERE mix = 0;"""
@@ -19,6 +21,8 @@ video_id,
 emotion_1_id,
 success,
 confidence,
+intensity_level,
+mode,
 `{X_COLS}`
 FROM openface
 WHERE mix = 0
@@ -27,6 +31,8 @@ AND video_id = '{VIDEO_ID}';"""
 opensmile_lld_query = """SELECT filename,
 video_id,
 emotion_1_id,
+intensity_level,
+mode,
 `{X_COLS}`
 FROM opensmile_lld
 WHERE mix = 0
@@ -35,6 +41,8 @@ AND intensity_level = 4;"""
 specific_opensmile_lld_query = """SELECT filename,
 video_id,
 emotion_1_id,
+intensity_level,
+mode,
 `{X_COLS}`
 FROM opensmile_lld
 WHERE mix = 0
@@ -43,6 +51,8 @@ AND video_id = '{VIDEO_ID}';"""
 gemep_opensmile_lld_query = """SELECT filename,
 video_id,
 emotion_id,
+intensity_level,
+mode,
 `{X_COLS}`
 FROM gemep_opensmile_compare_lld;"""
 
