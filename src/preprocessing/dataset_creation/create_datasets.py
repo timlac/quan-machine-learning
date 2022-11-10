@@ -8,7 +8,8 @@ from torch.nn.utils.rnn import pad_sequence
 from src.preprocessing.dataset_creation.time_series_handling import pad_list_of_series, time_series_to_list
 from src.preprocessing.sql_handling.execute_sql import execute_sql_pandas
 from global_config import ROOT_DIR, AU_INTENSITY_COLS, TARGET_COLUMN, POSE_COLS, AUDIO_LLD_COLS, COMPARE_AUDIO_LLD_COLS
-from src.preprocessing.sql_handling.queries import query_pose_cols, query_audio_cols, query_audio_cols_A220, query_audio_cols_gemep
+from src.preprocessing.sql_handling.queries import query_pose_cols, query_audio_cols, query_audio_cols_A220, \
+    query_audio_cols_gemep, query_au_cols
 from src.preprocessing.dataset_creation.interpolation import Interpolator
 
 
@@ -19,6 +20,9 @@ class DatasetCreator:
     # padding value for time series datasets
     # variable length time series requires padding to create an array with same length rows
     PADDING_VALUE = -1000
+
+    INTENSITY_COL = "intensity_level"
+    MODE_COL = "mode"
 
     def __init__(self,
                  query,
@@ -56,12 +60,17 @@ class DatasetCreator:
         else:
             x = get_x(slices, self.X_COLS, self.PADDING_VALUE)
 
-        y = get_y(slices, self.Y_COL)
+        y = get_fixed_col(slices, self.Y_COL)
+        intensity_level = get_fixed_col(slices, self.INTENSITY_COL)
+        mode = get_fixed_col(slices, self.MODE_COL)
+
 
         print("x shape: ", x.shape)
         print("y shape: ", y.shape)
+        print("intensity_level shape: ", intensity_level.shape)
+        print("mode shape: ", mode.shape)
 
-        np.savez_compressed(save_as, x=x, y=y)
+        np.savez_compressed(save_as, x=x, y=y, intensity_level=intensity_level, mode=mode)
 
 
 def get_x(slices, X_COLS, padding_value):
@@ -91,12 +100,14 @@ def get_aggregate_measures(slices, X_COLS):
         x = df[X_COLS].values
 
         m = np.mean(x, axis=0)
-        per20 = np.percentile(x, 20, axis=0)
-        per50 = np.percentile(x, 50, axis=0)
-        per80 = np.percentile(x, 80, axis=0)
-        iqr2080 = scipy.stats.iqr(x, rng=(20, 80), axis=0)
+        # per20 = np.percentile(x, 20, axis=0)
+        # per50 = np.percentile(x, 50, axis=0)
+        # per80 = np.percentile(x, 80, axis=0)
+        # iqr2080 = scipy.stats.iqr(x, rng=(20, 80), axis=0)
+        #
+        # x = np.concatenate((m, per20, per50, per80, iqr2080), axis=None)
 
-        x = np.concatenate((m, per20, per50, per80, iqr2080), axis=None)
+        x = m
 
         x = np.nan_to_num(x)
         ret.append(x)
@@ -106,17 +117,17 @@ def get_aggregate_measures(slices, X_COLS):
     return arr
 
 
-def get_y(slices, Y_COL):
+def get_fixed_col(slices, COL_NAME):
     """
     :param slices: list of dataframes
-    :param Y_COL: list of column name for y
-    :return: np array
+    :param COL_NAME: column name
+    :return: np array with the extracted column value, one for each dataframe
     """
     y = []
     for df in slices:
-        array = df[Y_COL].values
+        array = df[COL_NAME].values
         if len(np.unique(array)) != 1:
-            raise ValueError("something went wrong, more than one emotion id found for time series")
+            raise ValueError("something went wrong, more than one {} found for time series".format(COL_NAME))
         else:
             y.append(array[0])
     return np.asarray(y)
@@ -140,6 +151,9 @@ def main():
     # TODO: Is there any particular feature that stands out?
     # pose_dataset_creator = DatasetCreator(query=query_pose_cols,
     #                                       X_COLS=POSE_COLS,
+    #                                       Y_COL="emotion_1_id",
+    #                                       interpolate=True,
+    #                                       aggregate=True,
     #                                       )
     # pose_save_path = os.path.join(ROOT_DIR, "files/out/functionals/video_pose_functionals.npz")
     # pose_dataset_creator.create(pose_save_path)
@@ -160,14 +174,23 @@ def main():
     # video_time_series_save_path = os.path.join(ROOT_DIR, "files/out/low_level/video_time_series.npz")
     # video_time_series_creator.create(video_time_series_save_path)
 
+    # action unit functionals
+    au_functionals_creator = DatasetCreator(query=query_au_cols,
+                                            X_COLS=AU_INTENSITY_COLS,
+                                            Y_COL="emotion_1_id",
+                                            interpolate=True,
+                                            aggregate=True)
+    au_save_path = os.path.join(ROOT_DIR, "files/out/functionals/au_functionals_only_means.npz")
+    au_functionals_creator.create(au_save_path)
+
     # gemep time series
-    audio_time_series_creator = DatasetCreator(query=query_audio_cols_gemep,
-                                               X_COLS=COMPARE_AUDIO_LLD_COLS,
-                                               Y_COL="emotion_id",
-                                               interpolate=False,
-                                               aggregate=False)
-    audio_time_series_save_path = os.path.join(ROOT_DIR, "files/out/low_level/gemep_compare_audio_time_series.npz")
-    audio_time_series_creator.create(audio_time_series_save_path)
+    # audio_time_series_creator = DatasetCreator(query=query_audio_cols_gemep,
+    #                                            X_COLS=COMPARE_AUDIO_LLD_COLS,
+    #                                            Y_COL="emotion_id",
+    #                                            interpolate=False,
+    #                                            aggregate=False)
+    # audio_time_series_save_path = os.path.join(ROOT_DIR, "files/out/low_level/gemep_compare_audio_time_series.npz")
+    # audio_time_series_creator.create(audio_time_series_save_path)
 
 
 if __name__ == "__main__":
