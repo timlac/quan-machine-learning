@@ -298,6 +298,17 @@ POSE_COLS = [
     "pose_Tz"
 ]
 
+GAZE_COLS = [
+    'gaze_0_x',
+    'gaze_0_y',
+    'gaze_0_z',
+    'gaze_1_x',
+    'gaze_1_y',
+    'gaze_1_z',
+    'gaze_angle_x',
+    'gaze_angle_y'
+]
+
 AUDIO_LLD_COLS = [
     "Loudness_sma3",
     "alphaRatio_sma3",

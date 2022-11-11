@@ -1,15 +1,12 @@
 import os
-import pandas as pd
 import numpy as np
-import scipy
-import torch
-from torch.nn.utils.rnn import pad_sequence
 
-from src.preprocessing.dataset_creation.time_series_handling import pad_list_of_series, time_series_to_list
+from src.preprocessing.dataset_creation.helpers import get_padded_time_series, get_fixed_col, \
+    slice_by
+from src.preprocessing.dataset_creation.aggregation import get_aggregate_measures
 from src.preprocessing.sql_handling.execute_sql import execute_sql_pandas
-from global_config import ROOT_DIR, AU_INTENSITY_COLS, TARGET_COLUMN, POSE_COLS, AUDIO_LLD_COLS, COMPARE_AUDIO_LLD_COLS
-from src.preprocessing.sql_handling.queries import query_pose_cols, query_audio_cols, query_audio_cols_A220, \
-    query_audio_cols_gemep, query_au_cols
+from global_config import ROOT_DIR, AU_INTENSITY_COLS, GAZE_COLS
+from src.preprocessing.sql_handling.queries import query_au_cols, query_gaze_cols
 from src.preprocessing.dataset_creation.interpolation import Interpolator
 
 
@@ -58,12 +55,11 @@ class DatasetCreator:
         if self.aggregate:
             x = get_aggregate_measures(slices, self.X_COLS)
         else:
-            x = get_x(slices, self.X_COLS, self.PADDING_VALUE)
+            x = get_padded_time_series(slices, self.X_COLS, self.PADDING_VALUE)
 
         y = get_fixed_col(slices, self.Y_COL)
         intensity_level = get_fixed_col(slices, self.INTENSITY_COL)
         mode = get_fixed_col(slices, self.MODE_COL)
-
 
         print("x shape: ", x.shape)
         print("y shape: ", y.shape)
@@ -71,78 +67,6 @@ class DatasetCreator:
         print("mode shape: ", mode.shape)
 
         np.savez_compressed(save_as, x=x, y=y, intensity_level=intensity_level, mode=mode)
-
-
-def get_x(slices, X_COLS, padding_value):
-    """
-    :param padding_value: the value to pad the time series with
-    :param slices: list of dataframes
-    :return: np array
-    """
-    x_list = []
-    for df in slices:
-        x = df[X_COLS].values
-        x_tensor = torch.Tensor(x)
-        x_list.append(x_tensor)
-
-    ret = pad_sequence(x_list, batch_first=True, padding_value=padding_value)
-    return np.asarray(ret)
-
-
-def get_aggregate_measures(slices, X_COLS):
-    """
-    :param slices: list of dataframes
-    :param X_COLS: list of column names for x
-    :return: np array with mean values and other aggregate measures
-    """
-    ret = []
-    for df in slices:
-        x = df[X_COLS].values
-
-        m = np.mean(x, axis=0)
-        # per20 = np.percentile(x, 20, axis=0)
-        # per50 = np.percentile(x, 50, axis=0)
-        # per80 = np.percentile(x, 80, axis=0)
-        # iqr2080 = scipy.stats.iqr(x, rng=(20, 80), axis=0)
-        #
-        # x = np.concatenate((m, per20, per50, per80, iqr2080), axis=None)
-
-        x = m
-
-        x = np.nan_to_num(x)
-        ret.append(x)
-
-    arr = np.asarray(ret)
-
-    return arr
-
-
-def get_fixed_col(slices, COL_NAME):
-    """
-    :param slices: list of dataframes
-    :param COL_NAME: column name
-    :return: np array with the extracted column value, one for each dataframe
-    """
-    y = []
-    for df in slices:
-        array = df[COL_NAME].values
-        if len(np.unique(array)) != 1:
-            raise ValueError("something went wrong, more than one {} found for time series".format(COL_NAME))
-        else:
-            y.append(array[0])
-    return np.asarray(y)
-
-
-def slice_by(df, identifier):
-    """
-    :param df: dataframe with multiple time series
-    :param identifier: column name to identify unique time series
-    :return: list of dataframes
-    """
-    ret = []
-    for _, group in df.groupby(identifier):
-        ret.append(group)
-    return ret
 
 
 def main():
@@ -175,13 +99,22 @@ def main():
     # video_time_series_creator.create(video_time_series_save_path)
 
     # action unit functionals
-    au_functionals_creator = DatasetCreator(query=query_au_cols,
-                                            X_COLS=AU_INTENSITY_COLS,
-                                            Y_COL="emotion_1_id",
-                                            interpolate=True,
-                                            aggregate=True)
-    au_save_path = os.path.join(ROOT_DIR, "files/out/functionals/au_functionals_only_means.npz")
-    au_functionals_creator.create(au_save_path)
+    # au_functionals_creator = DatasetCreator(query=query_au_cols,
+    #                                         X_COLS=AU_INTENSITY_COLS,
+    #                                         Y_COL="emotion_1_id",
+    #                                         interpolate=True,
+    #                                         aggregate=True)
+    # au_save_path = os.path.join(ROOT_DIR, "files/out/functionals/au_functionals_only_means.npz")
+    # au_functionals_creator.create(au_save_path)
+
+    # gaze functionals
+    gaze_functionals_creator = DatasetCreator(query=query_gaze_cols,
+                                              X_COLS=GAZE_COLS,
+                                              Y_COL="emotion_1_id",
+                                              interpolate=True,
+                                              aggregate=True)
+    gaze_save_path = os.path.join(ROOT_DIR, "files/out/functionals/gaze_functionals.npz")
+    gaze_functionals_creator.create(gaze_save_path)
 
     # gemep time series
     # audio_time_series_creator = DatasetCreator(query=query_audio_cols_gemep,

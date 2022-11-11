@@ -1,4 +1,4 @@
-from global_config import AUDIO_LLD_COLS, AU_INTENSITY_COLS, POSE_COLS, COMPARE_AUDIO_LLD_COLS
+from global_config import AUDIO_LLD_COLS, AU_INTENSITY_COLS, POSE_COLS, COMPARE_AUDIO_LLD_COLS, GAZE_COLS
 
 
 def list2string(lst):
@@ -63,6 +63,9 @@ query_au_cols_A74 = specific_openface_query.format(X_COLS=list2string(AU_INTENSI
 
 # POSE
 query_pose_cols = openface_query.format(X_COLS=list2string(POSE_COLS))
+
+# GAZE
+query_gaze_cols = openface_query.format(X_COLS=list2string(GAZE_COLS))
 
 # AUDIO
 query_audio_cols = opensmile_lld_query.format(X_COLS=list2string(AUDIO_LLD_COLS))
