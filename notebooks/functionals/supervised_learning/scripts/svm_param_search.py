@@ -29,6 +29,9 @@ def get_train_data(path):
     if len(files) == 0:
         raise ValueError("Invalid # of files in dir: {}".format(path))
     
+    print("printing filename: ")
+    print(files[0])
+    
     f = np.load(files[0])
 
     x = f['x']
