@@ -5,7 +5,7 @@ from scipy.stats import iqr
 from scipy.signal import find_peaks
 
 
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
 
 
 def my_find_peaks(x):
@@ -111,7 +111,7 @@ def normalize(ts):
     :param ts: np array with (rows = time steps) and (cols = features)
     :return: scaled np array
     """
-    scaler = StandardScaler()
+    scaler = MinMaxScaler()
     scaler.fit(ts)
     ret = scaler.transform(ts)
     return ret
