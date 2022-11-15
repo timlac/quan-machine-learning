@@ -8,33 +8,19 @@ import numpy.ma as ma
 from scipy.stats.mstats import kurtosis
 
 
-
-# plt.rcParams["figure.figsize"] = (15, 10)
-
-
-def plot_stds(cols, x, y):
+def plot_stds(x, y, cols):
     x = ma.masked_where(x == -1000, x)
 
     for idx, col in enumerate(cols):
         means = {}
         stds = {}
         for emotion_id, emotion in emotion_id_to_emotion.items():
-            # print(emotion)
-            # print(idx)
+
             emotion_indices = np.where(y == emotion_id)[0]
             x_emotion = x[emotion_indices]
             x_emotion_col = x_emotion[:, :, idx]
 
-            # std_arr = np.std(x_emotion_col, axis=1)
-
-            std_arr = kurtosis(x_emotion_col, axis=1)
-            
-
-            # mean = np.mean(std_arr)
-            # std = np.std(std_arr)
-            #
-            # print(mean)
-            # print(std)
+            std_arr = np.std(x_emotion_col, axis=1)
 
             means[emotion] = np.mean(std_arr)
             stds[emotion] = np.std(std_arr)
@@ -48,16 +34,12 @@ def plot_stds(cols, x, y):
         plt.show()
 
 
-# def plot_time_series(cols, x, y):
-
-
-
-def plot_time_series_means(cols, x, y):
+def plot_time_series_means(x, y, cols):
     x = ma.masked_where(x == -1000, x)
 
-    plt.figure(figsize=(15, 10))
-
     for idx, col in enumerate(cols):
+        plt.figure(figsize=(15, 10))
+
         for emotion_id, emotion in emotion_id_to_emotion.items():
             emotion_indices = np.where(y == emotion_id)[0]
             x_emotion = x[emotion_indices]
@@ -68,12 +50,13 @@ def plot_time_series_means(cols, x, y):
 
             plt.plot(means, label=emotion)
 
+        # bbox_inches = "tight"
         plt.title(col)
         plt.legend()
         plt.show()
 
 
-def plot_means(cols, x, y):
+def plot_means(x, y, cols):
     for idx, col in enumerate(cols):
         means = {}
         stds = {}
@@ -102,7 +85,7 @@ def main():
     x = f['x']
     y = f['y']
 
-    plot_stds(GAZE_COLS, x, y)
+    plot_means(x, y, GAZE_COLS)
 
 
 if __name__ == "__main__":

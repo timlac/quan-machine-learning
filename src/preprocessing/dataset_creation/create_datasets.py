@@ -1,5 +1,6 @@
 import os
 import numpy as np
+import pandas as pd
 
 from src.preprocessing.dataset_creation.helpers import get_padded_time_series, get_fixed_col, \
     slice_by

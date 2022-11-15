@@ -1,22 +1,37 @@
 import numpy as np
 import torch
 from torch.nn.utils.rnn import pad_sequence
+import pandas as pd
 
 
-def get_padded_time_series(slices, X_COLS, padding_value):
+def get_padded_time_series(slices, X_COLS=None, padding_value=-1000):
     """
     :param padding_value: the value to pad the time series with
-    :param slices: list of dataframes
+    :param slices: list of dataframes or numpy arrays
     :return: np array
     """
     x_list = []
-    for df in slices:
-        x = df[X_COLS].values
+    for sli in slices:
+        if isinstance(sli, pd.DataFrame):
+            x = sli[X_COLS].values
+        elif isinstance(sli, np.ndarray):
+            x = sli
+        else:
+            raise Exception("slice not pandas dataframe or numpy array")
+
         x_tensor = torch.Tensor(x)
         x_list.append(x_tensor)
 
     ret = pad_sequence(x_list, batch_first=True, padding_value=padding_value)
     return np.asarray(ret)
+
+
+def get_cols(slices, COLS):
+    ret = []
+    for df in slices:
+        array = df[COLS].values
+        ret.append(array)
+    return ret
 
 
 def get_fixed_col(slices, COL_NAME):

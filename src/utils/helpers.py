@@ -5,6 +5,10 @@ from glob import glob
 from global_config import emotion_id_to_emotion_abr
 
 
+def list2string(lst):
+    return "`, `".join(lst)
+
+
 def get_filename(file):
     """
     :param file: some file path
