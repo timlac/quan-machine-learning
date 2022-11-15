@@ -57,10 +57,10 @@ class DatasetCreator:
         self.aggregate = aggregate
 
     def create(self):
-        # df, _ = execute_sql_pandas(query)
-        # df.to_csv(os.path.join(ROOT_DIR, "files/out/query.csv"), index=False)
+        df, _ = execute_sql_pandas(self.query)
+        df.to_csv(os.path.join(ROOT_DIR, "files/out/query.csv"), index=False)
 
-        df = pd.read_csv(os.path.join(ROOT_DIR, "files/out/query.csv"))
+        # df = pd.read_csv(os.path.join(ROOT_DIR, "files/out/query.csv"))
 
         slices = slice_by(df, "filename")
         slices = self.interpolate(slices)

@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analysis/data_exploration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/data_exploration.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/aggregation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/aggregation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_datasets.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_openface_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_openface_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +100,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.aggregation">
+  <component name="RunManager" selected="Python.create_openface_dataset">
     <configuration name="aggregation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="emotional-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -224,8 +220,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.aggregation" />
         <item itemvalue="Python.create_openface_dataset" />
+        <item itemvalue="Python.aggregation" />
         <item itemvalue="Python.scratch_3" />
         <item itemvalue="Python.data_exploration" />
         <item itemvalue="Python.gaze_exploration" />
@@ -316,7 +312,7 @@
       <workItem from="1668100738336" duration="314000" />
       <workItem from="1668168841153" duration="17396000" />
       <workItem from="1668406095192" duration="14648000" />
-      <workItem from="1668502450327" duration="1729000" />
+      <workItem from="1668502450327" duration="4059000" />
     </task>
     <servers />
   </component>
@@ -583,7 +579,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/aggregation.py</url>
-          <line>140</line>
+          <line>133</line>
           <option name="timeStamp" value="165" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -638,12 +634,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/aggregation.py</url>
-          <line>131</line>
+          <line>124</line>
           <option name="timeStamp" value="176" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/aggregation.py</url>
-          <line>134</line>
+          <line>127</line>
           <option name="timeStamp" value="178" />
         </line-breakpoint>
       </breakpoints>
@@ -663,7 +659,7 @@
     <SUITE FILE_PATH="coverage/emotional_recognition$elastic_net.coverage" NAME="elastic_net Coverage Results" MODIFIED="1659965853975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
     <SUITE FILE_PATH="coverage/emotional_recognition$ts_classification_lstm.coverage" NAME="ts_classification_lstm Coverage Results" MODIFIED="1663581399827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/analysis/machine_learning_examples" />
     <SUITE FILE_PATH="coverage/emotional_recognition$create_datasets.coverage" NAME="create_datasets Coverage Results" MODIFIED="1668085591296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
-    <SUITE FILE_PATH="coverage/emotional_recognition$create_openface_dataset.coverage" NAME="create_openface_dataset Coverage Results" MODIFIED="1668503808865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$create_openface_dataset.coverage" NAME="create_openface_dataset Coverage Results" MODIFIED="1668505654780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
     <SUITE FILE_PATH="coverage/emotional_recognition$save.coverage" NAME="save Coverage Results" MODIFIED="1659956911287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
     <SUITE FILE_PATH="coverage/emotional_recognition$queries.coverage" NAME="queries Coverage Results" MODIFIED="1667827684462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/sql_handling" />
     <SUITE FILE_PATH="coverage/emotional_recognition$scratch_3.coverage" NAME="scratch_3 Coverage Results" MODIFIED="1668420587456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />

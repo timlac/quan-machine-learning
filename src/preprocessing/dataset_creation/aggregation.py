@@ -1,18 +1,11 @@
-import pickle
-
-import matplotlib.pyplot as plt
 import numpy as np
 import numpy.ma as ma
-from scipy.stats import variation, iqr
+from scipy.stats import iqr
 
 from scipy.signal import find_peaks
-import pandas as pd
-import os
+
 
 from sklearn.preprocessing import StandardScaler
-
-from global_config import ROOT_DIR, AU_INTENSITY_COLS, GAZE_COLS, POSE_COLS
-from src.preprocessing.dataset_creation.helpers import slice_by, get_cols, get_fixed_col, get_padded_time_series
 
 
 def my_find_peaks(x):
@@ -124,18 +117,18 @@ def normalize(ts):
     return ret
 
 
-from src.analysis.data_exploration import plot_time_series_means, plot_means
-
-with open(os.path.join(ROOT_DIR, "files/out/data.pickle"), "rb") as input_file:
-    file = pickle.load(input_file)
-
-x = file['x']
-y = file['y']
-
-au = x['au']
-gaze = x['gaze']
-pose = x['pose']
-
-# plot_time_series_means(get_padded_time_series(au), y, AU_INTENSITY_COLS)
-au_agg = get_aggregate_measures(au)
-plot_means(au_agg, y, AU_INTENSITY_COLS)
+# from src.analysis.data_exploration import plot_time_series_means, plot_means
+#
+# with open(os.path.join(ROOT_DIR, "files/out/data.pickle"), "rb") as input_file:
+#     file = pickle.load(input_file)
+#
+# x = file['x']
+# y = file['y']
+#
+# au = x['au']
+# gaze = x['gaze']
+# pose = x['pose']
+#
+# # plot_time_series_means(get_padded_time_series(au), y, AU_INTENSITY_COLS)
+# au_agg = get_aggregate_measures(au)
+# plot_means(au_agg, y, AU_INTENSITY_COLS)
