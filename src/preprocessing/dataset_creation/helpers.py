@@ -1,29 +1,30 @@
 import numpy as np
-import torch
-from torch.nn.utils.rnn import pad_sequence
 import pandas as pd
 
 
-def get_padded_time_series(slices, X_COLS=None, padding_value=-1000):
+def get_padded_time_series_with_numpy(ts_list, padding_value=-1000):
     """
-    :param padding_value: the value to pad the time series with
-    :param slices: list of dataframes or numpy arrays
-    :return: np array
+    :param ts_list: a list of time series where every element has shape (number of frames, number of features)
+    :return: np.array where every element in the series has been padded with zeros and then transformed into a matrix
+                with shape (number of observations, number of frames, number of features)
     """
-    x_list = []
-    for sli in slices:
-        if isinstance(sli, pd.DataFrame):
-            x = sli[X_COLS].values
-        elif isinstance(sli, np.ndarray):
-            x = sli
-        else:
-            raise Exception("slice not pandas dataframe or numpy array")
+    # obtain the longest element in the list
+    max_length = max(map(len, ts_list))
 
-        x_tensor = torch.Tensor(x)
-        x_list.append(x_tensor)
+    padded_list = []
+    for series in ts_list:
 
-    ret = pad_sequence(x_list, batch_first=True, padding_value=padding_value)
-    return np.asarray(ret)
+        diff = max_length - len(series)
+
+        # create an empty np array of appropriate size
+        pad = np.full(shape=(diff, series.shape[1]), fill_value=padding_value)
+
+        # concat with series and transpose in order to
+        series = np.concatenate((series, pad))
+
+        padded_list.append(series)
+
+    return np.asarray(padded_list)
 
 
 def get_cols(slices, COLS):

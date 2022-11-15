@@ -25,19 +25,22 @@ def time_series_to_list(df, identifier, x_cols, y_col):
     return x, y
 
 
-def pad_list_of_series(ts_list):
+def pad_list_of_series(ts_list, padding_value=-1000):
     """
     :param ts_list: a list of time series where every element has shape (number of frames, number of features)
     :return: np.array where every element in the series has been padded with zeros and then transformed into a matrix
                 with shape (number of observations, number of frames, number of features)
     """
     # obtain the longest element in the list
-    length = max(map(len, ts_list))
+    max_length = max(map(len, ts_list))
 
     padded_list = []
     for series in ts_list:
+
+        diff = max_length - len(series)
+
         # create an empty np array of appropriate size
-        pad = np.zeros((length-len(series), series.shape[1]))
+        pad = np.full(shape=(diff, series.shape[1]), fill_value=padding_value)
 
         # concat with series and transpose in order to
         series = np.concatenate((series, pad))
@@ -48,9 +51,10 @@ def pad_list_of_series(ts_list):
 
 
 def main():
-    load = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data.csv")
-    df = pd.read_csv(load, nrows=10000)
-    x, y, video_ids = time_series_to_list(df, "filename", AU_INTENSITY_COLS, "emotion_1_id", "video_id")
+    pass
+    # load = os.path.join(ROOT_DIR, "files/tests/preprocessing/dataset_creation/video_data.csv")
+    # df = pd.read_csv(load, nrows=10000)
+    # x, y, video_ids = time_series_to_list(df, "filename", AU_INTENSITY_COLS, "emotion_1_id", "video_id")
 
     # padded_x = pad_list_of_series(x)
     #

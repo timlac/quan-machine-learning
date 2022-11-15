@@ -13,6 +13,8 @@ from src.preprocessing.sql_handling.execute_sql import execute_sql_pandas
 from global_config import ROOT_DIR, AU_INTENSITY_COLS, GAZE_COLS, POSE_COLS
 from src.preprocessing.dataset_creation.interpolation import Interpolator
 
+from src.preprocessing.dataset_creation.torch_pad import get_padded_time_series_with_torch
+
 from src.preprocessing.dataset_creation.aggregation import smooth, normalize
 
 
@@ -48,7 +50,8 @@ class DatasetCreator:
                     FROM openface
                     WHERE mix = 0
                     AND intensity_level in (2,3)
-                    AND mode = 'p';""".format(X_COLS=list2string(X_COLS))
+                    AND mode = 'p'
+                    ;""".format(X_COLS=list2string(X_COLS))
 
     def __init__(self,
                  aggregate=True):
@@ -74,16 +77,33 @@ class DatasetCreator:
              "gaze": gaze,
              "pose": pose
              }
-        x = self.normalize(x, video_ids)
+
+        # x = self.normalize(x, video_ids)
 
         y = get_fixed_col(slices, "emotion_1_id")
 
+        self.save_as_pickle(x, y)
+        # self.save_as_numpy_ts(x, y)
+
+    def save_as_pickle(self, x, y):
         data = {"x": x,
                 "y": y
                 }
 
-        with open(os.path.join(ROOT_DIR, "files/out/data.pickle"), "wb") as output_file:
+        with open(os.path.join(ROOT_DIR, "files/out/all_data.pickle"), "wb") as output_file:
             pickle.dump(data, output_file)
+
+    def save_as_numpy_ts(self, x, y):
+        x = self.pad_lists(x)
+
+        for i in x:
+            print(i.shape)
+        np.savez_compressed(os.path.join(ROOT_DIR, "files/out/intensity_23_.pickle"), au=x["au"], gaze=x["gaze"], pose=x["pose"], y=y)
+
+    def pad_lists(self, x):
+        for key, value in x.items():
+            x[key] = get_padded_time_series_with_torch(value)
+        return x
 
     def normalize(self, x, video_ids):
         for key, values in x.items():
