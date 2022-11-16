@@ -1,5 +1,9 @@
 import numpy as np
 import pandas as pd
+import os
+from global_config import ROOT_DIR, AU_INTENSITY_COLS, video_id_to_fps
+
+from itertools import compress
 
 
 def get_padded_time_series_with_numpy(ts_list, padding_value=-1000):
@@ -61,3 +65,42 @@ def slice_by(df, identifier):
     for _, group in df.groupby(identifier):
         ret.append(group)
     return ret
+
+
+def filter_by_video_id(slices, video_ids, video_id_filter):
+    boolean_indices = np.in1d(video_ids, video_id_filter)
+    slice_to_keep = list(compress(slices, boolean_indices))
+    return slice_to_keep
+
+
+def main():
+    df = pd.read_csv(os.path.join(ROOT_DIR, "files/out/query.csv"))
+
+    slices = slice_by(df, "filename")
+
+    au = get_cols(slices, AU_INTENSITY_COLS)
+    video_ids = get_fixed_col(slices, "video_id")
+
+    fps_50_video_ids = []
+    for key, value in video_id_to_fps.items():
+        if value == 50:
+            fps_50_video_ids.append(key)
+    fps_50_video_ids = np.array(fps_50_video_ids)
+
+    fps_25_video_ids = []
+    for key, value in video_id_to_fps.items():
+        if value == 25:
+            fps_25_video_ids.append(key)
+
+    for v in fps_25_video_ids:
+        if v in video_ids:
+            print("video {} has 25 FPS".format(v))
+
+    for i in np.unique(video_ids):
+        print(i)
+
+    # filter_by_video_id(au, video_ids, fps_50_video_ids)
+
+
+if __name__ == "__main__":
+    main()
