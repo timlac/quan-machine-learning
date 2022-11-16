@@ -1,36 +1,26 @@
 import os
+
 import numpy as np
-import pandas as pd
 from itertools import compress
-import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 import pickle
 
+from src.preprocessing.dataset_creation.scaling import Scaler
 from src.utils.helpers import list2string
 from src.preprocessing.dataset_creation.helpers import slice_by, get_cols, get_fixed_col
-from src.preprocessing.dataset_creation.aggregation import get_aggregate_measures
 from src.preprocessing.sql_handling.execute_sql import execute_sql_pandas
 from global_config import ROOT_DIR, AU_INTENSITY_COLS, GAZE_COLS, POSE_COLS
 from src.preprocessing.dataset_creation.interpolation import Interpolator
 
 from src.preprocessing.dataset_creation.torch_pad import get_padded_time_series_with_torch
 
-from src.preprocessing.dataset_creation.aggregation import smooth, normalize
 
-
-class XData:
-
-    def __init__(self, au, gaze, pose):
-        self.au = au
-        self.gaze = gaze
-        self.pose = pose
-
-
-class Dataset:
-
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+def normalize(x, video_ids):
+    for group, slices in x.items():
+        scaler = Scaler(slices)
+        scaler.scale_by_video_id(video_ids)
+        x[group] = scaler.slices
+    return x
 
 
 class DatasetCreator:
@@ -41,16 +31,30 @@ class DatasetCreator:
     # variable length time series requires padding to create an array with same length rows
     PADDING_VALUE = -1000
 
+    # AND VIDEO_ID NOT IN('A050121-R', 'A21', 'A34')
+
     query = """SELECT filename,
                     video_id,
+                    intensity_level,
                     emotion_1_id,
                     success,
                     confidence,
                     `{X_COLS}`
                     FROM openface
                     WHERE mix = 0
-                    AND intensity_level in (2,3)
-                    AND mode = 'p'
+                    AND video_id IN ('A101',
+                                        'A102',
+                                        'A103',
+                                        'A18',
+                                        'A200',
+                                        'A201',
+                                        'A205',
+                                        'A207',
+                                        'A218',
+                                        'A220',
+                                        'A221',
+                                        'A223',                                        
+                                        'A227')
                     ;""".format(X_COLS=list2string(X_COLS))
 
     def __init__(self,
@@ -65,32 +69,35 @@ class DatasetCreator:
 
         # df = pd.read_csv(os.path.join(ROOT_DIR, "files/out/query.csv"))
 
-        slices = slice_by(df, "filename")
-        slices = self.interpolate(slices)
-
-        au = get_cols(slices, AU_INTENSITY_COLS)
-        gaze = get_cols(slices, GAZE_COLS)
-        pose = get_cols(slices, POSE_COLS)
-        video_ids = get_fixed_col(slices, "video_id")
-
-        x = {"au": au,
-             "gaze": gaze,
-             "pose": pose
-             }
-
+        # slices = slice_by(df, "filename")
+        # slices = self.interpolate(slices)
+        #
+        # au = get_cols(slices, AU_INTENSITY_COLS)
+        # gaze = get_cols(slices, GAZE_COLS)
+        # pose = get_cols(slices, POSE_COLS)
+        # video_ids = get_fixed_col(slices, "video_id")
+        # intensity_level = get_fixed_col(slices, "intensity_level")
+        #
+        # x = {"au": au,
+        #      "gaze": gaze,
+        #      "pose": pose
+        #      }
+        #
         # x = self.normalize(x, video_ids)
-
-        y = get_fixed_col(slices, "emotion_1_id")
-
-        self.save_as_pickle(x, y)
+        #
+        # y = get_fixed_col(slices, "emotion_1_id")
+        #
+        # self.save_as_pickle(x, y, video_ids, intensity_level)
         # self.save_as_numpy_ts(x, y)
 
-    def save_as_pickle(self, x, y):
+    def save_as_pickle(self, x, y, video_ids, intensity_level):
         data = {"x": x,
-                "y": y
+                "y": y,
+                "video_id": video_ids,
+                "intensity_level": intensity_level
                 }
 
-        with open(os.path.join(ROOT_DIR, "files/out/all_data.pickle"), "wb") as output_file:
+        with open(os.path.join(ROOT_DIR, "files/out/intensity_23_mode_p_minmax_normalized.pickle"), "wb") as output_file:
             pickle.dump(data, output_file)
 
     def save_as_numpy_ts(self, x, y):
@@ -103,11 +110,6 @@ class DatasetCreator:
     def pad_lists(self, x):
         for key, value in x.items():
             x[key] = get_padded_time_series_with_torch(value)
-        return x
-
-    def normalize(self, x, video_ids):
-        for key, values in x.items():
-            x[key] = normalize_by_video_id(values, video_ids)
         return x
 
     def interpolate(self, slices):
@@ -139,7 +141,6 @@ def normalize_by_video_id(slices, video_ids):
 
 
 def main():
-
     d = DatasetCreator()
     d.create()
 
