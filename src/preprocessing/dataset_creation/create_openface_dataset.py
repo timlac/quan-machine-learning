@@ -141,8 +141,9 @@ def normalize_by_video_id(slices, video_ids):
 
 
 def main():
-    d = DatasetCreator()
-    d.create()
+    pass
+    # d = DatasetCreator()
+    # d.create()
 
 
 if __name__ == "__main__":

@@ -13,33 +13,25 @@ from global_config import ROOT_DIR
 
 class ConfusionMatrixCreator:
 
-    def __init__(self, x, y, groups, model_parameters):
+    def __init__(self, x, y, model_parameters):
         """
         :param x: np.array
         :param y: np.array
-        :param groups: np.array
         :param model_parameters: dict
         """
         self.x = x
         self.y = y
-        self.groups = groups
         self.model_parameters = model_parameters
 
         self.classes = np.unique(self.y)
         self.n_classes = len(self.classes)
 
-    def create_split(self):
-        logo = LeaveOneGroupOut()
-        cv = logo.split(X=self.x, groups=self.groups)
-        return cv
-
     def load_classifier(self):
         clf = SVC(**self.model_parameters)
         return clf
 
-    def calculate_avg_conf_matrix(self):
+    def calculate_avg_conf_matrix(self, cv):
         clf = self.load_classifier()
-        cv = self.create_split()
         cum_conf_mat = np.zeros([self.n_classes, self.n_classes])
 
         n_groups = 0
