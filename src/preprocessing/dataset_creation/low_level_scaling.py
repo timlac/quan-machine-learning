@@ -17,7 +17,7 @@ class Method(str, Enum):
     standard = "standard"
 
 
-class Scaler:
+class LowLevelScaler:
 
     def __init__(self, slices, method):
         self.slices = slices
@@ -84,7 +84,7 @@ def main():
     intensity_level = get_fixed_col(slices, "intensity_level")
     y = get_fixed_col(slices, "emotion_1_id")
 
-    scaler = Scaler(au, "standard")
+    scaler = LowLevelScaler(au, "standard")
     # scaler.scale_by_intensity(intensity_level)
     scaler.scale_by_video_id_and_intensity(video_ids, intensity_level)
 

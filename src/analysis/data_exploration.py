@@ -123,13 +123,12 @@ def plot_means(x, y, cols):
         stds = {}
 
         for emotion_id, emotion in emotion_id_to_emotion.items():
-            if emotion_id in basic_emotion_ids:
 
-                emotion_indices = np.where(y == emotion_id)[0]
-                x_emotion = x[emotion_indices]
-                x_emotion_col = x_emotion[:, idx]
-                means[emotion] = np.mean(x_emotion_col)
-                stds[emotion] = np.std(x_emotion_col)
+            emotion_indices = np.where(y == emotion_id)[0]
+            x_emotion = x[emotion_indices]
+            x_emotion_col = x_emotion[:, idx]
+            means[emotion] = np.mean(x_emotion_col)
+            stds[emotion] = np.std(x_emotion_col)
 
         plt.figure(figsize=(15, 10))
         plt.errorbar(means.keys(), means.values(), yerr=list(stds.values()),

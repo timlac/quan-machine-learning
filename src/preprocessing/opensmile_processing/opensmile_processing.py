@@ -7,6 +7,12 @@ import glob
 from src.utils.helpers import get_filename
 from src.preprocessing.opensmile_processing.duplicate_handler import DuplicateHandler
 
+# smile = opensmile.Smile(
+#     feature_set=opensmile.FeatureSet.eGeMAPSv02,
+#     feature_level=opensmile.FeatureLevel.Functionals,
+# )
+
+
 smile = opensmile.Smile(
     feature_set=opensmile.FeatureSet.ComParE_2016,
     feature_level=opensmile.FeatureLevel.LowLevelDescriptors_Deltas,
