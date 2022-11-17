@@ -9,8 +9,8 @@ from src.analysis.data_exploration import plot_means
 from src.preprocessing.dataset_creation.scaling.method import Method
 
 
-def scale_by_video_id(x, video_ids, method):
-    for video_id in np.unique(video_ids):
+def scale_by(x, identifiers, method):
+    for identifier in np.unique(identifiers):
         if method == Method.min_max:
             scaler = MinMaxScaler()
         elif method == Method.standard:
@@ -18,7 +18,7 @@ def scale_by_video_id(x, video_ids, method):
         else:
             raise RuntimeError("Something went wrong, no scaling method chosen")
 
-        rows = np.where(video_ids == video_id)
+        rows = np.where(identifiers == identifier)
         x[rows] = scaler.fit_transform(x[rows])
     return x
 
@@ -30,13 +30,14 @@ def main():
     x = df[AUDIO_FUNCTIONALS_EGEMAPS_COLS].values
     y = df["emotion_1_id"].values
     video_ids = df["video_id"].values
+    intensity_levels = df["intensity_level"].values
+
 
     plot_means(x, y, AUDIO_FUNCTIONALS_EGEMAPS_COLS[:5])
 
-    x = scale_by_video_id(x, video_ids, "standard")
+    x = scale_by(x, intensity_levels, "standard")
     plot_means(x, y, AUDIO_FUNCTIONALS_EGEMAPS_COLS[:5])
 
 
 if __name__ == "__main__":
     main()
-    
