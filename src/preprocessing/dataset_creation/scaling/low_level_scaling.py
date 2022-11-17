@@ -1,4 +1,3 @@
-from enum import Enum
 from itertools import compress
 
 import numpy as np
@@ -6,15 +5,11 @@ import pandas as pd
 import os
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 
-from global_config import ROOT_DIR, AU_INTENSITY_COLS, POSE_COLS
+from global_config import ROOT_DIR, AU_INTENSITY_COLS
 from src.preprocessing.dataset_creation.helpers import slice_by, get_cols, get_fixed_col
 
-from src.analysis.data_exploration import plot_time_series_means, plot_time_series_means_subplots
-
-
-class Method(str, Enum):
-    min_max = "min_max"
-    standard = "standard"
+from src.analysis.data_exploration import plot_time_series_means_subplots
+from src.preprocessing.dataset_creation.scaling.method import Method
 
 
 class LowLevelScaler:

@@ -6,12 +6,19 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler
 
 from global_config import ROOT_DIR, AUDIO_FUNCTIONALS_EGEMAPS_COLS
 from src.analysis.data_exploration import plot_means
+from src.preprocessing.dataset_creation.scaling.method import Method
 
 
-def scale_by_video_id(x, video_ids):
+def scale_by_video_id(x, video_ids, method):
     for video_id in np.unique(video_ids):
+        if method == Method.min_max:
+            scaler = MinMaxScaler()
+        elif method == Method.standard:
+            scaler = StandardScaler()
+        else:
+            raise RuntimeError("Something went wrong, no scaling method chosen")
+
         rows = np.where(video_ids == video_id)
-        scaler = MinMaxScaler()
         x[rows] = scaler.fit_transform(x[rows])
     return x
 
@@ -26,9 +33,10 @@ def main():
 
     plot_means(x, y, AUDIO_FUNCTIONALS_EGEMAPS_COLS[:5])
 
-    x = scale_by_video_id(x, video_ids)
+    x = scale_by_video_id(x, video_ids, "standard")
     plot_means(x, y, AUDIO_FUNCTIONALS_EGEMAPS_COLS[:5])
 
 
 if __name__ == "__main__":
     main()
+    
