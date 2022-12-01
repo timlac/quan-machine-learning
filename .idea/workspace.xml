@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2bc19bef-d789-47d9-8357-d3e314f41efd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/scaling/functional_scaling.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/scaling/functional_scaling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analysis/data_exploration.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/data_exploration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analysis/supervised_learning/evaluation/confusion_matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis/supervised_learning/evaluation/confusion_matrix.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_datasets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/preprocessing/dataset_creation/interpolation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/dataset_creation/interpolation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/preprocessing/sql_handling/execute_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocessing/sql_handling/execute_sql.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,25 +65,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/tim/work/su-thesis-project/emotional-recognition/src/preprocessing/dataset_creation/scaling/method.py",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "trusted.hosts"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/tim/Pictures/plots&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;trusted.hosts&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "Python"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Python&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="emotional-recognition" sdk-home="$USER_HOME$/anaconda3/envs/torchenv/bin/python">
@@ -97,36 +101,11 @@
       <recent name="$PROJECT_DIR$/logs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.functional_scaling">
-    <configuration name="create_datasets" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="emotional-recognition" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/preprocessing/dataset_creation/create_datasets.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.data_exploration">
     <configuration name="data_exploration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="emotional-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/analysis" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -142,7 +121,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="functional_scaling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="execute_sql" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="emotional-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -150,12 +129,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/preprocessing/sql_handling" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/preprocessing/dataset_creation/scaling/functional_scaling.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/preprocessing/sql_handling/execute_sql.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,7 +143,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="group_creation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="interpolation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="emotional-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -177,7 +156,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/preprocessing/dataset_creation/group_creation.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/preprocessing/dataset_creation/interpolation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -186,7 +165,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="low_level_scaling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="pose exploration 2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="emotional-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -194,12 +173,31 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/preprocessing/dataset_creation/scaling/low_level_scaling.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/pose exploration 2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_7" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="emotional-recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_7.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -209,19 +207,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.functional_scaling" />
-      <item itemvalue="Python.low_level_scaling" />
-      <item itemvalue="Python.create_datasets" />
-      <item itemvalue="Python.group_creation" />
+      <item itemvalue="Python.scratch_7" />
+      <item itemvalue="Python.interpolation" />
+      <item itemvalue="Python.execute_sql" />
+      <item itemvalue="Python.pose exploration 2" />
       <item itemvalue="Python.data_exploration" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.functional_scaling" />
-        <item itemvalue="Python.create_datasets" />
-        <item itemvalue="Python.group_creation" />
-        <item itemvalue="Python.low_level_scaling" />
         <item itemvalue="Python.data_exploration" />
+        <item itemvalue="Python.scratch_7" />
+        <item itemvalue="Python.interpolation" />
+        <item itemvalue="Python.pose exploration 2" />
+        <item itemvalue="Python.execute_sql" />
       </list>
     </recent_temporary>
   </component>
@@ -313,7 +311,14 @@
       <workItem from="1668538325824" duration="2885000" />
       <workItem from="1668590920335" duration="25732000" />
       <workItem from="1668676849456" duration="5430000" />
-      <workItem from="1668691619168" duration="4337000" />
+      <workItem from="1668691619168" duration="8175000" />
+      <workItem from="1668713400983" duration="8597000" />
+      <workItem from="1668762727956" duration="3952000" />
+      <workItem from="1669218534648" duration="708000" />
+      <workItem from="1669219525271" duration="6929000" />
+      <workItem from="1669297844963" duration="1425000" />
+      <workItem from="1669826097970" duration="650000" />
+      <workItem from="1669888151661" duration="5482000" />
     </task>
     <servers />
   </component>
@@ -338,11 +343,6 @@
           <url>file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py</url>
           <line>25</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/interpolation.py</url>
-          <line>84</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/analysis/supervised_learning/param_search/save_output.py</url>
@@ -554,26 +554,6 @@
           <option name="timeStamp" value="165" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/analysis/data_exploration.py</url>
-          <line>126</line>
-          <option name="timeStamp" value="166" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/analysis/data_exploration.py</url>
-          <line>127</line>
-          <option name="timeStamp" value="167" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/analysis/data_exploration.py</url>
-          <line>129</line>
-          <option name="timeStamp" value="168" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/analysis/data_exploration.py</url>
-          <line>128</line>
-          <option name="timeStamp" value="169" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/aggregation.py</url>
           <line>124</line>
           <option name="timeStamp" value="176" />
@@ -582,21 +562,6 @@
           <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/aggregation.py</url>
           <line>127</line>
           <option name="timeStamp" value="178" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/scaling/low_level_scaling.py</url>
-          <line>43</line>
-          <option name="timeStamp" value="197" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/scaling/low_level_scaling.py</url>
-          <line>35</line>
-          <option name="timeStamp" value="198" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/scaling/low_level_scaling.py</url>
-          <line>34</line>
-          <option name="timeStamp" value="199" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/preprocessing/dataset_creation/scaling/functional_scaling.py</url>
@@ -618,6 +583,51 @@
           <line>28</line>
           <option name="timeStamp" value="206" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$APPLICATION_CONFIG_DIR$/scratches/pandas_join.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="207" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$APPLICATION_CONFIG_DIR$/scratches/pandas_join.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="213" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$APPLICATION_CONFIG_DIR$/scratches/pandas_join.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="214" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$APPLICATION_CONFIG_DIR$/scratches/pandas_join.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="215" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$APPLICATION_CONFIG_DIR$/scratches/pandas_join.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="216" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/analysis/data_exploration.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="217" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/analysis/data_exploration.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="218" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/analysis/data_exploration.py</url>
+          <line>66</line>
+          <option name="timeStamp" value="219" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/analysis/data_exploration.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="220" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -629,14 +639,15 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/emotional_recognition$pandas_join.coverage" NAME="pandas_join Coverage Results" MODIFIED="1668721720319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/emotional_recognition$create_functionals_ds.coverage" NAME="create_functionals_ds Coverage Results" MODIFIED="1667295560569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
     <SUITE FILE_PATH="coverage/emotional_recognition$elastic_net.coverage" NAME="elastic_net Coverage Results" MODIFIED="1659965853975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
     <SUITE FILE_PATH="coverage/emotional_recognition$ts_classification_lstm.coverage" NAME="ts_classification_lstm Coverage Results" MODIFIED="1663581399827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/analysis/machine_learning_examples" />
     <SUITE FILE_PATH="coverage/emotional_recognition$create_openface_dataset.coverage" NAME="create_openface_dataset Coverage Results" MODIFIED="1668614736955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
-    <SUITE FILE_PATH="coverage/emotional_recognition$create_datasets.coverage" NAME="create_datasets Coverage Results" MODIFIED="1668682450897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$create_datasets.coverage" NAME="create_datasets Coverage Results" MODIFIED="1668718005250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
     <SUITE FILE_PATH="coverage/emotional_recognition$queries.coverage" NAME="queries Coverage Results" MODIFIED="1667827684462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/sql_handling" />
     <SUITE FILE_PATH="coverage/emotional_recognition$gemeps_csv_processor.coverage" NAME="gemeps_csv_processor Coverage Results" MODIFIED="1667836663247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/csv_processing/gemeps_processing" />
-    <SUITE FILE_PATH="coverage/emotional_recognition$confusion_matrix.coverage" NAME="confusion_matrix Coverage Results" MODIFIED="1661950726849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/analysis/supervised_learning/evaluation" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$confusion_matrix.coverage" NAME="confusion_matrix Coverage Results" MODIFIED="1668717048116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/analysis/supervised_learning/evaluation" />
     <SUITE FILE_PATH="coverage/emotional_recognition$fiddle2.coverage" NAME="fiddle2 Coverage Results" MODIFIED="1659978645774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
     <SUITE FILE_PATH="coverage/emotional_recognition$api.coverage" NAME="api Coverage Results" MODIFIED="1667836768159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/sql_handling" />
     <SUITE FILE_PATH="coverage/emotional_recognition$load_data.coverage" NAME="load_data Coverage Results" MODIFIED="1662045093424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/analysis/supervised_learning/param_search" />
@@ -649,12 +660,14 @@
     <SUITE FILE_PATH="coverage/emotional_recognition$gaze_exploration.coverage" NAME="gaze_exploration Coverage Results" MODIFIED="1668094399049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/emotional_recognition$svm.coverage" NAME="svm Coverage Results" MODIFIED="1661938672888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/analysis/supervised_learning/param_search" />
     <SUITE FILE_PATH="coverage/emotional_recognition$query.coverage" NAME="query Coverage Results" MODIFIED="1667402771137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$scratch_7.coverage" NAME="scratch_7 Coverage Results" MODIFIED="1669890432807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/emotional_recognition$decision_tree.coverage" NAME="decision_tree Coverage Results" MODIFIED="1659960161611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
     <SUITE FILE_PATH="coverage/emotional_recognition$pose_exploration.coverage" NAME="pose_exploration Coverage Results" MODIFIED="1668076077282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/emotional_recognition$csv_processor.coverage" NAME="csv_processor Coverage Results" MODIFIED="1667417078431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/csv_processing" />
-    <SUITE FILE_PATH="coverage/emotional_recognition$execute_sql.coverage" NAME="execute_sql Coverage Results" MODIFIED="1667555194052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/sql_handling" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$execute_sql.coverage" NAME="execute_sql Coverage Results" MODIFIED="1669222974001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/sql_handling" />
     <SUITE FILE_PATH="coverage/emotional_recognition$aggregation.coverage" NAME="aggregation Coverage Results" MODIFIED="1668504005095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
     <SUITE FILE_PATH="coverage/emotional_recognition$scratch_2.coverage" NAME="scratch_2 Coverage Results" MODIFIED="1660754147010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$25_fps_videos.coverage" NAME="25_fps_videos Coverage Results" MODIFIED="1668697308307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/emotional_recognition$time_series.coverage" NAME="query_db Coverage Results" MODIFIED="1660669887586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
     <SUITE FILE_PATH="coverage/emotional_recognition$shapelet_learning.coverage" NAME="shapelet_learning Coverage Results" MODIFIED="1660605099066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/shapelets" />
     <SUITE FILE_PATH="coverage/emotional_recognition$save_output.coverage" NAME="save_output Coverage Results" MODIFIED="1662107935460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/analysis/supervised_learning/param_search" />
@@ -672,14 +685,15 @@
     <SUITE FILE_PATH="coverage/emotional_recognition$tf_adaption_lstm.coverage" NAME="tf_adaption_lstm Coverage Results" MODIFIED="1663684890126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/analysis/machine_learning_examples" />
     <SUITE FILE_PATH="coverage/emotional_recognition$random_forrest.coverage" NAME="random_forrest Coverage Results" MODIFIED="1659960628435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/learning" />
     <SUITE FILE_PATH="coverage/emotional_recognition$gemep_params.coverage" NAME="gemep_params Coverage Results" MODIFIED="1667825028293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/csv_processing/gemeps_processing" />
-    <SUITE FILE_PATH="coverage/emotional_recognition$functional_scaling.coverage" NAME="functional_scaling Coverage Results" MODIFIED="1668695371092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$functional_scaling.coverage" NAME="functional_scaling Coverage Results" MODIFIED="1668696055988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
     <SUITE FILE_PATH="coverage/emotional_recognition$logistic_regression.coverage" NAME="logistic_regression Coverage Results" MODIFIED="1660597004545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/neural_networks" />
     <SUITE FILE_PATH="coverage/emotional_recognition$audio_exploration.coverage" NAME="audio_exploration Coverage Results" MODIFIED="1667574008609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/emotional_recognition$fiddle.coverage" NAME="fiddle Coverage Results" MODIFIED="1664359755674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
     <SUITE FILE_PATH="coverage/emotional_recognition$create_video_functionals.coverage" NAME="create_video_functionals Coverage Results" MODIFIED="1660681775768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
     <SUITE FILE_PATH="coverage/emotional_recognition$audio_exploration_2.coverage" NAME="audio_exploration_2 Coverage Results" MODIFIED="1667996861197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/emotional_recognition$scratch_5.coverage" NAME="scratch_5 Coverage Results" MODIFIED="1668602882494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
-    <SUITE FILE_PATH="coverage/emotional_recognition$data_exploration.coverage" NAME="data_exploration Coverage Results" MODIFIED="1668612534778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/analysis" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$data_exploration.coverage" NAME="data_exploration Coverage Results" MODIFIED="1669891712255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/analysis" />
+    <SUITE FILE_PATH="coverage/emotional_recognition$interpolation.coverage" NAME="interpolation Coverage Results" MODIFIED="1669298465969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/preprocessing/dataset_creation" />
     <SUITE FILE_PATH="coverage/emotional_recognition$softmax.coverage" NAME="softmax Coverage Results" MODIFIED="1662727998158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/analysis/machine_learning_examples" />
   </component>
 </project>

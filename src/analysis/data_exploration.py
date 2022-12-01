@@ -5,13 +5,18 @@ import numpy as np
 import numpy.ma as ma
 import pandas as pd
 
+from sklearn.preprocessing import MinMaxScaler
+
 from scipy.stats.mstats import kurtosis
 
-
 from global_config import ROOT_DIR, emotion_id_to_emotion, GAZE_COLS, basic_emotion_ids, AU_INTENSITY_COLS, \
-    au_intensity_name_to_desc
+    au_intensity_name_to_desc, POSE_COLS
 from src.preprocessing.dataset_creation.helpers import get_padded_time_series_with_numpy, slice_by, get_cols, \
     get_fixed_col
+
+from src.preprocessing.dataset_creation.scaling.low_level_scaling import LowLevelScaler
+
+from src.preprocessing.dataset_creation.aggregation import get_aggregate_measures
 
 
 def plot_stds(x, y, cols):
@@ -21,7 +26,6 @@ def plot_stds(x, y, cols):
         means = {}
         stds = {}
         for emotion_id, emotion in emotion_id_to_emotion.items():
-
             emotion_indices = np.where(y == emotion_id)[0]
             x_emotion = x[emotion_indices]
             x_emotion_col = x_emotion[:, :, idx]
@@ -34,7 +38,7 @@ def plot_stds(x, y, cols):
         plt.figure(figsize=(15, 10))
         plt.errorbar(means.keys(), means.values(), yerr=list(stds.values()),
                      fmt='o', ecolor="black", capsize=2, elinewidth=1)
-        plt.title(col)
+        plt.title(au_intensity_name_to_desc(col))
         plt.xticks(rotation=90)
         plt.tight_layout()
         plt.show()
@@ -45,16 +49,19 @@ def plot_time_series_means(slices, y, cols):
     x = get_padded_time_series_with_numpy(slices, padding_value)
     x = ma.masked_where(x == padding_value, x)
 
+    scaler = MinMaxScaler()
+
     for idx, col in enumerate(cols):
-        plt.figure(figsize=(15, 10))
+        plt.figure(figsize=(10, 5))
 
         for emotion_id, emotion in emotion_id_to_emotion.items():
             if emotion_id in basic_emotion_ids:
-
                 emotion_indices = np.where(y == emotion_id)[0]
                 x_emotion = x[emotion_indices]
 
                 x_emotion_col = x_emotion[:, :, idx]
+
+                # scaler.fit_transform(x_emotion_col[x_emotion_col.mask   == False])
 
                 means = np.mean(x_emotion_col, axis=0)
                 stds = np.std(x_emotion_col, axis=0)
@@ -63,8 +70,11 @@ def plot_time_series_means(slices, y, cols):
                 plt.fill_between(range(len(means)), means - stds, means + stds, alpha=0.3)
 
         plt.xlim(0, 350)
-        plt.title(au_intensity_name_to_desc[col])
-        plt.legend()
+        plt.ylabel("activation", fontsize=18)
+        plt.xlabel("frame number", fontsize=18)
+        plt.title(au_intensity_name_to_desc[col], fontsize=20)
+        plt.legend(fontsize=16)
+        plt.savefig("/home/tim/Pictures/plots/" + au_intensity_name_to_desc[col])
         plt.show()
 
 
@@ -95,7 +105,6 @@ def plot_time_series_means_subplots(slices_1, slices_2, y, cols):
         axes[1].set_title("Post")
         for emotion_id, emotion in emotion_id_to_emotion.items():
             if emotion_id in basic_emotion_ids:
-
                 emotion_indices = np.where(y == emotion_id)[0]
 
                 means_1, stds_1 = get_means_and_stds(x1, emotion_indices, idx)
@@ -123,7 +132,6 @@ def plot_means(x, y, cols):
         stds = {}
 
         for emotion_id, emotion in emotion_id_to_emotion.items():
-
             emotion_indices = np.where(y == emotion_id)[0]
             x_emotion = x[emotion_indices]
             x_emotion_col = x_emotion[:, idx]
@@ -133,7 +141,7 @@ def plot_means(x, y, cols):
         plt.figure(figsize=(15, 10))
         plt.errorbar(means.keys(), means.values(), yerr=list(stds.values()),
                      fmt='o', ecolor="black", capsize=2, elinewidth=1)
-        plt.title(col)
+        plt.title(au_intensity_name_to_desc[col])
         plt.xticks(rotation=90)
         plt.tight_layout()
         plt.show()
@@ -154,7 +162,7 @@ def get_mean_length(slices):
 
 
 def main():
-    df = pd.read_csv(os.path.join(ROOT_DIR, "files/out/query.csv"))
+    df = pd.read_csv(os.path.join(ROOT_DIR, "files/out/openface_query.csv"))
 
     slices = slice_by(df, "filename")
 
@@ -164,7 +172,19 @@ def main():
 
     y = get_fixed_col(slices, "emotion_1_id")
 
-    plot_time_series_means_subplots(au, au, y, cols)
+    # au = get_aggregate_measures(au, means=True,
+    #                            variance=False,
+    #                            deltas=False,
+    #                            peaks=False)
+    #
+    # plot_means(au, y, AU_INTENSITY_COLS)
+
+    # Time series truncation
+    # Outlier detection
+
+    plot_time_series_means(au, y, cols)
+
+    # plot_time_series_means_subplots(au, au, y, cols)
 
 
 if __name__ == "__main__":

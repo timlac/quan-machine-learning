@@ -12,6 +12,26 @@ from src.analysis.data_exploration import plot_time_series_means_subplots
 from src.preprocessing.dataset_creation.scaling.method import Method
 
 
+def scale_by(slices, video_ids, method):
+    for slice_chunk, indices in chunk_data(video_ids, slices):
+        slices_as_array = np.vstack(slice_chunk)
+
+        if method == Method.standard:
+            scaler = StandardScaler()
+        elif method == Method.min_max:
+            scaler = MinMaxScaler()
+        else:
+            raise RuntimeError("Something went wrong, no scaling method chosen")
+
+        # fit on all videos in chunk
+        scaler.fit(slices_as_array)
+
+        for idx in indices:
+            # transform every video in chunk indices
+            slices[idx] = scaler.transform(slices[idx])
+    return slices
+
+
 class LowLevelScaler:
 
     def __init__(self, slices, method):

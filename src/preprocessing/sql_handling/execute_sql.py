@@ -4,7 +4,7 @@ from global_config import ROOT_DIR
 import os
 
 from src.preprocessing.sql_handling.connector import ConnectionHandler
-from src.preprocessing.sql_handling.queries import query_audio_cols, query_au_cols
+from src.preprocessing.sql_handling.queries import query_audio_cols, query_au_cols, query_pose_cols
 
 
 def execute_sql_pandas(query, chunk_size=1000000):
@@ -37,14 +37,17 @@ def execute_sql(query):
 
 
 def main():
-    df, read_duration = execute_sql_pandas(query_audio_cols)
-    df.to_csv(os.path.join(ROOT_DIR, "files/out/audio.csv"), index=False)
+    # df, read_duration = execute_sql_pandas(query_audio_cols)
+    # df.to_csv(os.path.join(ROOT_DIR, "files/out/audio.csv"), index=False)
+    #
+    #
+    # # TODO: There is some bug with the number of rows being queried
+    # # df = pd.read_csv(os.path.join(ROOT_DIR, "files/out/au_cols_without_confidence_filter.csv"))
+    # df, read_duration = execute_sql_pandas(query_au_cols)
+    # df.to_csv(os.path.join(ROOT_DIR, "files/out/au.csv"), index=False)
 
-
-    # TODO: There is some bug with the number of rows being queried
-    # df = pd.read_csv(os.path.join(ROOT_DIR, "files/out/au_cols_without_confidence_filter.csv"))
-    df, read_duration = execute_sql_pandas(query_au_cols)
-    df.to_csv(os.path.join(ROOT_DIR, "files/out/au.csv"), index=False)
+    df, read_duration = execute_sql_pandas(query_pose_cols)
+    df.to_csv(os.path.join(ROOT_DIR, "files/out/pose.csv"), index=False)
 
 
 if __name__ == '__main__':

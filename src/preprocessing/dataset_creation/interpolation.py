@@ -1,6 +1,9 @@
 import numpy as np
 
 
+# TODO: Since some videos are removed in this step the sync between openface and opensmile data will need to be monitored
+
+
 class Interpolator:
 
     # parameters
@@ -39,6 +42,7 @@ class Interpolator:
 
             if ratio_successful < 1 or ratio_high_conf < 1:
                 if ratio_successful < self.MIN_RATIO_GOOD_FRAMES or ratio_high_conf < self.MIN_RATIO_GOOD_FRAMES:
+                    print("found df with less than 85% successful frames")
                     # skip dataframes with too many bad values
                     continue
                 else:
@@ -67,3 +71,25 @@ class Interpolator:
         df = df.dropna()
 
         return df
+
+
+
+
+# import os
+# import pandas as pd
+# from global_config import ROOT_DIR
+# from src.preprocessing.dataset_creation.helpers import slice_by
+# path = os.path.join(ROOT_DIR, "files/out/openface_query.csv")
+# df = pd.read_csv(path)
+# slices = slice_by(df, "filename")
+#
+# print("before interpolation")
+# print(len(slices))
+#
+#
+# from global_config import AU_INTENSITY_COLS
+# interpolator = Interpolator(AU_INTENSITY_COLS)
+# interpolated_slices = interpolator.remove_interpolate(slices)
+#
+# print("after interpolation")
+# print(len(interpolated_slices))
