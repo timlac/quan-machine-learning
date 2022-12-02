@@ -17,9 +17,10 @@ def openface_query(x_cols):
                     `{X_COLS}`
                     FROM openface
                     WHERE mix = 0
-                    AND video_id NOT IN ('A050121-R',
-                                                'A21',
-                                                'A34')
+                    AND video_id IN ('A223',
+                                        'A220',
+                                        'A91')
+                    AND mode = 'v'
                     ;""".format(X_COLS=list2string(x_cols))
 
     df, _ = execute_sql_pandas(query)
@@ -40,9 +41,10 @@ def opensmile_functionals_query(x_cols):
                         `{X_COLS}`
                         FROM opensmile_functionals
                         WHERE mix = 0
-                        AND video_id NOT IN ('A050121-R',
-                                                'A21',
-                                                'A34')
+                        AND video_id IN ('A223',
+                                        'A220',
+                                        'A91')
+                        AND mode = 'v'
                         ;""".format(X_COLS=list2string(x_cols))
 
     # print(query)

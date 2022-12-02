@@ -29,9 +29,9 @@ def check_for_nan(arr):
 
 def get_aggregate_measures(slices,
                            means=True,
-                           variance=True,
-                           deltas=True,
-                           peaks=True):
+                           variance=False,
+                           deltas=False,
+                           peaks=False):
     """
     :param slices: list of numpy arrays
     :return: np array with mean values and other aggregate measures

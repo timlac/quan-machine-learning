@@ -9,7 +9,7 @@ from src.analysis.data_exploration import plot_means
 from src.preprocessing.dataset_creation.scaling.method import Method
 
 
-def scale_by(x, identifiers, method):
+def functional_scale_by(x, identifiers, method):
     for identifier in np.unique(identifiers):
         if method == Method.min_max:
             scaler = MinMaxScaler()
@@ -35,7 +35,7 @@ def main():
 
     plot_means(x, y, AUDIO_FUNCTIONALS_EGEMAPS_COLS[:5])
 
-    x = scale_by(x, intensity_levels, "standard")
+    x = functional_scale_by(x, intensity_levels, "standard")
     plot_means(x, y, AUDIO_FUNCTIONALS_EGEMAPS_COLS[:5])
 
 

@@ -22,37 +22,25 @@ from src.utils.helpers import mapper
 
 class ConfusionMatrixCreator:
 
-    def __init__(self, x, y, model_parameters):
-        """
-        :param x: np.array
-        :param y: np.array
-        :param model_parameters: dict
-        """
-        self.x = x
-        self.y = y
-        self.model_parameters = model_parameters
+    def __init__(self, clf):
+        self.clf = clf
 
-        self.classes = np.unique(self.y)
-        self.n_classes = len(self.classes)
+    def calculate_avg_conf_matrix(self, x, y, splits):
+        classes = np.unique(y)
+        n_classes = len(classes)
 
-    def load_classifier(self):
-        clf = SVC(**self.model_parameters)
-        return clf
-
-    def calculate_avg_conf_matrix(self, cv):
-        clf = self.load_classifier()
-        cum_conf_mat = np.zeros([self.n_classes, self.n_classes])
+        cum_conf_mat = np.zeros([n_classes, n_classes])
 
         n_groups = 0
-        for train_idx, val_idx in cv:
+        for train_idx, val_idx in splits:
             n_groups += 1
-            x_train, x_val, y_train, y_val = self.x[train_idx], self.x[val_idx], self.y[train_idx], self.y[val_idx]
+            x_train, x_val, y_train, y_val = x[train_idx], x[val_idx], y[train_idx], y[val_idx]
 
-            clf.fit(x_train, y_train)
-            y_pred = clf.predict(x_val)
+            self.clf.fit(x_train, y_train)
+            y_pred = self.clf.predict(x_val)
             conf_mat = confusion_matrix(y_val,
                                         y_pred,
-                                        labels=self.classes,
+                                        labels=classes,
                                         normalize='true'
                                         )
 
@@ -62,14 +50,26 @@ class ConfusionMatrixCreator:
         return avg_conf_mat
 
 
-def plot_conf_matrix(df_cm, title):
+def plot_conf_matrix(df_cm, title, save_path):
     plt.figure(figsize=(20, 15))
-    ax = sns.heatmap(df_cm, annot=True, fmt='.2f', vmin=0, vmax=1, cmap=conf_cmap)
+    ax = sns.heatmap(df_cm, annot=True, fmt='.1f', vmin=0, vmax=1, cmap=conf_cmap)
     plt.yticks(va='center')
     plt.xlabel('Predicted Label')
     plt.ylabel('Actual Label')
     plt.title(title)
+    plt.savefig(save_path)
     plt.show()
+
+
+def conf_mat_to_df(conf_mat, y):
+    # get emotion_ids
+    emotion_ids = np.unique(y)
+    # get emotion abreviations
+    emotion_abrs = mapper(emotion_ids, emotion_id_to_emotion_abr)
+    # create dataframe with lists of emotion ids as row and column names
+    df_cm = pd.DataFrame(conf_mat, list(emotion_abrs), list(emotion_abrs))
+
+    return df_cm
 
 
 def main():

@@ -14,7 +14,7 @@ from global_config import ROOT_DIR, emotion_id_to_emotion, GAZE_COLS, basic_emot
 from src.preprocessing.dataset_creation.helpers import get_padded_time_series_with_numpy, slice_by, get_cols, \
     get_fixed_col
 
-from src.preprocessing.dataset_creation.scaling.low_level_scaling import LowLevelScaler
+from src.preprocessing.dataset_creation.scaling.low_level_scaling import low_level_scale_by
 
 from src.preprocessing.dataset_creation.aggregation import get_aggregate_measures
 
@@ -49,8 +49,6 @@ def plot_time_series_means(slices, y, cols):
     x = get_padded_time_series_with_numpy(slices, padding_value)
     x = ma.masked_where(x == padding_value, x)
 
-    scaler = MinMaxScaler()
-
     for idx, col in enumerate(cols):
         plt.figure(figsize=(10, 5))
 
@@ -61,8 +59,6 @@ def plot_time_series_means(slices, y, cols):
 
                 x_emotion_col = x_emotion[:, :, idx]
 
-                # scaler.fit_transform(x_emotion_col[x_emotion_col.mask   == False])
-
                 means = np.mean(x_emotion_col, axis=0)
                 stds = np.std(x_emotion_col, axis=0)
 
@@ -70,11 +66,11 @@ def plot_time_series_means(slices, y, cols):
                 plt.fill_between(range(len(means)), means - stds, means + stds, alpha=0.3)
 
         plt.xlim(0, 350)
-        plt.ylabel("activation", fontsize=18)
-        plt.xlabel("frame number", fontsize=18)
-        plt.title(au_intensity_name_to_desc[col], fontsize=20)
+        plt.ylabel("activation mean", fontsize=18)
+        plt.xlabel("frame", fontsize=18)
+        plt.title(col, fontsize=20)
         plt.legend(fontsize=16)
-        plt.savefig("/home/tim/Pictures/plots/" + au_intensity_name_to_desc[col])
+        plt.savefig("/home/tim/Pictures/plots/" + col)
         plt.show()
 
 
@@ -141,9 +137,12 @@ def plot_means(x, y, cols):
         plt.figure(figsize=(15, 10))
         plt.errorbar(means.keys(), means.values(), yerr=list(stds.values()),
                      fmt='o', ecolor="black", capsize=2, elinewidth=1)
-        plt.title(au_intensity_name_to_desc[col])
-        plt.xticks(rotation=90)
+        plt.title(col, fontsize=20)
+        plt.xticks(rotation=90, fontsize=15)
+        plt.yticks(fontsize=15)
+        plt.ylabel("activation mean", fontsize=18)
         plt.tight_layout()
+        plt.savefig("/home/tim/Pictures/plots/" + "agg_" + col)
         plt.show()
 
 
@@ -166,23 +165,28 @@ def main():
 
     slices = slice_by(df, "filename")
 
-    cols = AU_INTENSITY_COLS
+    cols = POSE_COLS
 
-    au = get_cols(slices, cols)
+    x = get_cols(slices, cols)
 
     y = get_fixed_col(slices, "emotion_1_id")
 
-    # au = get_aggregate_measures(au, means=True,
-    #                            variance=False,
-    #                            deltas=False,
-    #                            peaks=False)
-    #
-    # plot_means(au, y, AU_INTENSITY_COLS)
+    video_ids = get_fixed_col(slices, "video_id")
+
+    # x_scaled = scale_by(slices=x, by=video_ids, method="min_max")
+
+    x = get_aggregate_measures(x, means=True,
+                               variance=False,
+                               deltas=False,
+                               peaks=False)
+    scaler = MinMaxScaler()
+    x = scaler.fit_transform(x)
+    plot_means(x, y, cols)
 
     # Time series truncation
     # Outlier detection
 
-    plot_time_series_means(au, y, cols)
+    # plot_time_series_means(x_scaled, y, cols)
 
     # plot_time_series_means_subplots(au, au, y, cols)
 

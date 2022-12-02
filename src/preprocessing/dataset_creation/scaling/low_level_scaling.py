@@ -8,12 +8,11 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from global_config import ROOT_DIR, AU_INTENSITY_COLS
 from src.preprocessing.dataset_creation.helpers import slice_by, get_cols, get_fixed_col
 
-from src.analysis.data_exploration import plot_time_series_means_subplots
 from src.preprocessing.dataset_creation.scaling.method import Method
 
 
-def scale_by(slices, video_ids, method):
-    for slice_chunk, indices in chunk_data(video_ids, slices):
+def low_level_scale_by(slices, by, method):
+    for slice_chunk, indices in chunk_data(by, slices):
         slices_as_array = np.vstack(slice_chunk)
 
         if method == Method.standard:
@@ -58,9 +57,9 @@ def main():
     intensity_level = get_fixed_col(slices, "intensity_level")
     y = get_fixed_col(slices, "emotion_1_id")
 
-    au_scaled = scale_by(au, video_ids, method="min_max")
+    au_scaled = low_level_scale_by(au, video_ids, method="min_max")
 
-    plot_time_series_means_subplots(au, au_scaled, y, AU_INTENSITY_COLS)
+    # plot_time_series_means_subplots(au, au_scaled, y, AU_INTENSITY_COLS)
 
 
 if __name__ == "__main__":

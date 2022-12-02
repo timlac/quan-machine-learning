@@ -31,6 +31,7 @@ class Interpolator:
 
         ret = []
 
+        removed = 0
         for df in slices:
 
             confidence = df[self.CONFIDENCE].values
@@ -42,8 +43,8 @@ class Interpolator:
 
             if ratio_successful < 1 or ratio_high_conf < 1:
                 if ratio_successful < self.MIN_RATIO_GOOD_FRAMES or ratio_high_conf < self.MIN_RATIO_GOOD_FRAMES:
-                    print("found df with less than 85% successful frames")
                     # skip dataframes with too many bad values
+                    removed += 1
                     continue
                 else:
                     # interpolate if not too many values are bad
@@ -52,6 +53,9 @@ class Interpolator:
             else:
                 # just append if no values are bad
                 ret.append(df)
+
+        print("{} videos had over {} bad frames and very therefore completely removed"
+              .format(removed, self.MIN_RATIO_GOOD_FRAMES))
 
         return ret
 
