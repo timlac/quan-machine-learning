@@ -42,6 +42,7 @@ class ConfusionMatrixCreator:
                                         y_pred,
                                         labels=classes,
                                         normalize='true'
+
                                         )
 
             cum_conf_mat += conf_mat

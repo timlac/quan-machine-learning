@@ -32,7 +32,10 @@ class Interpolator:
         ret = []
 
         removed = 0
+        interpolated = 0
+        processed = 0
         for df in slices:
+            processed += 1
 
             confidence = df[self.CONFIDENCE].values
             success = df[self.SUCCESS].values
@@ -48,14 +51,19 @@ class Interpolator:
                     continue
                 else:
                     # interpolate if not too many values are bad
+                    interpolated += 1
                     df = self.interpolate(df)
                     ret.append(df)
             else:
                 # just append if no values are bad
                 ret.append(df)
 
-        print("{} videos had over {} bad frames and very therefore completely removed"
+        print("a total of {} videos were processed". format(processed))
+
+        print("{} videos had over {} bad frames and were therefore completely removed"
               .format(removed, self.MIN_RATIO_GOOD_FRAMES))
+        print("{} videos had some bad frames and underwent interpolation"
+              .format(interpolated))
 
         return ret
 

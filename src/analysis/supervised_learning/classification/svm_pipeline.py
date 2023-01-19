@@ -2,6 +2,7 @@ import os
 
 import numpy as np
 import pandas as pd
+import json
 
 from sklearn.model_selection import GridSearchCV
 
@@ -45,11 +46,11 @@ def param_search(x, y):
                   'kernel': kernel,
                   }
 
-    # parameters = {'class_weight': ['balanced'],
-    #               'C': [1, 10],
-    #               'gamma': [1, 0.1],
-    #               'kernel': ["linear"],
-    #               }
+    parameters = {'class_weight': ['balanced'],
+                  'C': [1, 10],
+                  'gamma': [1],
+                  'kernel': ["linear"],
+                  }
 
     skf = StratifiedKFold(n_splits=5, shuffle=True)
 
@@ -77,10 +78,10 @@ def check_alignment(sli, df):
     print(np.array_equal(y_sli, y_df))
 
 
-path_video = os.path.join(ROOT_DIR, "files/out/openface_query.csv")
+path_video = os.path.join(ROOT_DIR, "files/out/openface_query_FULL.csv")
 df_video = pd.read_csv(path_video)
 
-path_audio = os.path.join(ROOT_DIR, "files/out/opensmile_functionals_query.csv")
+path_audio = os.path.join(ROOT_DIR, "files/out/opensmile_functionals_query_FULL.csv")
 df_audio = pd.read_csv(path_audio)
 
 slices_video = slice_by(df_video, "filename")
@@ -109,6 +110,8 @@ def transform_video_modality(sli, cols):
 class Evaluator:
     conf_mat_save_path = os.path.join(ROOT_DIR,
                                       "files/out/functionals/supervised_learning/confusion_matrix_")
+    classification_report_save_path = os.path.join(ROOT_DIR,
+                                      "files/out/functionals/supervised_learning/classification_report_")
 
     def __init__(self, x, y, model_parameters, save_as):
         self.x = x
@@ -142,10 +145,13 @@ class Evaluator:
 
     def create_classification_report(self):
         splits = self.get_splits()
-        y_pred = cross_val_predict(self.clf, self.x, self.y, cv=splits)
+        y_pred = cross_val_predict(self.clf, self.x, self.y, cv=splits, n_jobs=-1)
         report = metrics.classification_report(y_true=self.y, y_pred=y_pred,
-                                               target_names=emotion_abr_to_emotion.values())
+                                               target_names=emotion_abr_to_emotion.values(),
+                                               output_dict=True)
 
+        with open(self.classification_report_save_path + self.save_as + ".json", 'w') as fp:
+            json.dump(report, fp)
 
 
 def print_scores(scores, scoring_method):
@@ -156,27 +162,38 @@ def print_scores(scores, scoring_method):
     print('std (validation):', np.std(scores['test_{}'.format(scoring_method)]))
 
 
-for col in [("action_units", AU_INTENSITY_COLS), ("gaze", GAZE_COLS), ("pose", POSE_COLS)]:
-    print(col[0])
-    x = transform_video_modality(slices_video, col[1])
-    clf = param_search(x, y_audio_video)
-    eval = Evaluator(x, y_audio_video, clf.best_params_, col[0])
-    eval.evaluate_scores("accuracy")
-    eval.evaluate_scores("roc_auc_ovo_weighted")
+# for col in [("action_units", AU_INTENSITY_COLS), ("gaze", GAZE_COLS), ("pose", POSE_COLS)]:
+#     print(col[0])
+    # x = transform_video_modality(slices_video, col[1])
+    # clf = param_search(x, y_audio_video)
+    # eval = Evaluator(x, y_audio_video, clf.best_params_, col[0])
+    # eval.evaluate_scores("accuracy")
+    # eval.evaluate_scores("roc_auc_ovo_weighted")
+    # eval.evaluate_confusion_matrix()
+    # eval.create_classification_report()
 
 
-au_gaze_pose = transform_video_modality(slices_video, [*AU_INTENSITY_COLS, *GAZE_COLS, *POSE_COLS])
+# au_gaze_pose = transform_video_modality(slices_video, [*AU_INTENSITY_COLS, *GAZE_COLS, *POSE_COLS])
+#
+# egemaps = df_audio[AUDIO_FUNCTIONALS_EGEMAPS_COLS].values
+# egemaps = functional_scale_by(egemaps, video_ids, "min_max")
+# clf = param_search(egemaps, y_audio_video)
+#
+# eval = Evaluator(egemaps, y_audio_video, clf.best_params_, "audio")
+# eval.evaluate_scores("accuracy")
+# eval.evaluate_scores("roc_auc_ovo_weighted")
 
-egemaps = df_audio[AUDIO_FUNCTIONALS_EGEMAPS_COLS].values
-egemaps = functional_scale_by(egemaps, video_ids, "min_max")
 
-all_modes = np.hstack((au_gaze_pose, egemaps))
+#
+# all_modes = np.hstack((au_gaze_pose, egemaps))
+#
+#
+# clf = param_search(all_modes, y_audio_video)
+#
+# eval = Evaluator(all_modes, y_audio_video, clf.best_params_, "all_modes")
+# eval.evaluate_scores("accuracy")
+# eval.evaluate_scores("roc_auc_ovo_weighted")
+# eval.evaluate_confusion_matrix()
+# eval.create_classification_report()
 
 
-clf = param_search(all_modes, y_audio_video)
-
-eval = Evaluator(all_modes, y_audio_video, clf.best_params_, "some_mode")
-eval.evaluate_scores("accuracy")
-eval.evaluate_scores("roc_auc_ovo_weighted")
-eval.evaluate_confusion_matrix()
-eval.create_classification_report()
