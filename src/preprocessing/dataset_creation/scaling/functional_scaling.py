@@ -10,6 +10,12 @@ from src.preprocessing.dataset_creation.scaling.method import Method
 
 
 def functional_scale_by(x, identifiers, method):
+    """
+    :param x: a matrix with shape (observations, features)
+    :param identifiers: np Array
+    :param method: cls Method
+    :return: scaled x matrix
+    """
     for identifier in np.unique(identifiers):
         if method == Method.min_max:
             scaler = MinMaxScaler()

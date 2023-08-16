@@ -9,7 +9,6 @@ from global_config import ROOT_DIR, AU_INTENSITY_COLS, GAZE_COLS, POSE_COLS, AUD
 def openface_query(x_cols):
     query = """SELECT filename,
                     video_id,
-                    filename,
                     intensity_level,
                     emotion_1_id,
                     success,
@@ -27,6 +26,50 @@ def openface_query(x_cols):
     df.to_csv(os.path.join(ROOT_DIR, "files/out/openface_query.csv"), index=False)
 
 
+
+
+def openface_mixed_query(x_cols):
+    query = """SELECT filename,
+                    video_id,
+                    frame,
+                    intensity_level,
+                    emotion_1,
+                    emotion_1_id,
+                    emotion_2,
+                    emotion_2_id,
+                    proportions,
+                    success,
+                    confidence,
+                    `{X_COLS}`
+                    FROM openface
+                    WHERE mix = 1
+                    ;""".format(X_COLS=list2string(x_cols))
+
+    df, _ = execute_sql_pandas(query)
+    df.to_csv(os.path.join(ROOT_DIR, "files/out/openface_query_mixed.csv"), index=False)
+
+
+def openface_basic_emotions_query(x_cols):
+    query = """SELECT filename,
+                    video_id,
+                    frame,
+                    intensity_level,
+                    emotion_1,
+                    emotion_1_id,
+                    success,
+                    confidence,
+                    `{X_COLS}`
+                    FROM openface
+                    WHERE mix = 0
+                    AND emotion_1_id in ("12", "33", "6", "35", "10")
+                    ;""".format(X_COLS=list2string(x_cols))
+
+    # print(query)
+
+    df, _ = execute_sql_pandas(query)
+    df.to_csv(os.path.join(ROOT_DIR, "files/out/openface_query_basic.csv"), index=False)
+
+
 def opensmile_functionals_query(x_cols):
 
     # print(x_cols)
@@ -35,7 +78,6 @@ def opensmile_functionals_query(x_cols):
 
     query = """SELECT filename,
                         video_id,
-                        filename,
                         intensity_level,
                         emotion_1_id,
                         `{X_COLS}`
@@ -76,10 +118,14 @@ def opensmile_lld_query(x_cols):
 
 def main():
     x_cols = [*AU_INTENSITY_COLS, *GAZE_COLS, *POSE_COLS]
-    openface_query(x_cols)
+    # openface_query(x_cols)
 
-    x_cols = AUDIO_FUNCTIONALS_EGEMAPS_COLS
-    opensmile_functionals_query(x_cols)
+    openface_basic_emotions_query(x_cols)
+
+    # openface_mixed_query(x_cols)
+
+    # x_cols = AUDIO_FUNCTIONALS_EGEMAPS_COLS
+    # opensmile_functionals_query(x_cols)
 
     # x_cols = AUDIO_LLD_COLS
     # opensmile_lld_query(x_cols)

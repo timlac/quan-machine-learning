@@ -44,15 +44,15 @@ def process_files(file_path, out_path, limit=None):
 
 def main():
     print("in main")
-    # file_path = "../files/tests/example_data/**/*.mov"
-    # out_path = "../files/tests/example_data/opensmile/"
+    file_path = "../files/tests/example_data/**/*.mov"
+    out_path = "../files/tests/example_data/opensmile/"
 
     # file_path = "/media/tim/Seagate Backup Plus Drive/Documents/**/*.mov"
     # out_path = "/media/tim/Seagate Backup Plus Drive/out_opensmile_eGeMAPSv02_lowleveldescriptors/"
 
     # GEMEP
-    file_path = "/home/tim/work/su-thesis-project/datasets/GEMEP/ALLVIDEOS/*.wmv"
-    out_path = "/home/tim/work/su-thesis-project/datasets/GEMEP/gemep_opensmile_compare_2016_lowleveldescriptors_deltas/"
+    # file_path = "/home/tim/work/su-thesis-project/datasets/GEMEP/ALLVIDEOS/*.wmv"
+    # out_path = "/home/tim/work/su-thesis-project/datasets/GEMEP/gemep_opensmile_compare_2016_lowleveldescriptors_deltas/"
 
     print(os.path.isdir(out_path))
 
