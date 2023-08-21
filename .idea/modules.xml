@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/emotional-recognition.iml" filepath="$PROJECT_DIR$/.idea/emotional-recognition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/quan-machine-learning.iml" filepath="$PROJECT_DIR$/.idea/quan-machine-learning.iml" />
     </modules>
   </component>
 </project>
